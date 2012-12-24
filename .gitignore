@@ -17,3 +17,6 @@
 
 # idea_folder
 .idea/
+
+# build
+build/
