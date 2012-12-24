@@ -54,17 +54,76 @@
 
 #define QC_USES(module) QT_FORWARD_DECLARE_CLASS(module)
 
-/**
- * LOGGER specific methods
+
+
+#define QC_LOGGER_DATE_FORMAT "dd.MM.yyyy"
+#define QC_LOGGER_TIME_FORMAT "hh:mm:ss"
+
+/*!
+ * \class   QCLogger
+ * \extends QObject
+ * \brief   QCLoggerWrapper.
+ * \version 0.0.1
+ * \author  kornicameister
+ * \internal
+ *
+ * This class is a wrapper for generating diagnostic
+ * outputs to the console of how Qubic Works.
+ * Can be either used without creating it, thanks to
+ * static methods.
+ *
+ * QCLogger extends QObject. That gives one significant
+ * addvantage. If QCLogger is created using new operation we
+ * have to pass parental object to the constructor, as it does
+ * not permit default values (parental object being null).
+ * Since that we have an instance of QCLogger bound to the
+ * class that uses it, which means that logger will be deleted
+ * as soos as the class does.
  */
-class QC_HIDE Logger {
+class QC_HIDE QCLogger : public QObject {
+    Q_OBJECT
+    Q_DISABLE_COPY(QCLogger)
 public:
-    static void info(QObject *clazz, const QString &msg){
+
+    explicit QCLogger(const QObject *clazz) :
+        QObject(clazz){
+        Q_ASSERT(clazz != NULL);
+
+        // setting up
+        this->className = clazz->metaObject()->className();
+        this->loggerName = "QCLogger::" + this->className;
+    }
+
+    void info(const QString &msg){
+        return QCLogger::info(this->parent(),msg);
+    }
+
+    voida fatal(const QString &msg){
+        return QCLogger::fatal(this->parent(),msg);
+    }
+
+
+    static const QCLogger * getQCLogger(const QObject *clazz){
+        return new QCLogger(clazz);
+    }
+
+    static void info(const QObject *clazz, const QString &msg){
         QDateTime qdt = QDateTime::currentDateTime();
         qDebug() << "[" << qdt.toString("dd.MM.yyyy") << "]"
                  << "[" << qdt.toString("hh:mm:ss") << "]"
                  << "[" << clazz->metaObject()->className() << "]"
                  << " -> " << msg;
     }
+    static void fatal(const QObject *clazz, const QString &msg){
+        QDateTime qdt = QDateTime::currentDateTime();
+        qFatal() << "[" << qdt.toString("dd.MM.yyyy") << "]"
+                 << "[" << qdt.toString("hh:mm:ss") << "]"
+                 << "[" << clazz->metaObject()->className() << "]"
+                 << " -> " << msg;
+
+    }
+private:
+    QString className;
+    QString loggerName;
 };
 #endif // QUBICORM_H

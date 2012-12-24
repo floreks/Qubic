@@ -21,7 +21,7 @@ public:
 QCConnectionManager::QCConnectionManager(QObject *parent) :
     QObject(parent),
     data(new QCConnectionManagerData()){
-    Logger::info(this,"All done");
+    QCLogger::info(this,"All done");
 }
 
 QCConnectionManager::QCConnectionManager(const QCConnectionManager &rhs, QObject *parent) :
