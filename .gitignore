@@ -1,3 +1,4 @@
+
 /hibernateExamples/HibernateExamples/HibernateExamples.iml
 # Compiled Object files
 *.slo
@@ -22,3 +23,4 @@
 
 # build
 build/
+/hibernateExamples/HibernateExamples/target/
