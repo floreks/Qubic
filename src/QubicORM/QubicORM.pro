@@ -13,7 +13,7 @@ QT       -= gui
 
  # Use Precompiled headers (PCH)
 CONFIG   += precompile_header
-PRECOMPILED_HEADER  = pch.h
+PRECOMPILED_HEADER  = private/pch.h
 
 TARGET   = QubicORM
 TEMPLATE = lib
@@ -21,14 +21,26 @@ TEMPLATE = lib
 DEFINES += QUBICORM_LIBRARY
 
 SOURCES += \
-    ConnectionManager/qcconnectionmanager.cpp \
-    Qube/qubeengine.cpp
+    ConnectionModule/qcconnectionmanager.cpp \
+    QubeModule/qubeprocessor.cpp \
+    ConfigurationModule/qcconfigurationreader.cpp \
+    QubiconsModule/qubiconcompiler.cpp \
+    QubeModule/model/qubemodel.cpp \
+    QubeModule/model/qubeinterface.cpp
 
-HEADERS += qubicorm.h\
-    ConnectionManager/qcconnectionmanager.h \
-    Qube/qubeengine.h \
-    pch.h \
-    QCSession
+HEADERS += private/qubicorm.h\
+    ConnectionModule/qcconnectionmanager.h \
+    private/pch.h \
+    QCSession \
+    QubeModule/qubeprocessor.h \
+    ConfigurationModule/qcconfigurationreader.h \
+    QubiconsModule/qubicons.h \
+    QubiconsModule/qubicon.h \
+    QubiconsModule/qubiconcompiler.h \
+    QubeModule/model/qubemodel.h \
+    QubeModule/model/qubeinterface.h
 
 OTHER_FILES += \
-    README.md
+    README.md \
+    ConnectionModule/README.md \
+    ConfigurationModule/README.md

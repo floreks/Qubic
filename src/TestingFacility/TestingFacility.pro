@@ -14,16 +14,13 @@ QMAKE_CXXFLAGS  += -std=c++0x
 
 TEMPLATE = app
 
-
 SOURCES +=
-
-
 
 HEADERS += \
     ConnectionManagerTestUnit.h
 
 
-unix:!macx:!symbian: LIBS += -L$$OUT_PWD/../QubicORM/ -lQubicORM
+unix:!macx: LIBS += -L$$OUT_PWD/../QubicORM/ -lQubicORM
 
 INCLUDEPATH += $$PWD/../QubicORM
 DEPENDPATH += $$PWD/../QubicORM

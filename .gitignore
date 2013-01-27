@@ -14,6 +14,7 @@
 
 # QtCreator files
 *.pro.user
+/src/Qubic.pro.user.*
 
 # idea_folder
 .idea/
