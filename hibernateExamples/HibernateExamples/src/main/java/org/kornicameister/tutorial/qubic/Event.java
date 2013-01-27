@@ -1,16 +1,50 @@
 package org.kornicameister.tutorial.qubic;
 
-import org.hibernate.annotations.NaturalId;
-
 import javax.persistence.*;
 import java.util.Date;
 
+/**
+ * Event model.</br>
+ * <p>
+ * This class is different from its ancestor. It is not
+ * described as {@link MappedSuperclass} but as {@link Entity}.
+ * This comes with significant advantages:
+ * <ul>
+ * <li>
+ * the class will have its equivalent in the database
+ * existing under the name specified in
+ * {@link Table}'s name argument
+ * </li>
+ * <li>
+ * class may contain dozens of additional fields
+ * and they all will be reflected in the corresponding
+ * table in the database. For instances, here we have:
+ * <ul>
+ * <li>{@link Event#title}</li>
+ * <li>{@link Event#date}</li>
+ * </ul>
+ * </li>
+ * </ul>
+ * </p>
+ *
+ * @author kornicameister
+ * @version 0.1
+ * @see org.kornicameister.tutorial.qubic.Event#hashCode()
+ * @since 2013-01-27
+ */
 @Entity
 @Table(name = "event")
 public class Event extends PersistenceObject {
     @Column(name = "title", insertable = true, nullable = false, updatable = true)
     private String title;
 
+    /**
+     * When the class' field is declared with {@link Temporal} annotation
+     * and this field is initialized in each one of the class' constructors, than
+     * one thing is more than sure. Hibernate will take care of updating this field.
+     * This feature is quite useful if you would like to have a column
+     * in database that will hold information about recent row's access.
+     */
     @Temporal(TemporalType.TIMESTAMP)
     @Column(name = "lastAccess")
     private Date date;
@@ -56,6 +90,14 @@ public class Event extends PersistenceObject {
         return true;
     }
 
+    /**
+     * Overriding {@link org.kornicameister.tutorial.qubic.PersistenceObject#hashCode()} method
+     * may not be necessary if auto incremented primary key is used. The situation
+     * of the two rows (entities) and what comes with that - models is simple
+     * not possible.
+     *
+     * @return value of comparison
+     */
     @Override
     public int hashCode() {
         int result = super.hashCode();
