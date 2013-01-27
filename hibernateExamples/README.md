@@ -29,3 +29,4 @@ based on it, requires no more than *pom.xml* to start working.
 Useful links:
 * [Hibernate 4.1 docs](http://docs.jboss.org/hibernate/orm/4.1/quickstart/en-US/html/)
 * [Maven Mykong tutorial](http://www.mkyong.com/tutorials/maven-tutorials/)
+* [Some models](https://www.dropbox.com/sh/vhshvs2j30xdeh8/z-tI54qOYt)
