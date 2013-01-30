@@ -3,6 +3,7 @@ package org.kornicameister.tutorial.qubic;
 import org.hibernate.Session;
 import org.junit.Assert;
 import org.junit.Test;
+import org.kornicameister.tutorial.AbstractTest;
 
 import java.util.List;
 

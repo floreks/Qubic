@@ -1,4 +1,4 @@
-package org.kornicameister.tutorial.qubic;
+package org.kornicameister.tutorial;
 
 import org.hibernate.SessionFactory;
 import org.junit.After;

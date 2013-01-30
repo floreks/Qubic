@@ -59,7 +59,21 @@
         </plugins>
     </build>
 
+    <repositories>
+        <repository>
+            <id>random-data-generator</id>
+            <url>http://random-data-generator.googlecode.com/svn/releases/maven2</url>
+            <name>random-data-generator</name>
+        </repository>
+    </repositories>
+
     <dependencies>
+        <dependency>
+            <groupId>org.soqqo</groupId>
+            <artifactId>random-data-generator</artifactId>
+            <version>0.01</version>
+            <scope>test</scope>
+        </dependency>
         <dependency>
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-core</artifactId>
