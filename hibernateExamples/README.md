@@ -1,7 +1,7 @@
 This subdirectory can not be considered as the part of Qubic itself.
 
 # Before you even start
-Read [this]()
+Read [this](http://kornicameister.blogspot.com/2013/02/qubic-how-to-set-up-intellij-windows.html)
 ## Rules
 * if you indent to create own examples I suggest to create own package under the **org** package
 * the same rule is applied to the testing as well
