@@ -1,5 +1,12 @@
 This subdirectory can not be considered as the part of Qubic itself.
 
+# Before you even start
+Read [this]()
+## Rules
+* if you indent to create own examples I suggest to create own package under the **org** package
+* the same rule is applied to the testing as well
+* JUnit4 is the king
+
 # HibernateExamples
 
 HibernateExamples can be considered as the background review, research

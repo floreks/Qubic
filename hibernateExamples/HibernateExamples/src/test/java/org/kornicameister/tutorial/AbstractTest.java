@@ -1,9 +1,9 @@
 package org.kornicameister.tutorial;
 
+import org.bridge.HibernateBridge;
 import org.hibernate.SessionFactory;
 import org.junit.After;
 import org.junit.Before;
-import org.kornicameister.tutorial.access.HibernateBridge;
 
 /**
  * @author kornicameister
@@ -14,7 +14,7 @@ public class AbstractTest {
 
     @Before
     public void setUp() throws Exception {
-        HibernateBridge.accessHibernate();
+        HibernateBridge.accessHibernate(new MyHibernateAccess());
         AbstractTest.HB = HibernateBridge.getSessionFactory();
     }
 

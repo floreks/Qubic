@@ -8,6 +8,7 @@ QC_BEGIN_NAMESPACE
 
 QC_USES(QubeModel)
 class QC_HIDE QubeInterface : public QObject {
+    Q_OBJECT
 public:
     explicit QubeInterface(QubeModel *parent = 0);
     
@@ -21,7 +22,6 @@ public:
 
     bool                            save() = 0;
     bool                            purge() = 0;
-
 
 signals:
     void qubeDeleted(const QVariant &id);

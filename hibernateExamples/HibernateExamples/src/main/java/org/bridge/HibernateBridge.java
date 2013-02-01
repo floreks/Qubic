@@ -1,21 +1,29 @@
-package org.kornicameister.tutorial.access;
+package org.bridge;
 
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.service.ServiceRegistry;
 import org.hibernate.service.ServiceRegistryBuilder;
 
-public final class HibernateBridge {
+public class HibernateBridge {
     private static SessionFactory sessionFactory = null;
 
     public static SessionFactory getSessionFactory() {
         return sessionFactory;
     }
 
-    public static boolean accessHibernate() {
-
+    /**
+     * Some useful static method that will create Hibernate connection
+     * in the way you like. {@link HibernateConfigurationDecorator} is
+     * an abstract class that has only one method that should return path
+     * to your Hibernate cfg file.
+     *
+     * @param decorator
+     * @return true if all good
+     */
+    public static boolean accessHibernate(HibernateConfigurationDecorator decorator) {
         Configuration configuration = new Configuration();
-        configuration = configuration.configure("/hibernate.cfg.xml");
+        configuration = configuration.configure(decorator.getHibernateCfgFile());
 
         ServiceRegistry serviceRegistry = new ServiceRegistryBuilder()
                 .applySettings(configuration.getProperties())
