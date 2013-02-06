@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <!-- some options -->
+        <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+        <property name="hibernate.connection.password">root</property>
+        <property name="hibernate.connection.username">root</property>
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/qubic</property>
+        <property name="hibernate.default_catalog">qubic</property>
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+        <property name="hibernate.dialect.cache.provider_class">org.hibernate.cache.internal.NoCacheProvider</property>
+        <!--
+            hibernate.hbm2ddl.auto may have following content
+            update -> will update database schema if possible and any changes is detected
+        -->
+        <property name="hibernate.hbm2ddl.auto">update</property>
+
+        <!--<property name="use_sql_comments">true</property>-->
+        <!--<property name="show_sql">true</property>-->
+        <!--<property name="format_sql">true</property>-->
+        <property name="hibernate.order_inserts">true</property>
+        <property name="hibernate.order_updates">true</property>
+        <property name="hibernate.connection.autocommit">true</property>
+        <property name="transaction.flush_before_completion">true</property>
+
+        <property name="hibernate.connection.useUnicode">true</property>
+        <property name="hibernate.connection.characterEncoding">UTF-8</property>
+
+        <!--
+        mapping
+        -->
+        <mapping class="org.kornicameister.tutorial.qubic.AbstractModel"/>
+        <mapping class="org.kornicameister.tutorial.qubic.IDModel"/>
+        <mapping class="org.kornicameister.tutorial.qubic.Event"/>
+        <mapping class="org.kornicameister.tutorial.qubic2.Calendar"/>
+        <mapping class="org.kornicameister.tutorial.qubic2.User"/>
+    </session-factory>
+</hibernate-configuration>
