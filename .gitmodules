@@ -1,0 +1,3 @@
+[submodule "thesis_kornicameister"]
+	path = thesis_kornicameister
+	url = git@github.com:kornicameister/Qubic-Thesis.git
