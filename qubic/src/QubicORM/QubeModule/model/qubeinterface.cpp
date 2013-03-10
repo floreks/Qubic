@@ -2,7 +2,7 @@
 
 QC_BEGIN_NAMESPACE
 
-QubeInterface::QubeInterface(QubeModel *parent) :
+QubeInterface::QubeInterface(QObject *parent) :
     QObject(parent){
 }
 

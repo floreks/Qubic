@@ -2,15 +2,15 @@
 #define QUBEINTERFACE_H
 
 #include "private/qubicorm.h"
+#include "qubemodel.h"
 #include <QSet>
 
 QC_BEGIN_NAMESPACE
 
-QC_USES(QubeModel)
 class QC_HIDE QubeInterface : public QObject {
     Q_OBJECT
 public:
-    explicit QubeInterface(QubeModel *parent = 0);
+    explicit QubeInterface(QObject *parent = 0);
     
     QSet<QPointer<QubeModel> >      all() = 0;
 
