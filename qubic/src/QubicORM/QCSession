@@ -1,6 +1,0 @@
-#ifndef QCSESSION_H
-#define QCSESSION_H
-
-#include "ConnectionModule/qcconnectionmanager.h"
-
-#endif // QCSESSION_H

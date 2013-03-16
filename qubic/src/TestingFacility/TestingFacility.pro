@@ -16,8 +16,7 @@ TEMPLATE = app
 
 SOURCES +=
 
-HEADERS += \
-    ConnectionManagerTestUnit.h
+HEADERS +=
 
 
 unix:!macx: LIBS += -L$$OUT_PWD/../QubicORM/ -lQubicORM
