@@ -9,21 +9,21 @@ MainWindow::MainWindow(QWidget *parent) :
 
     this->setWindowTitle("QThread test");
 
-    QThread *firstThread = new QThread;
+    QThread *firstThread = new QThread; // creating our thread object
     QThread *secondThread = new QThread;
-    timer.moveToThread(firstThread);
+    timer.moveToThread(firstThread); // moving our working class to thread pipe
     updater.moveToThread(secondThread);
 
-    connect(firstThread,SIGNAL(started()),&timer,SLOT(start()));
+    connect(firstThread,SIGNAL(started()),&timer,SLOT(start())); // connecting start functions
     connect(firstThread, SIGNAL(finished()),&timer,SLOT(deleteLater()));
-    connect(&timer,SIGNAL(timeUpdated(QString)),this,SLOT(onTimerUpdate(QString)));
+    connect(&timer,SIGNAL(timeUpdated(QString)),this,SLOT(onTimerUpdate(QString))); // working with emited signals
 
     connect(secondThread,SIGNAL(started()),&updater,SLOT(start()));
     connect(secondThread,SIGNAL(finished()),&updater,SLOT(deleteLater()));
-    qRegisterMetaType<POINT>("POINT");
+    qRegisterMetaType<POINT>("POINT"); // as qt doesn't now windows api structures we need to register it in their metasystem
     connect(&updater,SIGNAL(mouseMove(POINT)),this,SLOT(onMouseMove(POINT)));
 
-    firstThread->start();
+    firstThread->start(); // starting threads
     secondThread->start();
 }
 
@@ -32,6 +32,7 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
+// Working with signals from our threads
 
 void MainWindow::onTimerUpdate(QString time)
 {
