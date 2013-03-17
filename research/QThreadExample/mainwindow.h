@@ -23,7 +23,7 @@ private:
     Ui::MainWindow *ui;
 private slots:
     void onTimerUpdate(QString time);
-    void onMouseMove(POINT pos);
+    void onMouseMove(QPoint pos);
 };
 
 #endif // MAINWINDOW_H

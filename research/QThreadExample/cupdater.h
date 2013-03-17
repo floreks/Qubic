@@ -2,7 +2,7 @@
 #define CUPDATER_H
 
 #include <QObject>
-#include <windows.h>
+#include <QCursor>
 #include <QThread>
 
 class CUpdater : public QObject
@@ -13,7 +13,7 @@ public:
 public slots:
     void start();
 signals:
-    void mouseMove(POINT position);
+    void mouseMove(QPoint position);
 };
 
 #endif // CUPDATER_H

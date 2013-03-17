@@ -6,11 +6,9 @@ CUpdater::CUpdater(QObject *parent) : QObject(parent)
 
 void CUpdater::start()
 {
-    POINT mousePosition;
     while(1)
     {
-        GetCursorPos(&mousePosition);
-        emit mouseMove(mousePosition);
+        emit mouseMove(QCursor::pos());
         QThread::msleep(10);
     }
 }

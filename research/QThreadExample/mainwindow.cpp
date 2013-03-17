@@ -20,8 +20,7 @@ MainWindow::MainWindow(QWidget *parent) :
 
     connect(secondThread,SIGNAL(started()),&updater,SLOT(start()));
     connect(secondThread,SIGNAL(finished()),&updater,SLOT(deleteLater()));
-    qRegisterMetaType<POINT>("POINT"); // as qt doesn't now windows api structures we need to register it in their metasystem
-    connect(&updater,SIGNAL(mouseMove(POINT)),this,SLOT(onMouseMove(POINT)));
+    connect(&updater,SIGNAL(mouseMove(QPoint)),this,SLOT(onMouseMove(QPoint)));
 
     firstThread->start(); // starting threads
     secondThread->start();
@@ -39,13 +38,13 @@ void MainWindow::onTimerUpdate(QString time)
     ui->label->setText(time);
 }
 
-void MainWindow::onMouseMove(POINT pos)
+void MainWindow::onMouseMove(QPoint pos)
 {
     QString text;
     text = "X: ";
-    text += QString::number(pos.x+1);
+    text += QString::number(pos.x()+1);
     text += " Y: ";
-    text +=QString::number(pos.y+1);
+    text +=QString::number(pos.y()+1);
 
     ui->label_4->setText(text);
 }
