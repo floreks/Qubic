@@ -1,25 +1,25 @@
 #-------------------------------------------------
 #
-# Project created by QtCreator 2012-12-23T23:41:02
+# Project created by QtCreator 2013-09-12T00:43:58
 #
 #-------------------------------------------------
 
-QT       += core testlib sql
+QT       += core
+
 QT       -= gui
 
-TARGET          = TestingFacility
-CONFIG          += console
-CONFIG          -= app_bundle
-QMAKE_CXXFLAGS  += -std=c++0x
+TARGET = TestingFacility
+CONFIG   += console
+CONFIG   -= app_bundle
+CONFIG += c++11
 
 TEMPLATE = app
 
-SOURCES +=
 
-HEADERS +=
+SOURCES += main.cpp
 
-
-unix:!macx: LIBS += -L$$OUT_PWD/../QubicORM/ -lQubicORM
-
-INCLUDEPATH += $$PWD/../QubicORM
-DEPENDPATH += $$PWD/../QubicORM
+INCLUDEPATH += $$PWD/../QcCore \
+               $$PWD/../QcUtility
+LIBS += -LG:\Projects\Qubic\qubic\build\debug\QcCore\debug \
+        -LG:\Projects\Qubic\qubic\build\debug\QcUtility\debug \
+    -lQcCore -lQcUtility
