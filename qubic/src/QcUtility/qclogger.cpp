@@ -1,6 +1,6 @@
 #include "qclogger.h"
 
-QcLogger* QcLogger::instance = NULL;
+QSharedPointer<QcLogger> QcLogger::instance;
 
 QcLogger::QcLogger()
 {
@@ -22,14 +22,14 @@ QcLogger::QcLogger()
 }
 
 void QcLogger::setLoggingLevel(QsLogging::Level level) {
-    instance = getInstance();
+    getInstance();
     QsLogging::Logger::instance().setLoggingLevel(level);
 }
 
 QcLogger *QcLogger::getInstance()
 {
-    if (instance == NULL) instance = new QcLogger();
-    return instance;
+    if (instance.isNull()) instance = QSharedPointer<QcLogger>(new QcLogger());
+    return instance.data();
 }
 
 void QcLogger::debug(QObject *object, QString message)

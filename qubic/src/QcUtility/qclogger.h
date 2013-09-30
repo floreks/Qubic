@@ -18,8 +18,9 @@ public:
     void fatal(QObject *object, QString message);
     static void setLoggingLevel(QsLogging::Level level);
     static QcLogger* getInstance();
+    virtual ~QcLogger() {}
 private:
-    static QcLogger* instance;
+    static QSharedPointer<QcLogger> instance;
     QcLogger();
 };
 
