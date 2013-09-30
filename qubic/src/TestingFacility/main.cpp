@@ -21,6 +21,5 @@ int main()
     }
 
     qDebug() << retVal;
-
     return 0;
 }

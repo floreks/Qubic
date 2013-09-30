@@ -32,5 +32,5 @@ unix:!symbian {
 
 INCLUDEPATH += $$PWD/../QcUtility
 
-LIBS += -LG:\Projects\Qubic\qubic\build\debug\QcUtility\debug \
+LIBS += -L$$PWD\..\..\build\debug\QcUtility\debug \
     -lQcUtility
