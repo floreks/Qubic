@@ -5,6 +5,7 @@
 #-------------------------------------------------
 
 QT       -= gui
+QT       += xmlpatterns
 
 TARGET = QcUtility
 TEMPLATE = lib
@@ -13,11 +14,15 @@ CONFIG += c++11
 DEFINES += QCUTILITY_LIBRARY
 
 SOURCES += \
-    qclogger.cpp
+    qclogger.cpp \
+    qcdatabase.cpp \
+    qcpropertiesmanager.cpp
 
 HEADERS +=\
     qcutility_global.h \
-    qclogger.h
+    qclogger.h \
+    qcdatabase.h \
+    qcpropertiesmanager.h
 
 unix:!symbian {
     maemo5 {

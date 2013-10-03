@@ -16,6 +16,12 @@ public:
     void warn(QObject *object, QString message);
     void error(QObject *object, QString message);
     void fatal(QObject *object, QString message);
+    void debug(QString message);
+    void info(QString message);
+    void trace(QString message);
+    void warn(QString message);
+    void error(QString message);
+    void fatal(QString message);
     static void setLoggingLevel(QsLogging::Level level);
     static QcLogger* getInstance();
     virtual ~QcLogger() {}

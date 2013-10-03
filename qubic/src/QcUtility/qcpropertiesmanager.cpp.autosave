@@ -1,0 +1,24 @@
+#include "qcpropertiesmanager.h"
+
+#include <QXmlSchema>
+#include <QXmlSchemaValidator>
+
+bool QcPropertiesManager::validate(const QString &propertiesPath) {
+    QXmlSchema schema;
+    QXmlSchemaValidator validator;
+    
+    QByteArray schemaData, propertiesData;
+    
+    if(propertiesFileName.isEmpty() && schemaFileName.isEmpty()) {
+       
+    }
+}
+
+void QcPropertiesManager::overrideProperties(const QString filename) {
+    logger->info("Overriding properties file.");
+    this->propertiesFileName = filename;
+}
+
+void QcPropertiesManager::overrideSchema(const QString filename) {
+    this->schemaFileName = filename;
+}

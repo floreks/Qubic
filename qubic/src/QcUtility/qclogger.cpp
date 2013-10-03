@@ -61,3 +61,33 @@ void QcLogger::fatal(QObject *object, QString message)
 {
     QLOG_FATAL() << QString(object->metaObject()->className()) + " - " + message;
 }
+
+void QcLogger::debug(QString message)
+{
+    QLOG_DEBUG() << message;
+}
+
+void QcLogger::info(QString message)
+{
+    QLOG_INFO() << message;
+}
+
+void QcLogger::trace(QString message)
+{
+    QLOG_TRACE() << message;
+}
+
+void QcLogger::warn(QString message)
+{
+    QLOG_WARN() << message;
+}
+
+void QcLogger::error(QString message)
+{
+    QLOG_ERROR() << message;
+}
+
+void QcLogger::fatal(QString message)
+{
+    QLOG_FATAL() << message;
+}

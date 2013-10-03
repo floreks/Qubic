@@ -1,0 +1,30 @@
+#ifndef QCPROPERTIESMANAGER_H
+#define QCPROPERTIESMANAGER_H
+
+#include <QDir>
+
+#include <qclogger.h>
+
+#define QC_PROPERTIES_FILE "qcproperties.xml"
+#define QC_SCHEMA_FILE "qcproperties.xsd"
+
+class QcPropertiesManager
+{
+private:
+    QString propertiesFileName;
+    QString schemaFileName;
+    QcLogger *logger = QcLogger::getInstance();
+public:
+    // Disable constructor and copy constructor
+    QcPropertiesManager() = delete;
+    QcPropertiesManager(const QcPropertiesManager&) = delete;
+    
+    virtual ~QcPropertiesManager();
+    
+    static bool validate(const QString &propertiesPath = QDir::currentPath()); 
+    static void overrideProperties(const QString filename);
+    static void overrideSchema(const QString filename);
+    
+};
+
+#endif // QCPROPERTIESMANAGER_H
