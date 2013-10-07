@@ -10,8 +10,7 @@ QcLogger::QcLogger()
     QString time = QTime::currentTime().toString("hh.mm.ss");
     const QString filepath (QDir::currentPath() + "/logs/" + date + " " + time + ".txt");
     QFileInfo logs("logs");
-    if(!logs.exists() || !logs.isDir())
-    {
+    if(!logs.exists() || !logs.isDir()) {
         QDir logsDir;
         logsDir.mkdir("logs");
     }

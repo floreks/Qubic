@@ -2,7 +2,7 @@
 
 #include <QDir>
 
-#define QC_PROPERTIES_FILE "qcproperties.xml"
+#include "qcpropertiesmanager.h"
 
 QSharedPointer<QcDatabase> QcDatabase::instance;
 
@@ -17,6 +17,7 @@ QcDatabase *QcDatabase::getInstance(QString propertiesPath) {
 }
 
 QcDatabase::QcDatabase(QString propertiesPath) {
-    logger->info("Current path is: " + propertiesPath);
-
+    QcPropertiesManager manager;
+    manager.validate(propertiesPath);
+    qDebug() << manager.getPort();
 }

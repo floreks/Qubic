@@ -7,19 +7,8 @@
         <q:username>test</q:username>
         <q:password>test</q:password>
     </q:credentials>
-    <q:connection name="qubic_Test">
-        <q:schema name="qubic"/>
+    <q:connection>
         <q:driver name="mysql"/>
         <q:host address="localhost" port="3306"/>
     </q:connection>
-
-    <q:querying>
-        <q:option name="autoCommit">d</q:option>
-        <q:option name="useUnicode">true</q:option>
-    </q:querying>
-
-    <q:qubes path='./this/is/path/to/model/'>
-        <q:qube type="class" source="Bike.h" path='./subPath/'/>
-        <q:qube type="file" source="car.qube"/>
-    </q:qubes>
 </q:qubic>

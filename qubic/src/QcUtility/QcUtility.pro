@@ -5,7 +5,7 @@
 #-------------------------------------------------
 
 QT       -= gui
-QT       += xmlpatterns
+QT       += xml xmlpatterns
 
 TARGET = QcUtility
 TEMPLATE = lib
