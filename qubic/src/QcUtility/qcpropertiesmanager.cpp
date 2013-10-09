@@ -13,6 +13,7 @@ QByteArray QcPropertiesManager::readFile(const QString filename) {
         file.close();
         return result;
     }
+    logger->error(file.errorString());
     return QByteArray();
 }
 
