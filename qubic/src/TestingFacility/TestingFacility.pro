@@ -4,7 +4,7 @@
 #
 #-------------------------------------------------
 
-QT       += core widgets
+QT       += core widgets sql
 
 QT       -= gui
 
@@ -20,6 +20,22 @@ SOURCES += main.cpp
 
 INCLUDEPATH += $$PWD/../QcCore \
                $$PWD/../QcUtility
-LIBS += -L$$PWD\..\..\build\debug\QcCore\debug \
-        -L$$PWD\..\..\build\debug\QcUtility\debug \
-    -lQcCore -lQcUtility
+
+ParentDirectory = $$PWD\..\..
+
+RCC_DIR = "$$ParentDirectory\build\RCCFiles"
+UI_DIR = "$$ParentDirectory\build\UICFiles"
+MOC_DIR = "$$ParentDirectory\build\MOCFiles"
+OBJECTS_DIR = "$$ParentDirectory\build\ObjFiles"
+
+CONFIG(debug, debug|release) {
+    DESTDIR = "$$ParentDirectory\out"
+    TARGET = QcCored
+    LIBS += -L$$PWD\..\..\include \
+        -lQcCored -lQcUtilityd
+} else {
+    DESTDIR = "$$ParentDirectory\out"
+    TARGET = QcCore
+    LIBS += -L$$PWD\..\..\include \
+        -lQcCore -lQcUtility
+}

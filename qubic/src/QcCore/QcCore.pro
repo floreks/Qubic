@@ -17,20 +17,27 @@ SOURCES += \
     qcpersistable.cpp
 
 HEADERS +=\
-        qccore_global.h \
+    qccore_global.h \
     qcobject.h \
     qcpersistable.h
 
-unix:!symbian {
-    maemo5 {
-        target.path = /opt/usr/lib
-    } else {
-        target.path = /usr/lib
-    }
-    INSTALLS += target
-}
-
 INCLUDEPATH += $$PWD/../QcUtility
 
-LIBS += -L$$PWD\..\..\build\debug\QcUtility\debug \
-    -lQcUtility
+ParentDirectory = $$PWD\..\..
+
+RCC_DIR = "$$ParentDirectory\build\RCCFiles"
+UI_DIR = "$$ParentDirectory\build\UICFiles"
+MOC_DIR = "$$ParentDirectory\build\MOCFiles"
+OBJECTS_DIR = "$$ParentDirectory\build\ObjFiles"
+
+CONFIG(debug, debug|release) {
+    DESTDIR = "$$ParentDirectory\include"
+    TARGET = QcCored
+    LIBS += -L$$PWD\..\..\include \
+        -lQcUtilityd
+} else {
+    DESTDIR = "$$ParentDirectory\include"
+    TARGET = QcCore
+    LIBS += -L$$PWD\..\..\include \
+        -lQcUtility
+}

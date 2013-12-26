@@ -19,5 +19,4 @@ QcDatabase *QcDatabase::getInstance(QString propertiesPath) {
 QcDatabase::QcDatabase(QString propertiesPath) {
     QcPropertiesManager manager;
     manager.validate(propertiesPath);
-    qDebug() << manager.getPort();
 }
