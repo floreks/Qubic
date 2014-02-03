@@ -19,7 +19,7 @@
 /src/Qubic.pro.user.*
 /src/**/*.ts
 /src/**/*.qm
-/src/*.bat
+*.bat
 
 
 # idea_folder
