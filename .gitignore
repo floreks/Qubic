@@ -17,6 +17,10 @@
 # QtCreator files
 *.pro.user
 /src/Qubic.pro.user.*
+/src/**/*.ts
+/src/**/*.qm
+/src/*.bat
+
 
 # idea_folder
 .idea/
@@ -25,4 +29,5 @@
 build/
 docs/
 out/
+!out/resources
 include/
