@@ -15,8 +15,6 @@
 # QtCreator files
 *.pro.user
 *.bat
-*.ts
-*.qm
 
 
 # idea_folder

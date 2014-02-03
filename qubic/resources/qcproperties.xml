@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<q:qubic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:q="http://www.example.org/Qubic"
+       xsi:schemaLocation="http://www.example.org/Qubic qubic.xsd">
+
+    <q:credentials>
+        <q:username>root</q:username>
+        <q:password>root</q:password>
+    </q:credentials>
+    <q:connection>
+        <q:driver name="mysql"/>
+        <q:host address="localhost" port="3306"/>
+    </q:connection>
+</q:qubic>
