@@ -1,17 +1,26 @@
 #include "qclogger.h"
 #include "qcdatabase.h"
+#include "QcStaticProperties.h"
 
 #include <QCoreApplication>
-#include <QSqlDatabase>
-#include <QSqlQuery>
-#include <QPluginLoader>
+#include <QLibraryInfo>
+#include <QTranslator>
+#include <QDebug>
 
 using namespace std;
 
 int main(int argc, char **argv) {
     QCoreApplication app(argc,argv);
-    QcLogger::setLoggingLevel(QsLogging::DebugLevel);
+    QString locale = QLocale::system().name();
+    QTranslator translator;
 
-    QcDatabase *db = QcDatabase::getInstance("E:\\Projects\\Qubic\\qubic\\resources");
+    translator.load(QString("qubic_") + locale, APP_DIR + "/resources/translations");
+    app.installTranslator(&translator);
+
+    // --------------- Start ------------------- //
+
+    QcLogger::setLoggingLevel(QsLogging::DebugLevel);
+    QcDatabase *db = QcDatabase::getInstance();
+
     return 0;
 }

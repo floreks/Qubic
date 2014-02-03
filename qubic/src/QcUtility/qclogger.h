@@ -22,6 +22,7 @@ public:
     void warn(QString message);
     void error(QString message);
     void fatal(QString message);
+    void clear(QDir dir);
     static void setLoggingLevel(QsLogging::Level level);
     static QcLogger* getInstance();
     virtual ~QcLogger() {}

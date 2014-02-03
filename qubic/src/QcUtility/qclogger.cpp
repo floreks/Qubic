@@ -1,9 +1,12 @@
 #include "qclogger.h"
 
+#include "QcStaticProperties.h"
+
 QSharedPointer<QcLogger> QcLogger::instance;
 
 QcLogger::QcLogger()
 {
+    clear(QDir(QDir::currentPath() + "/logs/"));
     QsLogging::Logger &logger = QsLogging::Logger::instance();
     logger.setLoggingLevel(QsLogging::TraceLevel);
     QString date = QDate::currentDate().toString("dd-MM-yyyy");
@@ -18,6 +21,15 @@ QcLogger::QcLogger()
     QsLogging::DestinationPtr debugDestination(QsLogging::DestinationFactory::MakeDebugOutputDestination());
     logger.addDestination(debugDestination);
     logger.addDestination(fileDestination);
+}
+
+void QcLogger::clear(QDir dir) {
+    if(dir.entryList().size() >= QC_MAX_LOGS_COUNT) {
+        if(dir.removeRecursively()) {
+            QDir newFolder(QDir::currentPath());
+            newFolder.mkdir("logs");
+        }
+    }
 }
 
 void QcLogger::setLoggingLevel(QsLogging::Level level) {

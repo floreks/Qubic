@@ -1,37 +1,36 @@
 #ifndef QCPROPERTIESMANAGER_H
 #define QCPROPERTIESMANAGER_H
 
-#include <QDir>
 #include <QDomDocument>
+#include <QCoreApplication>
 
 #include <qclogger.h>
 
-#define QC_PROPERTIES_FILE "qcproperties.xml"
-#define QC_SCHEMA_FILE "qcproperties.xsd"
-
 class QcPropertiesManager
 {
-private:
-    QString propertiesFileName;
-    QString schemaFileName;
-    QcLogger *logger = QcLogger::getInstance();
-    QDomDocument xmlDocument;
+    Q_DECLARE_TR_FUNCTIONS(QcPropertiesManager)
 
-    QByteArray readFile(const QString filename);
+private:
+    static QString propertiesFileName;
+    static QString schemaFileName;
+    static QcLogger *logger;
+    static QDomDocument xmlDocument;
+
+    static QByteArray readFile(const QString &filename);
 public:
-    QcPropertiesManager() {}
+    QcPropertiesManager() = delete;
     virtual ~QcPropertiesManager() {}
     
-    bool validate(const QString &propertiesPath = QDir::currentPath());
+    static bool validate(const QString &propertiesPath);
 
-    QString getUsername()const;
-    QString getPassword()const;
-    QString getDriverName()const;
-    QString getHost()const;
-    short int getPort()const;
+    static QString getUsername();
+    static QString getPassword();
+    static QString getDriverName();
+    static QString getHost();
+    static short int getPort();
 
-    void overrideProperties(const QString filename);
-    void overrideSchema(const QString filename);
+    static void overrideProperties(const QString filename);
+    static void overrideSchema(const QString filename);
     
 };
 

@@ -21,23 +21,27 @@ HEADERS +=\
     qcobject.h \
     qcpersistable.h
 
+TRANSLATIONS += qubic_pl_PL.ts
+
 INCLUDEPATH += $$PWD/../QcUtility
 
-ParentDirectory = $$PWD\..\..
+PWD = $$PWD/..
+OUT_PWD = $$PWD/..
 
-RCC_DIR = "$$ParentDirectory\build\RCCFiles"
-UI_DIR = "$$ParentDirectory\build\UICFiles"
-MOC_DIR = "$$ParentDirectory\build\MOCFiles"
-OBJECTS_DIR = "$$ParentDirectory\build\ObjFiles"
+RCC_DIR = "$$OUT_PWD/build/RCCFiles"
+UI_DIR = "$$OUT_PWD/build/UICFiles"
+MOC_DIR = "$$OUT_PWD/build/MOCFiles"
+OBJECTS_DIR = "$$OUT_PWD/build/ObjFiles"
+QMAKE_LIBDIR_QT = $$QMAKESPEC/../../bin
+DESTDIR = "$$OUT_PWD/include"
 
 CONFIG(debug, debug|release) {
-    DESTDIR = "$$ParentDirectory\include"
     TARGET = QcCored
-    LIBS += -L$$PWD\..\..\include \
+    LIBS += -L$$PWD/../include \
         -lQcUtilityd
-} else {
-    DESTDIR = "$$ParentDirectory\include"
+}
+CONFIG(release, debug|release) {
     TARGET = QcCore
-    LIBS += -L$$PWD\..\..\include \
+    LIBS += -L$$PWD/../include \
         -lQcUtility
 }

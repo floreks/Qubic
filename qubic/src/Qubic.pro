@@ -1,7 +1,8 @@
 TEMPLATE = subdirs
 
 CONFIG += ordered
-SUBDIRS += \
+SUBDIRS = \
     QcUtility \
     QcCore \
     TestingFacility
+

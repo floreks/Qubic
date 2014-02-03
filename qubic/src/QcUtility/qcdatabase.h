@@ -14,7 +14,7 @@ public:
 private:
     QcLogger *logger = QcLogger::getInstance();
     static QSharedPointer<QcDatabase> instance;
-    QcDatabase(QString propertiesPath = QDir::currentPath());
+    QcDatabase(QString propertiesPath = (QDir::currentPath() + "\\resources"));
 };
 
 #endif // QCDATABASE_H
