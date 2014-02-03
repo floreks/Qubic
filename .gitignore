@@ -1,5 +1,3 @@
-
-/hibernateExamples/HibernateExamples/HibernateExamples.iml
 # Compiled Object files
 *.slo
 *.lo
@@ -16,10 +14,8 @@
 
 # QtCreator files
 *.pro.user
-/src/Qubic.pro.user.*
-/src/**/*.ts
-/src/**/*.qm
-*.bat
+*.ts
+*.qm
 
 
 # idea_folder
@@ -29,5 +25,4 @@
 build/
 docs/
 out/
-!out/resources
 include/
