@@ -6,12 +6,12 @@ QSharedPointer<QcLogger> QcLogger::instance;
 
 QcLogger::QcLogger()
 {
-    clear(QDir(QDir::currentPath() + "/logs/"));
+    clear(QDir(LOGS_DIR));
     QsLogging::Logger &logger = QsLogging::Logger::instance();
     logger.setLoggingLevel(QsLogging::TraceLevel);
     QString date = QDate::currentDate().toString("dd-MM-yyyy");
     QString time = QTime::currentTime().toString("hh.mm.ss");
-    const QString filepath (QDir::currentPath() + "/logs/" + date + " " + time + ".txt");
+    const QString filepath (LOGS_DIR + date + " " + time + ".txt");
     QFileInfo logs("logs");
     if(!logs.exists() || !logs.isDir()) {
         QDir logsDir;

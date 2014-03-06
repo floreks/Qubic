@@ -13,20 +13,21 @@ CONFIG += c++11
 DEFINES += QCUTILITY_LIBRARY
 
 SOURCES += \
-    qclogger.cpp \
-    qcdatabase.cpp \
-    qcpropertiesmanager.cpp
+    qclogger.cpp
+
 
 HEADERS +=\
     qcutility_global.h \
-    qclogger.h \
-    qcdatabase.h \
-    qcpropertiesmanager.h \
-    QcStaticProperties.h
+    qclogger.h
+
 
 TRANSLATIONS = qubic_pl_PL.ts
 
 include(QsLog\QsLog.pri)
+include(database\database.pri)
+include(generator\generator.pri)
+include(properties\properties.pri)
+include(schema\schema.pri)
 
 PWD = $$PWD/..
 OUT_PWD = $$PWD/..

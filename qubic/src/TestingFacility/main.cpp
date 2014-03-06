@@ -1,6 +1,6 @@
 #include "qclogger.h"
-#include "qcdatabase.h"
-#include "QcStaticProperties.h"
+#include "database/qcdatabase.h"
+#include "properties/QcStaticProperties.h"
 
 #include <QCoreApplication>
 #include <QLibraryInfo>
@@ -14,7 +14,7 @@ int main(int argc, char **argv) {
     QString locale = QLocale::system().name();
     QTranslator translator;
 
-    translator.load(QString("qubic_") + locale, APP_DIR + "/resources/translations");
+    translator.load(QString("qubic_") + locale, TRANSLATIONS_DIR);
     app.installTranslator(&translator);
 
     // --------------- Start ------------------- //

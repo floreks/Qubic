@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<xs:schema version="1.0"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           attributeFormDefault="unqualified"
+           elementFormDefault="qualified"
+           targetNamespace="http://www.example.org/Qubic"
+           xmlns:qc="http://www.example.org/Qubic">
+	<xs:element name="mapping">
+		<xs:complexType>
+			<xs:sequence>
+        <xs:element name="map" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:attribute name="fromType" type="xs:string" use="required"/>
+            <xs:attribute name="toType" type="xs:string" use="required"/>
+          </xs:complexType>  
+        </xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

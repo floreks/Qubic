@@ -4,6 +4,7 @@
 #include <QSharedPointer>
 #include <QObject>
 #include "qclogger.h"
+#include "properties/QcStaticProperties.h"
 
 class QcDatabase
 {
@@ -14,7 +15,7 @@ public:
 private:
     QcLogger *logger = QcLogger::getInstance();
     static QSharedPointer<QcDatabase> instance;
-    QcDatabase(QString propertiesPath = (QDir::currentPath() + "\\resources"));
+    QcDatabase(QString propertiesPath = PROPERTIES_DIR);
 };
 
 #endif // QCDATABASE_H

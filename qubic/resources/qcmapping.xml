@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<qc:mapping xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:qc="http://www.example.org/Qubic"
+       xsi:schemaLocation="http://www.example.org/Qubic qcmapping.xsd">
+
+	   <qc:map fromType="varchar" toType="QString"/>
+	   <qc:map fromType="int" toType="QInteger"/>
+
+</qc:mapping>
