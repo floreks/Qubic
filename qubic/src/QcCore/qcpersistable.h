@@ -11,7 +11,6 @@ private:
 public:
     explicit QcPersistable(QObject *parent = 0);
     ~QcPersistable();
-    Q_INVOKABLE QString getName() { return this->staticMetaObject.className(); }
 };
 
 #endif // QCPERSISTABLE_H

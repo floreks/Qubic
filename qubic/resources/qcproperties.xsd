@@ -91,6 +91,11 @@
                     </xs:attribute>
                 </xs:complexType>
             </xs:element>
+			<xs:element name="database">
+				<xs:complexType>
+					<xs:attribute name="name" type="xs:string"/>
+				</xs:complexType>
+			</xs:element>
         </xs:sequence>
     </xs:complexType>
 </xs:schema>

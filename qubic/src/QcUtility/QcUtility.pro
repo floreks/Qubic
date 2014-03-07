@@ -5,7 +5,7 @@
 #-------------------------------------------------
 
 QT       -= gui
-QT       += xml xmlpatterns
+QT       += xml xmlpatterns sql
 
 TEMPLATE = lib
 CONFIG += c++11

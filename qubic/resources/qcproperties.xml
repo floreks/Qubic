@@ -10,5 +10,6 @@
     <q:connection>
         <q:driver name="mysql"/>
         <q:host address="localhost" port="3306"/>
+		<q:database name="world"/>
     </q:connection>
 </q:qubic>

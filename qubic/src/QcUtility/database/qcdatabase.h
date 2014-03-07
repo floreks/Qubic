@@ -2,20 +2,21 @@
 #define QCDATABASE_H
 
 #include <QSharedPointer>
-#include <QObject>
+#include <QtSql/QSqlDatabase>
 #include "qclogger.h"
-#include "properties/QcStaticProperties.h"
+#include "properties/properties.h"
 
 class QcDatabase
 {
+    Q_DECLARE_TR_FUNCTIONS(QcDatabase)
+
 public:
-    static QcDatabase* getInstance();
-    static QcDatabase* getInstance(QString propertiesPath);
-    virtual ~QcDatabase() {}
+    static QcDatabase* getInstance(QString driver, Properties *properties);
 private:
+    QSqlDatabase db;
     QcLogger *logger = QcLogger::getInstance();
     static QSharedPointer<QcDatabase> instance;
-    QcDatabase(QString propertiesPath = PROPERTIES_DIR);
+    QcDatabase(QString driver, Properties *properties);
 };
 
 #endif // QCDATABASE_H
