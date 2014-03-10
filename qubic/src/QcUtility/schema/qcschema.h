@@ -1,20 +1,24 @@
 #ifndef QCSCHEMA_H
 #define QCSCHEMA_H
 
-#include <map>
-#include <list>
+#include <QMap>
+#include <QList>
 
 #include "qcmetatable.h"
 
 class QcSchema
 {
 private:
-    std::map<QcMetaTable,std::list<QcMetaTable>> schema;
+    QMap<QcMetaTable,QList<QcMetaTable>> schema;
 public:
     QcSchema();
 
     void addTable(QcMetaTable table);
-    void addChildren(QcMetaTable parent, std::list<QcMetaTable> children);
+    void setChildren(QcMetaTable parent, QList<QcMetaTable> children);
+    void addChild(QcMetaTable parent, QcMetaTable child);
+
+    QcMetaTable getTable(QString tableName);
+    QList<QcMetaTable> getChildrenOf(QString tableName);
 };
 
 #endif // QCSCHEMA_H

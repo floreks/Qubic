@@ -1,8 +1,9 @@
 #ifndef QCMETATABLE_H
 #define QCMETATABLE_H
 
-#include <list>
+#include <QList>
 #include <QString>
+#include <QDebug>
 
 #include "qcmetafield.h"
 
@@ -10,11 +11,17 @@ class QcMetaTable
 {
 private:
     QString tableName;
-    std::list<QcMetaField*> fields;
+    QList<QcMetaField*> fields;
 public:
     explicit QcMetaTable(QString tableName);
-
     void addField(QcMetaField *field);
+
+    QString getName()const;
+    QList<QcMetaField*> getFields()const;
+
+    bool operator<(const QcMetaTable &obj)const;
+    friend QDebug operator<<(QDebug os, const QcMetaTable &t);
+
 };
 
 #endif // QCMETATABLE_H

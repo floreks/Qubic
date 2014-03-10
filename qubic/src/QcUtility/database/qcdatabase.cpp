@@ -17,12 +17,22 @@ QcDatabase::QcDatabase(QString driver, Properties *properties) {
     db.setPort(properties->getProperty("host","port").toInt());
     db.setUserName(properties->getProperty("username"));
     db.setPassword(properties->getProperty("password"));
+}
 
+bool QcDatabase::open() {
     if(!db.open()) {
         logger->error(tr("Could not open database. Please check configuration."));
         logger->error(tr(db.lastError().text().toStdString().c_str()));
-        return;
+        return 0;
     }
 
     logger->info(tr("Connection to database has been established."));
+    return 1;
+}
+
+
+void QcDatabase::close() {
+    logger->info(tr("Closing database connection."));
+    db.close();
+    instance.clear();
 }

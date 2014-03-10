@@ -12,6 +12,8 @@ class QcDatabase
 
 public:
     static QcDatabase* getInstance(QString driver, Properties *properties);
+    bool open();
+    void close();
 private:
     QSqlDatabase db;
     QcLogger *logger = QcLogger::getInstance();
