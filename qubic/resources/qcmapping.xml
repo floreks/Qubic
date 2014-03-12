@@ -3,7 +3,7 @@
        xmlns:qc="http://www.example.org/Qubic"
        xsi:schemaLocation="http://www.example.org/Qubic qcmapping.xsd">
 
-	   <qc:map fromType="varchar" toType="QcStringField"/>
-	   <qc:map fromType="int" toType="QcIntegerField"/>
+	   <qc:map fromType="char" toType="QString"/>
+	   <qc:map fromType="int" toType="QInteger"/>
 
 </qc:mapping>

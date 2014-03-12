@@ -5,6 +5,8 @@
 #include "properties/qcpropertiesvalidator.h"
 
 #include "database/qcdatabase.h"
+#include "database/databasedescriptor.h"
+#include "database/mysqldescriptor.h"
 
 #include "schema/qcmetafield.h"
 #include "schema/qcstringfield.h"
@@ -16,6 +18,7 @@
 #include <QLibraryInfo>
 #include <QTranslator>
 #include <QDebug>
+#include "QSqlQuery"
 
 using namespace std;
 
@@ -41,12 +44,13 @@ int main(int argc, char **argv) {
     }
 
     // ------------------ Database connection ------------------ //
-    QcDatabase *db = QcDatabase::getInstance("QMYSQL3",properties);
-    if(db->open()) {
-        db->close();
+    QcDatabase *db = QcDatabase::getInstance(properties);
+    if(!db->open()) {
+        return -1;
     }
 
-    // ------------------ Schema test ------------------ //
+    // ------------------ Schema ------------------ //
+    qDebug() << "// ------------------ Schema ------------------ //\n";
     QcSchema schema;
     QcMetaTable t1("Employee");
     QcMetaTable t2("Job");
@@ -67,5 +71,20 @@ int main(int argc, char **argv) {
     children = schema.getChildrenOf(t1.getName());
     qDebug() << children;
 
+    // ------------------ Database descriptor ------------------ //
+    qDebug() << "\n// ------------------ Database descriptor ------------------ //\n";
+    DatabaseDescriptor *descriptor = new MySQLDescriptor();
+    qDebug() << descriptor->getTables();
+    qDebug() << descriptor->getColumns(descriptor->getTables().at(0));
+    qDebug() << descriptor->getColumnTypes(descriptor->getTables().at(0));
+
+    // ------------------ Schema generator ------------------ //
+    qDebug() << "\n// ------------------ Schema generator ------------------ //\n";
+    schema = QcSchemaGenerator::getSchema(mapping);
+
+
+    qDebug() << "\n// ------------------ Exit ------------------ //\n";
+
+    db->close();
     return 0;
 }

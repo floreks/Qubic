@@ -2,25 +2,35 @@
 
 using std::list;
 
-QList<QcMetaTable> QcSchemaGenerator::getTables(QcDatabase *db) {
+QList<QcMetaTable> QcSchemaGenerator::getTables() {
     QList<QcMetaTable> result;
+
+
 
     return result;
 }
 
-QList<QcMetaField> QcSchemaGenerator::getFields(QcMetaTable table) {
-    QList<QcMetaField> result;
+QList<QcMetaField*> QcSchemaGenerator::getFields(const QString &tableName) {
+    QList<QcMetaField*> result;
 
     return result;
 }
 
 // --------------------- ------------- --------------------- //
 
-QcSchema QcSchemaGenerator::getSchema(QcDatabase *db, Properties *properties) {
+QcSchema QcSchemaGenerator::getSchema(Properties *properties) {
     qRegisterHelper<QcMetaField>();
+
+    QcSchema result;
 //    int id = QMetaType::type("QcStringField");
 //    QcMetaField *field = static_cast<QcMetaField*>(QMetaType::create(id));
 //    field->setName("id");
 
-    return QcSchema();
+//    if(db->getDatabase().isOpen()) {
+
+//    }
+
+
+
+    return result;
 }

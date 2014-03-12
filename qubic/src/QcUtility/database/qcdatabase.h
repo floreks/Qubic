@@ -11,14 +11,18 @@ class QcDatabase
     Q_DECLARE_TR_FUNCTIONS(QcDatabase)
 
 public:
-    static QcDatabase* getInstance(QString driver, Properties *properties);
+    static QcDatabase* getInstance(Properties *properties);
+    static QcDatabase* getInstance();
     bool open();
     void close();
+    QSqlDatabase getDatabase(const QString &connectionName = "defaultConnection")const;
 private:
-    QSqlDatabase db;
     QcLogger *logger = QcLogger::getInstance();
     static QSharedPointer<QcDatabase> instance;
-    QcDatabase(QString driver, Properties *properties);
+    QcDatabase(Properties *properties);
+    QcDatabase();
+
+    void setUp(Properties *properties);
 };
 
 #endif // QCDATABASE_H

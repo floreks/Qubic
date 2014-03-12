@@ -19,6 +19,7 @@ public:
 
     QcMetaTable getTable(QString tableName);
     QList<QcMetaTable> getChildrenOf(QString tableName);
+    QMap<QcMetaTable,QList<QcMetaTable>> getSchema()const;
 };
 
 #endif // QCSCHEMA_H

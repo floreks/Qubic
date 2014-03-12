@@ -13,15 +13,15 @@
 class QcSchemaGenerator
 {
 private:
-    static QList<QcMetaTable> getTables(QcDatabase *db);
-    static QList<QcMetaField> getFields(QcMetaTable table);
+    static QList<QcMetaTable> getTables();
+    static QList<QcMetaField*> getFields(const QString &tableName);
     template<typename T>
     static void qRegisterHelper() {
         qRegisterMetaType<T>();
     }
 public:
     QcSchemaGenerator() = delete;
-    static QcSchema getSchema(QcDatabase *db, Properties *properties);
+    static QcSchema getSchema(Properties *properties);
 };
 
 template<>

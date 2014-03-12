@@ -53,3 +53,7 @@ QList<QcMetaTable> QcSchema::getChildrenOf(QString tableName) {
 
     return result;
 }
+
+QMap<QcMetaTable,QList<QcMetaTable>> QcSchema::getSchema()const {
+    return schema;
+}
