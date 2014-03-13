@@ -6,7 +6,7 @@
 class QcIntegerField : public QcMetaField
 {
 public:
-    explicit QcIntegerField(QString fieldName = "");
+    using QcMetaField::QcMetaField;
 
     QString getType()const;
 };

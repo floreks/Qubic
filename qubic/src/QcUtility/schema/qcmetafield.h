@@ -8,10 +8,9 @@ class QcMetaField
 {
 private:
     QString fieldName;
-protected:
-    QString fieldType;
 public:
-    explicit QcMetaField(QString fieldName = "");
+    QcMetaField() {}
+    QcMetaField(QString fieldName);
     virtual ~QcMetaField() {}
 
     void setName(QString fieldName);

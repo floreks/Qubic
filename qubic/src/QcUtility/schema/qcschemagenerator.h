@@ -2,19 +2,26 @@
 #define QCSCHEMAGENERATOR_H
 
 #include <QList>
+#include <QCoreApplication>
 
 #include "database/qcdatabase.h"
 #include "qcmetatable.h"
-#include "qcmetafield.h"
 #include "qcschema.h"
+#include "qclogger.h"
+
+#include "qcmetafield.h"
 #include "qcstringfield.h"
 #include "qcintegerfield.h"
+#include "qcenumfield.h"
+#include "qcfloatfield.h"
 
 class QcSchemaGenerator
 {
+    Q_DECLARE_TR_FUNCTIONS(QcSchemaGenerator)
+
 private:
-    static QList<QcMetaTable> getTables();
-    static QList<QcMetaField*> getFields(const QString &tableName);
+    static QList<QcMetaTable> getTables(Properties *properties);
+    static QList<QcMetaField*> getFields(const QString &tableName, Properties *properties);
     template<typename T>
     static void qRegisterHelper() {
         qRegisterMetaType<T>();
@@ -28,6 +35,8 @@ template<>
 void QcSchemaGenerator::qRegisterHelper<QcMetaField>() {
     qRegisterMetaType<QcStringField>();
     qRegisterMetaType<QcIntegerField>();
+    qRegisterMetaType<QcEnumField>();
+    qRegisterHelper<QcFloatField>();
 }
 
 #endif // QCSCHEMAGENERATOR_H

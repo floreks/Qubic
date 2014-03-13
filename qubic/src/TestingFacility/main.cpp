@@ -8,17 +8,11 @@
 #include "database/databasedescriptor.h"
 #include "database/mysqldescriptor.h"
 
-#include "schema/qcmetafield.h"
-#include "schema/qcstringfield.h"
-#include "schema/qcintegerfield.h"
 #include "schema/qcschemagenerator.h"
-#include "schema/qcschema.h"
 
-#include <QCoreApplication>
 #include <QLibraryInfo>
 #include <QTranslator>
 #include <QDebug>
-#include "QSqlQuery"
 
 using namespace std;
 
@@ -86,5 +80,8 @@ int main(int argc, char **argv) {
     qDebug() << "\n// ------------------ Exit ------------------ //\n";
 
     db->close();
+    delete properties;
+    delete mapping;
+    delete descriptor;
     return 0;
 }

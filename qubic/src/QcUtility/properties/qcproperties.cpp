@@ -26,13 +26,14 @@ QString QcProperties::getProperty(QString tag, QString attribute) {
     return xmlDocument.elementsByTagName("q:"+tag).at(0).toElement().attributeNode(attribute).nodeValue();
 }
 
-std::map<QString, QString> QcProperties::getAttributes(QString tag) {
-    std::map<QString,QString> map;
+QMap<QString, QString> QcProperties::getAttributesMap(QString tag, QString keyAttr, QString valueAttr) {
+    QMap<QString,QString> map;
 
     QDomNodeList list = xmlDocument.elementsByTagName("qc:"+tag);
     for(int i=0;i<list.size();i++) {
-        QDomNamedNodeMap nodeMap = list.at(i).attributes();
-        map[nodeMap.item(0).nodeValue()] = nodeMap.item(1).nodeValue();
+        QString from = list.at(i).toElement().attributeNode(keyAttr).nodeValue(),
+                to = list.at(i).toElement().attributeNode(valueAttr).nodeValue();
+        map[from] = to;
     }
 
     return map;

@@ -15,6 +15,7 @@ private:
 public:
     explicit QcMetaTable(QString tableName);
     void addField(QcMetaField *field);
+    void setFields(QList<QcMetaField*> fields);
 
     QString getName()const;
     QList<QcMetaField*> getFields()const;

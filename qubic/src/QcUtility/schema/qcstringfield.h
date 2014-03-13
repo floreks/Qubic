@@ -6,7 +6,7 @@
 class QcStringField : public QcMetaField
 {
 public:
-    explicit QcStringField(QString fieldName = "");
+    using QcMetaField::QcMetaField;
 
     QString getType()const;
 };

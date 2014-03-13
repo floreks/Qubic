@@ -3,7 +3,9 @@
        xmlns:qc="http://www.example.org/Qubic"
        xsi:schemaLocation="http://www.example.org/Qubic qcmapping.xsd">
 
-	   <qc:map fromType="char" toType="QString"/>
-	   <qc:map fromType="int" toType="QInteger"/>
+	   <qc:map fromType="char" toType="QcStringField"/>
+	   <qc:map fromType="int" toType="QcIntegerField"/>
+	   <qc:map fromType="enum" toType="QcEnumField"/>
+	   <qc:map fromType="float" toType="QcFloatField"/>
 
 </qc:mapping>

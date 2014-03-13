@@ -7,7 +7,7 @@
 
 class DatabaseDescriptor
 {
-    Q_DECLARE_TR_FUNCTIONS(QcDatabase)
+    Q_DECLARE_TR_FUNCTIONS(DatabaseDescriptor)
 
 protected:
     QcLogger *logger;

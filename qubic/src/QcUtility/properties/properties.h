@@ -5,7 +5,7 @@
 #include <qclogger.h>
 #include <QCoreApplication>
 #include <QDomDocument>
-#include <map>
+#include <QMap>
 
 class Properties
 {
@@ -24,7 +24,7 @@ public:
 
     virtual QString getProperty(QString tag) = 0;
     virtual QString getProperty(QString tag, QString attribute) = 0;
-    virtual std::map<QString,QString> getAttributes(QString tag) = 0;
+    virtual QMap<QString,QString> getAttributesMap(QString tag, QString keyAttr, QString valueAttr) = 0;
     virtual QByteArray getPropertyData() = 0;
     virtual QByteArray getSchemaData() = 0;
 

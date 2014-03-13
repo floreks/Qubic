@@ -15,7 +15,7 @@ public:
     QByteArray getSchemaData();
     QString getProperty(QString tag);
     QString getProperty(QString tag, QString attribute);
-    std::map<QString,QString> getAttributes(QString tag);
+    QMap<QString,QString> getAttributesMap(QString tag, QString keyAttr, QString valueAttr);
 };
 
 #endif // QCMAPPINGPROPERTIES_H
