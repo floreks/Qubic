@@ -29,6 +29,10 @@ QString QcMetaTable::getName()const {
 }
 
 QDebug operator <<(QDebug os, const QcMetaTable &t) {
-    os << "{ " << t.tableName << " }";
+    os << "{ " << t.tableName << " }\n";
+    for(int i=0;i<t.getFields().size();i++) {
+        os << "{ " << t.getFields().at(i)->getName() << ", " << t.getFields().at(i)->getType() << " } ";
+    }
+    os << "\n";
     return os;
 }

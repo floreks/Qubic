@@ -9,17 +9,17 @@
 class QcSchema
 {
 private:
-    QMap<QcMetaTable,QList<QcMetaTable>> schema;
+    QList<QcMetaTable> schema;
 public:
-    QcSchema();
+    QcSchema(QList<QcMetaTable> tables);
+    QcSchema() {}
 
     void addTable(QcMetaTable table);
-    void setChildren(QcMetaTable parent, QList<QcMetaTable> children);
-    void addChild(QcMetaTable parent, QcMetaTable child);
-
+    void setTables(QList<QcMetaTable> tables);
     QcMetaTable getTable(QString tableName);
-    QList<QcMetaTable> getChildrenOf(QString tableName);
-    QMap<QcMetaTable,QList<QcMetaTable>> getSchema()const;
+    QList<QcMetaTable> getSchema()const;
+
+    friend QDebug operator<<(QDebug os, const QcSchema &obj);
 };
 
 #endif // QCSCHEMA_H

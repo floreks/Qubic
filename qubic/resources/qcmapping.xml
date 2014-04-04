@@ -4,8 +4,24 @@
        xsi:schemaLocation="http://www.example.org/Qubic qcmapping.xsd">
 
 	   <qc:map fromType="char" toType="QcStringField"/>
+	   <qc:map fromType="varchar" toType="QcStringField"/>
+	   <qc:map fromType="text" toType="QcStringField"/>
+	   
 	   <qc:map fromType="int" toType="QcIntegerField"/>
-	   <qc:map fromType="enum" toType="QcEnumField"/>
+	   <qc:map fromType="smallint" toType="QcIntegerField"/>
+	   <qc:map fromType="tinyint" toType="QcIntegerField"/>
+	   <qc:map fromType="mediumint" toType="QcIntegerField"/>
+	   <qc:map fromType="decimal" toType="QcIntegerField"/>
+	   
+	   <qc:map fromType="datetime" toType="QcDateField"/>
+	   <qc:map fromType="year" toType="QcDateField"/>
+	   
+	   <qc:map fromType="timestamp" toType="QcTimestampField"/>
+	   
+	   	<qc:map fromType="enum" toType="QcEnumField"/>
+		   
 	   <qc:map fromType="float" toType="QcFloatField"/>
+	   
+	   <qc:map fromType="blob" toType="QcBlobField"/>
 
 </qc:mapping>

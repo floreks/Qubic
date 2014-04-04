@@ -10,6 +10,8 @@
 
 #include "schema/qcschemagenerator.h"
 
+#include "generator/qcfunction.h"
+
 #include <QLibraryInfo>
 #include <QTranslator>
 #include <QDebug>
@@ -52,18 +54,10 @@ int main(int argc, char **argv) {
     schema.addTable(t1);
     schema.addTable(t2);
 
-    schema.addChild(t1,t2);
-    schema.addChild(t1,QcMetaTable("Dupa"));
-
     QcMetaTable t3 = schema.getTable("Job");
     qDebug() << t3.getName();
 
-    QList<QcMetaTable> children = schema.getChildrenOf(t1.getName());
-    qDebug() << children;
-
-    schema.setChildren(t1,{QcMetaTable("Job"),QcMetaTable("Dupa2")});
-    children = schema.getChildrenOf(t1.getName());
-    qDebug() << children;
+    qDebug() << schema.getSchema();
 
     // ------------------ Database descriptor ------------------ //
     qDebug() << "\n// ------------------ Database descriptor ------------------ //\n";
@@ -74,8 +68,13 @@ int main(int argc, char **argv) {
 
     // ------------------ Schema generator ------------------ //
     qDebug() << "\n// ------------------ Schema generator ------------------ //\n";
-    schema = QcSchemaGenerator::getSchema(mapping);
+    //schema = QcSchemaGenerator::getSchema(mapping);
+    //qDebug() << schema;
 
+    // ------------------ File generator ------------------ //
+    qDebug() << "\n// ------------------ File generator ------------------ //\n";
+    QcFunction func;
+    func.addParameters(std::make_tuple("first","int"),std::make_tuple("second","QString"));
 
     qDebug() << "\n// ------------------ Exit ------------------ //\n";
 

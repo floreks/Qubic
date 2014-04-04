@@ -7,7 +7,10 @@ SOURCES += \
     schema/qcstringfield.cpp \
     schema/qcintegerfield.cpp \
     schema/qcenumfield.cpp \
-    schema/qcfloatfield.cpp
+    schema/qcfloatfield.cpp \
+    schema/qcdatefield.cpp \
+    schema/qctimestampfield.cpp \
+    schema/qcblobfield.cpp
 HEADERS += \ 
     schema/qcmetafield.h \
     schema/qcmetatable.h \
@@ -16,4 +19,7 @@ HEADERS += \
     schema/qcstringfield.h \
     schema/qcintegerfield.h \
     schema/qcenumfield.h \
-    schema/qcfloatfield.h
+    schema/qcfloatfield.h \
+    schema/qcdatefield.h \
+    schema/qctimestampfield.h \
+    schema/qcblobfield.h

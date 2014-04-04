@@ -14,6 +14,9 @@
 #include "qcintegerfield.h"
 #include "qcenumfield.h"
 #include "qcfloatfield.h"
+#include "qctimestampfield.h"
+#include "qcdatefield.h"
+#include "qcblobfield.h"
 
 class QcSchemaGenerator
 {
@@ -22,10 +25,12 @@ class QcSchemaGenerator
 private:
     static QList<QcMetaTable> getTables(Properties *properties);
     static QList<QcMetaField*> getFields(const QString &tableName, Properties *properties);
+    static void setForeignKeys(QList<QcMetaTable> &tables);
     template<typename T>
     static void qRegisterHelper() {
         qRegisterMetaType<T>();
     }
+    static QcLogger *logger;
 public:
     QcSchemaGenerator() = delete;
     static QcSchema getSchema(Properties *properties);
@@ -37,6 +42,9 @@ void QcSchemaGenerator::qRegisterHelper<QcMetaField>() {
     qRegisterMetaType<QcIntegerField>();
     qRegisterMetaType<QcEnumField>();
     qRegisterHelper<QcFloatField>();
+    qRegisterHelper<QcTimestampField>();
+    qRegisterHelper<QcDateField>();
+    qRegisterHelper<QcBlobField>();
 }
 
 #endif // QCSCHEMAGENERATOR_H

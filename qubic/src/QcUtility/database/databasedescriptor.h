@@ -20,6 +20,9 @@ public:
     virtual QString getColumnType(const QString &tableName, const QString &columnName) = 0;
     virtual QStringList getColumnTypes(const QString &tableName) = 0;
     virtual QString getTypeSchema() = 0;
+    virtual bool isPrimaryKey(const QString &tableName, const QString &columnName) = 0;
+    virtual bool isForeignKey(const QString &tableName, const QString &columnName) = 0;
+    virtual QString getFKTable(const QString &tableName, const QString &columnName) = 0;
 };
 
 #endif // DATABASEDESCRIPTOR_H
