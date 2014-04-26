@@ -3,10 +3,14 @@
 
 #include "qcheaderfile.h"
 
-class QcSourceFile
+class QcSourceFile : public QcHeaderFile
 {
+private:
+    QString getPublicSection();
 public:
-    QcSourceFile(QcHeaderFile header);
+    using QcHeaderFile::QcHeaderFile;
+
+    friend QTextStream& operator<<(QTextStream &str, QcSourceFile &file);
 };
 
 #endif // QCSOURCEFILE_H

@@ -10,7 +10,7 @@
 
 #include "schema/qcschemagenerator.h"
 
-#include "generator/qcfunction.h"
+#include "generator/qcfilegenerator.h"
 
 #include <QLibraryInfo>
 #include <QTranslator>
@@ -45,20 +45,6 @@ int main(int argc, char **argv) {
         return -1;
     }
 
-    // ------------------ Schema ------------------ //
-    qDebug() << "// ------------------ Schema ------------------ //\n";
-    QcSchema schema;
-    QcMetaTable t1("Employee");
-    QcMetaTable t2("Job");
-
-    schema.addTable(t1);
-    schema.addTable(t2);
-
-    QcMetaTable t3 = schema.getTable("Job");
-    qDebug() << t3.getName();
-
-    qDebug() << schema.getSchema();
-
     // ------------------ Database descriptor ------------------ //
     qDebug() << "\n// ------------------ Database descriptor ------------------ //\n";
     DatabaseDescriptor *descriptor = new MySQLDescriptor();
@@ -68,13 +54,13 @@ int main(int argc, char **argv) {
 
     // ------------------ Schema generator ------------------ //
     qDebug() << "\n// ------------------ Schema generator ------------------ //\n";
-    //schema = QcSchemaGenerator::getSchema(mapping);
-    //qDebug() << schema;
+    QcSchema schema = QcSchemaGenerator::getSchema(mapping);
+    qDebug() << schema;
 
     // ------------------ File generator ------------------ //
     qDebug() << "\n// ------------------ File generator ------------------ //\n";
-    QcFunction func;
-    func.addParameters(std::make_tuple("first","int"),std::make_tuple("second","QString"));
+    QcFileGenerator::generateHeaders("C:\\",schema);
+    QcFileGenerator::generateCPPs("C:\\",schema);
 
     qDebug() << "\n// ------------------ Exit ------------------ //\n";
 

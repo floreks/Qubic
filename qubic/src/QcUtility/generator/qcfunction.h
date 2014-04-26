@@ -1,15 +1,12 @@
 #ifndef QCFUNCTION_H
 #define QCFUNCTION_H
 
-#include "qclogger.h"
-
-#include <QList>
 #include <QString>
 #include <QTextStream>
 #include <QDebug>
 #include <QMap>
 
-#include <tuple>
+#include "qcvariable.h"
 
 enum FunctionType {
     Getter = 0x01,
@@ -18,27 +15,40 @@ enum FunctionType {
     Constructor = 0x04
 };
 
+enum ConstructorType {
+    Empty = 0x01,
+    WithID = 0x02,
+    WithoutID = 0x03
+};
+
 class QcFunction
 {
 private:
-    QcLogger *logger;
-    QMap<QString,QString> parameters;
+    QList<QcVariable> parameters;
     QString functionName;
     QString className;
+    FunctionType type;
+    QString invokable;
 
 public:
     QcFunction();
-    QcFunction(QString function);
+    QcFunction(QString functionName);
+    QcFunction(QString functionName, QString className);
+    QcFunction(QString functionName, QString className, FunctionType type);
 
-    void addParameters(std::tuple<QString,QString> parameter);
+    void addParameter(QString typeName, QString variableName);
+    void setName(const QString &name);
+    void setClass(const QString &name);
+    void setType(const FunctionType type);
+    void setInvokable(bool isInvokable);
 
-    template<typename ... T>
-    void addParameters(T ... parameter);
+    QString getName()const;
+    QString getClass()const;
 
-    friend QTextStream operator<<(QTextStream str, const QcFunction &func);
-    friend QDebug operator<<(QDebug dbg, const QcFunction &func);
+    friend QTextStream& operator<<(QTextStream &str, QcFunction &func);
+    friend QDebug operator<<(QDebug dbg, QcFunction &func);
+    QString getBody();
+    QString getHeader();
 };
-
-#include "qcfunction.cpp"
 
 #endif // QCFUNCTION_H

@@ -48,6 +48,7 @@ QList<QcMetaField*> QcSchemaGenerator::getFields(const QString &tableName, Prope
         if(descriptor->isForeignKey(tableName,columnName)) {
             logger->debug("Column: " + columnName + " is foreign key.");
             field->setType(descriptor->getFKTable(tableName,columnName));
+            field->setForeignKey(true);
         }
 
         result.append(field);

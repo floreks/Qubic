@@ -7,6 +7,7 @@ QcMetaField::QcMetaField() {
 QcMetaField::QcMetaField(QString fieldName) {
     this->fieldName = fieldName;
     primaryKey = false;
+    foreignKey = false;
 }
 
 QString QcMetaField::getName()const {
@@ -27,4 +28,12 @@ bool QcMetaField::isPrimaryKey()const {
 
 void QcMetaField::setPrimaryKey(bool pk) {
     primaryKey = pk;
+}
+
+void QcMetaField::setForeignKey(bool fk) {
+    this->foreignKey = fk;
+}
+
+bool QcMetaField::isForeignKey()const {
+    return foreignKey;
 }
