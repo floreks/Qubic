@@ -27,6 +27,7 @@
 #define QSLOGDEST_H
 
 #include "QsLogLevel.h"
+#include <QTextBrowser>
 #include <QSharedPointer>
 #include <QtGlobal>
 class QString;
@@ -50,6 +51,7 @@ class DestinationFactory
 public:
     static DestinationPtr MakeFileDestination(const QString& filePath, bool enableRotation = false, qint64 sizeInBytesToRotateAfter = 0, int oldLogsToKeep = 0);
     static DestinationPtr MakeDebugOutputDestination();
+    static DestinationPtr MakeBoxDestination(QTextBrowser *box);
 };
 
 } // end namespace

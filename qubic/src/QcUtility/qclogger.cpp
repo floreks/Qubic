@@ -32,6 +32,11 @@ void QcLogger::clear(QDir dir) {
     }
 }
 
+void QcLogger::addDestination(QTextBrowser *box) {
+    QsLogging::DestinationPtr boxDest(QsLogging::DestinationFactory::MakeBoxDestination(box));
+    QsLogging::Logger::instance().addDestination(boxDest);
+}
+
 void QcLogger::setLoggingLevel(QsLogging::Level level) {
     getInstance();
     QsLogging::Logger::instance().setLoggingLevel(level);

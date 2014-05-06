@@ -5,14 +5,16 @@ INCLUDEPATH += $$PWD
 SOURCES += $$PWD/QsLogDest.cpp \
     $$PWD/QsLog.cpp \
     $$PWD/QsLogDestConsole.cpp \
-    $$PWD/QsLogDestFile.cpp
+    $$PWD/QsLogDestFile.cpp \
+    QsLog/qslogdestbox.cpp
 
 HEADERS += $$PWD/QSLogDest.h \
     $$PWD/QsLog.h \
     $$PWD/QsLogDestConsole.h \
     $$PWD/QsLogLevel.h \
     $$PWD/QsLogDestFile.h \
-    $$PWD/QsLogDisableForThisFile.h
+    $$PWD/QsLogDisableForThisFile.h \
+    QsLog/qslogdestbox.h
 
 OTHER_FILES += \
     $$PWD/QsLogChanges.txt \

@@ -1,25 +1,27 @@
 #-------------------------------------------------
 #
-# Project created by QtCreator 2013-09-12T00:43:58
+# Project created by QtCreator 2014-05-06T21:29:09
 #
 #-------------------------------------------------
 
-QT       += core widgets sql xml
+QT       += core gui xml xmlpatterns sql
 
-QT       -= gui
+greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
-TARGET = TestingFacility
-CONFIG   += console
-CONFIG   -= app_bundle
 CONFIG += c++11
 
+TARGET = QcGenerator
 TEMPLATE = app
 
 
-SOURCES += main.cpp
+SOURCES += main.cpp\
+        qcgenerator.cpp
 
-INCLUDEPATH += $$PWD/../QcCore \
-               $$PWD/../QcUtility
+HEADERS  += qcgenerator.h
+
+FORMS    += qcgenerator.ui
+
+INCLUDEPATH += $$PWD/../QcUtility
 
 TRANSLATIONS = qubic_pl_PL.ts
 
@@ -36,7 +38,7 @@ DESTDIR = "$$OUT_PWD/out"
 CONFIG(debug, debug|release) {
     TARGET = TestingFacilityd
     LIBS += -L$$PWD/../include \
-        -lQcUtilityd -lQcCored
+        -lQcUtilityd
     libstocopy.path = $$DESTDIR
     libstocopy.files += \
                        $$QMAKE_LIBDIR_QT/Qt5OpenGLd.dll \
@@ -44,12 +46,15 @@ CONFIG(debug, debug|release) {
                        $$QMAKE_LIBDIR_QT/Qt5Guid.dll \
                        $$QMAKE_LIBDIR_QT/Qt5Cored.dll \
                        $$PWD/../include/QcUtilityd.dll \
-                       $$PWD/../include/QcCored.dll
+                       $$QMAKE_LIBDIR_QT/Qt5Sqld.dll \
+                       $$QMAKE_LIBDIR_QT/Qt5Xmld.dll \
+                       $$QMAKE_LIBDIR_QT/Qt5XmlPatternsd.dll \
+                       $$QMAKE_LIBDIR_QT/Qt5Networkd.dll
 }
 CONFIG(release, debug|release) {
     TARGET = TestingFacility
     LIBS += -L$$PWD/../include \
-        -lQcUtility -lQcCore
+        -lQcUtility
     libstocopy.path = $$DESTDIR
     libstocopy.files += \
                        $$QMAKE_LIBDIR_QT/Qt5OpenGL.dll \
@@ -57,7 +62,10 @@ CONFIG(release, debug|release) {
                        $$QMAKE_LIBDIR_QT/Qt5Gui.dll \
                        $$QMAKE_LIBDIR_QT/Qt5Core.dll \
                        $$PWD/../include/QcUtility.dll \
-                       $$PWD/../include/QcCore.dll
+                       $$QMAKE_LIBDIR_QT/Qt5Sql.dll \
+                       $$QMAKE_LIBDIR_QT/Qt5Xml.dll \
+                       $$QMAKE_LIBDIR_QT/Qt5XmlPatterns.dll \
+                       $$QMAKE_LIBDIR_QT/Qt5Network.dll
 }
 
 win32 {

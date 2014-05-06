@@ -26,6 +26,7 @@
 #include "QsLogDest.h"
 #include "QsLogDestConsole.h"
 #include "QsLogDestFile.h"
+#include "qslogdestbox.h"
 #include <QString>
 
 namespace QsLogging
@@ -49,6 +50,10 @@ DestinationPtr DestinationFactory::MakeFileDestination(const QString& filePath, 
 DestinationPtr DestinationFactory::MakeDebugOutputDestination()
 {
     return DestinationPtr(new DebugOutputDestination);
+}
+
+DestinationPtr DestinationFactory::MakeBoxDestination(QTextBrowser *box) {
+    return DestinationPtr(new QsLogDestBox(box));
 }
 
 } // end namespace
