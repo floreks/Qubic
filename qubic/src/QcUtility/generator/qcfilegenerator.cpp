@@ -17,8 +17,14 @@ void QcFileGenerator::generateHeaders(QString dirPath, QcSchema schema) {
             header.addFunction(getConstructor(table,ConstructorType::Empty));
             header.addFunction(getConstructor(table,ConstructorType::WithID));
             header.addFunction(getConstructor(table,ConstructorType::WithoutID));
+            header.addFunction(getConstructor(table,ConstructorType::Copy));
             header.addFunctions(getGetters(table));
             header.addFunctions(getSetters(table));
+            header.addFunctions(getFKSetters(table),true);
+            header.addFunction(getPointerFunction(table));
+            if(table.getRelationType() != RelationType::None) {
+                header.addFunction(getRelationFunction(table));
+            }
 
             header.addVariables(getVariables(table));
             header.addVariable(QcVariable("static bool","isRegistered",true));
@@ -40,9 +46,21 @@ void QcFileGenerator::generateCPPs(QString dirPath, QcSchema schema) {
         if(file.open(QFile::ReadWrite)) {
             QTextStream in(&file);
             QcSourceFile src(table.getName());
+            QString className = table.getName().replace(0,1,table.getName()[0].toUpper());
+            src.addVariables(getCPPQueryVariables(table));
+            src.addVariable(QcVariable("QString " + className + "::", "CLASSNAME = \"" + className + "\"",true));
+            src.addVariable(QcVariable("bool " + className + "::", "isRegistered = false",true));
+
             src.addFunction(getConstructor(table,ConstructorType::Empty));
+            src.addFunction(getConstructor(table,ConstructorType::WithID));
+            src.addFunction(getConstructor(table,ConstructorType::WithoutID));
+            src.addFunction(getConstructor(table,ConstructorType::Copy));
             src.addFunctions(getGetters(table));
             src.addFunctions(getSetters(table));
+            src.addFunction(getPointerFunction(table));
+            if(table.getRelationType() != RelationType::None) {
+                src.addFunction(getRelationFunction(table));
+            }
 
             in << src;
         } else {
@@ -59,13 +77,21 @@ QcFunction QcFileGenerator::getConstructor(QcMetaTable &table, ConstructorType t
     QcFunction result(table.getName(),table.getName(),FunctionType::Constructor);
     result.setInvokable(true);
     for(QcMetaField *field : table.getFields()) {
-        if(type == ConstructorType::Empty) {
+        if(type == ConstructorType::Empty || type == ConstructorType::Copy) {
             break;
         } else if(type == ConstructorType::WithoutID && (field->getName().compare("id",Qt::CaseInsensitive) == 0)) {
             continue;
         }
 
         result.addParameter(field->getType(),field->getName());
+    }
+
+    if(type == ConstructorType::Copy) {
+        result = QcFunction(table.getName(),table.getName(),FunctionType::CopyConstructor);
+        result.setInvokable(true);
+        for(QcMetaField *field : table.getFields()) {
+            result.addParameter(field->getType(), field->getName());
+        }
     }
     return result;
 }
@@ -114,6 +140,20 @@ QList<QcFunction> QcFileGenerator::getSetters(QcMetaTable &table) {
     return result;
 }
 
+QList<QcFunction> QcFileGenerator::getFKSetters(QcMetaTable &table) {
+    QList<QcFunction> result;
+    for(QcMetaField *field : table.getFields()) {
+        if(field->isForeignKey()) {
+            QcFunction func(field->getName(), table.getName(),FunctionType::Setter);
+            func.setInvokable(true);
+            func.setName(field->getName()+"Ptr");
+            func.addParameter("QbPersistable*",field->getName());
+            result.push_back(QcFunction(func));
+        }
+    }
+    return result;
+}
+
 QList<QcVariable> QcFileGenerator::getVariables(QcMetaTable &table) {
     QList<QcVariable> result;
     for(QcMetaField *field : table.getFields()) {
@@ -132,7 +172,39 @@ QList<QcVariable> QcFileGenerator::getVariables(QcMetaTable &table) {
 QList<QcVariable> QcFileGenerator::getQueryVariables(QcMetaTable &table) {
     QList<QcVariable> result;
     for(QcMetaField *field : table.getFields()) {
-        result.push_back(QcVariable("static QString", field->getName(),true));
+        result.push_back(QcVariable("static QString", field->getName().toUpper(),true));
     }
     return result;
+}
+
+QList<QcVariable> QcFileGenerator::getCPPQueryVariables(QcMetaTable &table) {
+    QList<QcVariable> result;
+    for(QcMetaField *field : table.getFields()) {
+        result.push_back(QcVariable("QString " + table.getName().replace(0,1,table.getName()[0].toUpper()) + "::", field->getName().toUpper() + " = \"" + field->getName() + "\"",true));
+    }
+    return result;
+}
+
+QcFunction QcFileGenerator::getPointerFunction(QcMetaTable &table) {
+    QcFunction func(table.getName(),table.getName(),FunctionType::Pointer);
+    QString body = "\treturn QList<QbPersistable*>()";
+    for(QcFunction func : getFKSetters(table)) {
+        body.append(" << " + func.getParameterAt(0).getName() + "ptr");
+    }
+    body.append(";");
+    func.setBody(body);
+    return func;
+}
+
+QcFunction QcFileGenerator::getRelationFunction(QcMetaTable &table) {
+    QcFunction func(table.getRelatedTable()->getName(),table.getName());
+
+    if(table.getRelationType() == RelationType::OneToMany) {
+        func.setType(FunctionType::OTM);
+    } else {
+        func.setType(FunctionType::MTM);
+        func.addParameter("",table.getJointTable()->getName());
+    }
+
+    return func;
 }

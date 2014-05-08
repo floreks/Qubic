@@ -13,6 +13,7 @@ protected:
     QString className;
 
     QList<QcFunction> functions;
+    QList<QcFunction> privateFunctions;
     QList<QcVariable> variables;
     QList<QcVariable> publicVariables;
 
@@ -30,8 +31,8 @@ public:
     void setInherits(QString inheritedClass);
     void setClassName(QString className);
 
-    void addFunction(QcFunction function);
-    void addFunctions(QList<QcFunction> functions);
+    void addFunction(QcFunction function, bool isPrivate = false);
+    void addFunctions(QList<QcFunction> functions, bool arePrivate = false);
     void addVariable(QcVariable variable, bool isPrivate = true);
     void addVariables(QList<QcVariable> variables, bool arePrivate = true);
 

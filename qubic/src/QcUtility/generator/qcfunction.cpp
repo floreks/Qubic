@@ -2,6 +2,7 @@
 
 QString QcFunction::getBody() {
     QString result;
+    bool hadId = false;
     functionName[0] = functionName[0].toUpper();
 
     switch(type) {
@@ -26,12 +27,38 @@ QString QcFunction::getBody() {
             p.getName() != parameters.last().getName() ? result.append(", ") : result.append("");
         }
         result.append(") {\n");
+        result.append(QString("\tif(!isRegistered) {\n") +
+            "\t\tqRegisterMetaType<" + className + ">(\"" + className + QString("\");\n") +
+            "\t\tisRegistered = true;\n" +
+            "\t}\n");
         for(QcVariable p : parameters) {
             result.append("\tthis->" + p.getName() + "=" + p.getName() +";\n");
+            if(p.getName().contains("id",Qt::CaseInsensitive)) {
+                hadId = true;
+            }
+        }
+        if(!hadId) {
+            result.append("\tthis->id = -1;\n");
         }
         result.append("}");
         break;
     case(FunctionType::CopyConstructor):
+        result.append(className + "::" + className + "(const " + className + "& other) {\n");
+        for(QcVariable vb : parameters) {
+            result.append("\t" + vb.getName() + "=other." + vb.getName() + ";\n");
+        }
+        result.append("}");
+        break;
+    case(FunctionType::OTM):
+        result.append("QList<QbPersistable*> " + className + "::get" + functionName + "s() {\n");
+        result.append("\treturn QbAdvancedQueryHelper::queryOneToMany(\"" + functionName + "\", \"" + className + "\", id);\n}");
+        break;
+    case(FunctionType::MTM):
+        result.append("QList<QbPersistable*> " + className + "::get" + functionName + "s() {\n");
+        result.append("\treturn QbAdvancedQueryHelper::queryManyToMany(\"" + functionName + "\", \"" + className + "\", \"" + parameters.at(0).getName() + "\", id);\n}");
+        break;
+    case(FunctionType::Pointer):
+        result.append("QList<QbPersistable*> " + className + "::getPointers() {\n" + body + "\n}");
         break;
     }
 
@@ -63,6 +90,14 @@ QString QcFunction::getHeader() {
         result.append(");\n");
         break;
     case(FunctionType::CopyConstructor):
+        result.append(invokable + className + "(const " + className + "& other);\n");
+        break;
+    case(FunctionType::Pointer):
+        result.append("QList<QbPersistable*> getPointers();\n");
+        break;
+    case(FunctionType::OTM):
+    case(FunctionType::MTM):
+        result.append("QList<QbPersistable*> get" + functionName + "s();\n");
         break;
     }
 
@@ -113,12 +148,20 @@ void QcFunction::setInvokable(bool isInvokable) {
     }
 }
 
+void QcFunction::setBody(QString body) {
+    this->body = body;
+}
+
 QString QcFunction::getClass()const {
     return className;
 }
 
 QString QcFunction::getName()const {
     return functionName;
+}
+
+QcVariable QcFunction::getParameterAt(int i)const {
+    return parameters.at(i);
 }
 
 QDebug operator<<(QDebug dbg, QcFunction &func) {

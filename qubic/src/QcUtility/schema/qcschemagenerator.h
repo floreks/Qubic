@@ -25,11 +25,15 @@ class QcSchemaGenerator
 private:
     static QList<QcMetaTable> getTables(Properties *properties);
     static QList<QcMetaField*> getFields(const QString &tableName, Properties *properties);
-    static void setForeignKeys(QList<QcMetaTable> &tables);
+    static void setRelations(QList<QcMetaTable> &tables);
+    static QcMetaTable& findTable(QList<QcMetaTable> &tables, QString idName);
+    static QList<QcMetaField*> getFKFields(QcMetaTable &table);
+
     template<typename T>
     static void qRegisterHelper() {
         qRegisterMetaType<T>();
     }
+
     static QcLogger *logger;
 public:
     QcSchemaGenerator() = delete;

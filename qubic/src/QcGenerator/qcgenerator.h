@@ -21,8 +21,8 @@ public:
 private:
     Ui::QcGenerator *ui;
 
-    Properties *properties, *mapping;
-    QcDatabase *db;
+    Properties *properties = NULL, *mapping = NULL;
+    QcDatabase *db = NULL;
 private slots:
     void loadDBProperty();
     void loadMappingProperty();

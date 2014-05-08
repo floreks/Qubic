@@ -10,7 +10,8 @@ SOURCES += \
     schema/qcfloatfield.cpp \
     schema/qcdatefield.cpp \
     schema/qctimestampfield.cpp \
-    schema/qcblobfield.cpp
+    schema/qcblobfield.cpp \
+    schema/qcschemavalidator.cpp
 HEADERS += \ 
     schema/qcmetafield.h \
     schema/qcmetatable.h \
@@ -22,4 +23,5 @@ HEADERS += \
     schema/qcfloatfield.h \
     schema/qcdatefield.h \
     schema/qctimestampfield.h \
-    schema/qcblobfield.h
+    schema/qcblobfield.h \
+    schema/qcschemavalidator.h

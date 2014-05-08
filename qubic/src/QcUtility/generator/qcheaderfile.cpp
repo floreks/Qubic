@@ -37,8 +37,12 @@ QTextStream& operator<<(QTextStream &str, QcHeaderFile &file) {
     return str;
 }
 
-void QcHeaderFile::addFunction(QcFunction function) {
-    functions.push_back(QcFunction(function));
+void QcHeaderFile::addFunction(QcFunction function, bool isPrivate) {
+    if(!isPrivate) {
+        functions.push_back(QcFunction(function));
+    } else {
+        functions.push_back(QcFunction(function));
+    }
 }
 
 void QcHeaderFile::addVariable(QcVariable variable, bool isPrivate) {
@@ -49,8 +53,12 @@ void QcHeaderFile::addVariable(QcVariable variable, bool isPrivate) {
     }
 }
 
-void QcHeaderFile::addFunctions(QList<QcFunction> functions) {
-    this->functions.append(functions);
+void QcHeaderFile::addFunctions(QList<QcFunction> functions, bool arePrivate) {
+    if(!arePrivate) {
+        this->functions.append(functions);
+    } else {
+        this->privateFunctions.append(functions);
+    }
 }
 
 void QcHeaderFile::addVariables(QList<QcVariable> variables, bool arePrivate) {
@@ -77,6 +85,10 @@ QString QcHeaderFile::getStart() {
 QString QcHeaderFile::getPrivateSection() {
     QString result;
     result.append("private:\n");
+
+    for(QcFunction fc : privateFunctions) {
+        result.append("\t" + fc.getHeader());
+    }
 
     for(QcVariable vb : variables) {
         result.append("\t" + vb.toString());
@@ -107,10 +119,10 @@ QString QcHeaderFile::getEnd() {
 
 QString QcHeaderFile::getIncludes() {
     QString result;
-    QList<QString> ignoreList = {"qreal", "qint32","static bool"};
+    QList<QString> ignoreList = {"qreal", "qint32","static bool", "QDate"};
     for(QcVariable vb : variables) {
         if(!ignoreList.contains(vb.getType())) {
-            result.append("#include <" + vb.getType() + ">\n");
+            result.append("#include \"" + vb.getType().remove("*").toLower() + ".h\"\n");
             ignoreList.push_back(vb.getType());
         }
     }

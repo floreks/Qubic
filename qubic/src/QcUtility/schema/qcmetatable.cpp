@@ -36,3 +36,27 @@ QDebug operator <<(QDebug os, const QcMetaTable &t) {
     os << "\n";
     return os;
 }
+
+void QcMetaTable::setJointTable(QcMetaTable *table) {
+    this->jointTable = table;
+}
+
+void QcMetaTable::setRelatedTable(QcMetaTable *table) {
+    this->relatedTable = table;
+}
+
+void QcMetaTable::setRelationType(RelationType type) {
+    this->relationType = type;
+}
+
+QcMetaTable* QcMetaTable::getJointTable()const {
+    return jointTable;
+}
+
+QcMetaTable* QcMetaTable::getRelatedTable()const {
+    return relatedTable;
+}
+
+RelationType QcMetaTable::getRelationType()const {
+    return relationType;
+}

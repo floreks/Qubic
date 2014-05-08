@@ -19,6 +19,10 @@ private:
     static QList<QcFunction> getSetters(QcMetaTable &table);
     static QList<QcVariable> getVariables(QcMetaTable &table);
     static QList<QcVariable> getQueryVariables(QcMetaTable &table);
+    static QList<QcVariable> getCPPQueryVariables(QcMetaTable &table);
+    static QList<QcFunction> getFKSetters(QcMetaTable &table);
+    static QcFunction getPointerFunction(QcMetaTable &table);
+    static QcFunction getRelationFunction(QcMetaTable &table);
 public:
     QcFileGenerator() = delete;
     static void generateHeaders(QString dirPath, QcSchema schema);

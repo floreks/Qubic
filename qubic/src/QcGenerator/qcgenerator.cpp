@@ -11,6 +11,7 @@
 
 #include "schema/qcschemagenerator.h"
 #include "schema/qcschema.h"
+#include "schema/qcschemavalidator.h"
 
 #include "generator/qcfilegenerator.h"
 
@@ -37,11 +38,16 @@ QcGenerator::QcGenerator(QWidget *parent) :
 
 QcGenerator::~QcGenerator()
 {
-    db->close();
+    if(db != NULL) {
+        db->close();
+        delete db;
+    }
     delete ui;
-    delete mapping;
-    delete properties;
-    delete db;
+    if(mapping != NULL)
+        delete mapping;
+    if(properties != NULL)
+        delete properties;
+
 }
 
 // ===================== SLOTS ===================== //
@@ -105,13 +111,24 @@ void QcGenerator::connectToDB() {
 }
 
 void QcGenerator::generate() {
-    QString dir = QFileDialog::getExistingDirectory(this,tr("Open directory"),"",QFileDialog::ShowDirsOnly | QFileDialog::DontResolveSymlinks);
     QcSchema schema = QcSchemaGenerator::getSchema(mapping);
 
-    QcFileGenerator::generateHeaders(dir,schema);
-    QcFileGenerator::generateCPPs(dir,schema);
+    if(!QcSchemaValidator::hasErrors()) {
 
-    QMessageBox::information(this,"Generation","Generating completed.");
+        if(QcSchemaValidator::hasWarnings()) {
+            QMessageBox::warning(this, "Warning", QcSchemaValidator::getWarnings());
+        }
+
+        QString dir = QFileDialog::getExistingDirectory(this,tr("Open directory"),"",QFileDialog::ShowDirsOnly | QFileDialog::DontResolveSymlinks);
+
+        QcFileGenerator::generateHeaders(dir,schema);
+        QcFileGenerator::generateCPPs(dir,schema);
+
+        QMessageBox::information(this,"Generation","Generating completed.");
+    } else {
+        QMessageBox::critical(this,"Error",QcSchemaValidator::getErrors());
+    }
+
 }
 
 void QcGenerator::setLoggingLevel(QString level) {
@@ -120,4 +137,6 @@ void QcGenerator::setLoggingLevel(QString level) {
     } else if(level.contains("debug", Qt::CaseInsensitive)) {
         QcLogger::setLoggingLevel(QsLogging::Level::DebugLevel);
     }
+
+    ui->logBrowser->clear();
 }
