@@ -3,8 +3,73 @@
 #include <QDir>
 #include "qcheaderfile.h"
 #include "qcsourcefile.h"
+#include "qcprojectfile.h"
 
 QcLogger* QcFileGenerator::logger;
+
+void QcFileGenerator::generateProject(QString dirPath, QcSchema schema) {
+    Q_INIT_RESOURCE(qresource);
+    QString outPath = dirPath + QDir::separator() + PROJECT_FOLDER_NAME;
+    QDir outDir(outPath);
+    if(!outDir.exists()) {
+        outDir.mkpath(".");
+    }
+
+    copyResources(":/files", outPath);
+
+    outDir = QDir(outPath + QDir::separator() + "Generated");
+    if(!outDir.exists()) {
+        outDir.mkpath(".");
+    }
+
+    generateHeaders(outDir.path(), schema);
+    generateCPPs(outDir.path(), schema);
+    generatePRI(outDir.path(), schema);
+}
+
+// ========================== PRIVATE ========================== //
+
+void QcFileGenerator::copyResources(QString srcPath, QString destPath) {
+    logger = QcLogger::getInstance();
+    QDir dir(srcPath);
+    if (! dir.exists()){
+        logger->debug("Did not find resources");
+        return;
+    }
+
+    foreach (QString d, dir.entryList(QDir::Dirs | QDir::NoDotAndDotDot)) {
+        QString dst_path = destPath + QDir::separator() + d;
+        QDir create(dst_path);
+        create.mkpath(".");
+        copyResources(srcPath + QDir::separator() + d, dst_path);
+    }
+
+    foreach (QString f, dir.entryList(QDir::Files)) {
+        logger->debug("Copying file: " + f + " To: " + destPath);
+        QFile::copy(srcPath + QDir::separator() + f, destPath + QDir::separator() + f);
+    }
+
+}
+
+void QcFileGenerator::generatePRI(QString dirPath, QcSchema schema) {
+    logger = QcLogger::getInstance();
+
+    QcProjectFile qcProject;
+    for(QcMetaTable table : schema.getSchema()) {
+        qcProject.addHeader(table.getName() + ".h");
+        qcProject.addSource(table.getName() + ".cpp");
+    }
+
+    QFile file(dirPath + QDir::separator() + "QcProject.pri");
+    if(file.open(QFile::ReadWrite)) {
+        QTextStream in(&file);
+        in << qcProject;
+    } else {
+        logger->error("Project file could not be created.");
+        return;
+    }
+}
+
 
 void QcFileGenerator::generateHeaders(QString dirPath, QcSchema schema) {
     logger = QcLogger::getInstance();
@@ -57,6 +122,7 @@ void QcFileGenerator::generateCPPs(QString dirPath, QcSchema schema) {
             src.addFunction(getConstructor(table,ConstructorType::Copy));
             src.addFunctions(getGetters(table));
             src.addFunctions(getSetters(table));
+            src.addFunctions(getFKSetters(table));
             src.addFunction(getPointerFunction(table));
             if(table.getRelationType() != RelationType::None) {
                 src.addFunction(getRelationFunction(table));
@@ -71,8 +137,6 @@ void QcFileGenerator::generateCPPs(QString dirPath, QcSchema schema) {
     }
 }
 
-// ========================== PRIVATE ========================== //
-
 QcFunction QcFileGenerator::getConstructor(QcMetaTable &table, ConstructorType type) {
     QcFunction result(table.getName(),table.getName(),FunctionType::Constructor);
     result.setInvokable(true);
@@ -83,14 +147,22 @@ QcFunction QcFileGenerator::getConstructor(QcMetaTable &table, ConstructorType t
             continue;
         }
 
-        result.addParameter(field->getType(),field->getName());
+        if(field->isForeignKey()) {
+            result.addParameter(field->getType().replace(0,1,field->getType()[0].toUpper())+"*",field->getName()+"Ptr");
+        } else {
+            result.addParameter(field->getType(), field->getName());
+        }
     }
 
     if(type == ConstructorType::Copy) {
         result = QcFunction(table.getName(),table.getName(),FunctionType::CopyConstructor);
         result.setInvokable(true);
         for(QcMetaField *field : table.getFields()) {
-            result.addParameter(field->getType(), field->getName());
+            if(field->isForeignKey()) {
+                result.addParameter(field->getType().replace(0,1,field->getType()[0].toUpper())+"*",field->getName()+"Ptr");
+            } else {
+                result.addParameter(field->getType(), field->getName());
+            }
         }
     }
     return result;
@@ -108,7 +180,7 @@ QList<QcFunction> QcFileGenerator::getGetters(QcMetaTable &table) {
 
         if(field->isForeignKey()) {
             func.setName(field->getName()+"Ptr");
-            func.addParameter(field->getType().replace(0,1,field->getType()[0].toUpper())+"*",field->getName());
+            func.addParameter(field->getType().replace(0,1,field->getType()[0].toUpper())+"*",field->getName()+"Ptr");
         } else {
             func.addParameter(field->getType(),field->getName());
         }
@@ -130,7 +202,7 @@ QList<QcFunction> QcFileGenerator::getSetters(QcMetaTable &table) {
 
         if(field->isForeignKey()) {
             func.setName(field->getName()+"Ptr");
-            func.addParameter(field->getType().replace(0,1,field->getType()[0].toUpper())+"*",field->getName());
+            func.addParameter(field->getType().replace(0,1,field->getType()[0].toUpper())+"*",field->getName() + "Ptr");
         } else {
             func.addParameter(field->getType(),field->getName());
         }
@@ -147,7 +219,9 @@ QList<QcFunction> QcFileGenerator::getFKSetters(QcMetaTable &table) {
             QcFunction func(field->getName(), table.getName(),FunctionType::Setter);
             func.setInvokable(true);
             func.setName(field->getName()+"Ptr");
-            func.addParameter("QbPersistable*",field->getName());
+            func.addParameter("QbPersistable*",field->getName() + "Ptr");
+            QString body = "this->" + field->getName().toLower() + "ptr=(" + field->getType().replace(0,1,field->getType()[0].toUpper())+"*) " + field->getName().toLower() + "ptr;";
+            func.setBody(body);
             result.push_back(QcFunction(func));
         }
     }
@@ -189,7 +263,7 @@ QcFunction QcFileGenerator::getPointerFunction(QcMetaTable &table) {
     QcFunction func(table.getName(),table.getName(),FunctionType::Pointer);
     QString body = "\treturn QList<QbPersistable*>()";
     for(QcFunction func : getFKSetters(table)) {
-        body.append(" << " + func.getParameterAt(0).getName() + "ptr");
+        body.append(" << " + func.getParameterAt(0).getName());
     }
     body.append(";");
     func.setBody(body);

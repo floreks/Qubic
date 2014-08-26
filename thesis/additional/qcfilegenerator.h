@@ -9,8 +9,6 @@
 #include <QString>
 #include <QList>
 
-#define PROJECT_FOLDER_NAME "Qubic-Generated"
-
 class QcFileGenerator
 {
 private:
@@ -25,14 +23,10 @@ private:
     static QList<QcFunction> getFKSetters(QcMetaTable &table);
     static QcFunction getPointerFunction(QcMetaTable &table);
     static QcFunction getRelationFunction(QcMetaTable &table);
-    static void copyResources(QString srcPath, QString destPath);
-
-    static void generateHeaders(QString dirPath, QcSchema schema);
-    static void generateCPPs(QString dirPath, QcSchema schema);
-    static void generatePRI(QString dirPath, QcSchema schema);
 public:
     QcFileGenerator() = delete;
-    static void generateProject(QString dirPath, QcSchema schema);
+    static void generateHeaders(QString dirPath, QcSchema schema);
+    static void generateCPPs(QString dirPath, QcSchema schema);
 };
 
 #endif // QCFILEGENERATOR_H

@@ -41,7 +41,7 @@ void QcHeaderFile::addFunction(QcFunction function, bool isPrivate) {
     if(!isPrivate) {
         functions.push_back(QcFunction(function));
     } else {
-        functions.push_back(QcFunction(function));
+        privateFunctions.push_back(QcFunction(function));
     }
 }
 
@@ -127,7 +127,7 @@ QString QcHeaderFile::getIncludes() {
         }
     }
     if(!inheritedClass.isEmpty()) {
-        result.append("#include <QObject>\n#include <QbCore/qbpersistable.h>\n#include <QbUtilities/qbadvancedqueryhelper.h>\n");
+        result.append("#include <ORM/Qubic.h>\n");
     }
     return result;
 }

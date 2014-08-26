@@ -1,0 +1,53 @@
+\contentsline {chapter}{\numberline {1}Wst\IeC {\k e}p}{4}
+\contentsline {section}{\numberline {1.1}Problematyka i zakres pracy}{4}
+\contentsline {section}{\numberline {1.2}Cele pracy}{5}
+\contentsline {subsection}{\numberline {1.2.1}Przybli\IeC {\.z}enie istniej\IeC {\k a}cych aplikacji szkieletowych z dziedziny mapowania obiektowo-relacyjnego.}{5}
+\contentsline {subsection}{\numberline {1.2.2}Poznanie technik tworzenia i stworzenie aplikacji szkieletowej z zakresu generowania opisu mapowania obiektowo-relacyjnego w C++.}{6}
+\contentsline {subsection}{\numberline {1.2.3}Por\IeC {\'o}wnanie stworzonej aplikacji z ju\IeC {\.z} istniej\IeC {\k a}cymi aplikacjami szkieletowymi w j\IeC {\k e}zyku C++ oraz w innych j\IeC {\k e}zykach programowania.}{6}
+\contentsline {section}{\numberline {1.3}Metoda badawcza}{6}
+\contentsline {section}{\numberline {1.4}Przegl\IeC {\k a}d literatury w dziedzinie}{7}
+\contentsline {subsubsection}{\IeC {\'Z}r\IeC {\'o}d\IeC {\l }a z zakresu j\IeC {\k e}zyka C++}{7}
+\contentsline {subsubsection}{\IeC {\'Z}r\IeC {\'o}d\IeC {\l }a z zakresu narz\IeC {\k e}dzi i aplikacji do mapowania obiektowo-relacyjnego}{8}
+\contentsline {subsubsection}{\IeC {\'Z}r\IeC {\'o}d\IeC {\l }a z zakresu dzia\IeC {\l }ania frameworka Qt}{8}
+\contentsline {subsubsection}{\IeC {\'Z}r\IeC {\'o}d\IeC {\l }a z zakresu SQL}{8}
+\contentsline {section}{\numberline {1.5}Uk\IeC {\l }ad pracy}{8}
+\contentsline {chapter}{\numberline {2}Generator opisu mapowania obiektowo-relacyjnego w C++}{10}
+\contentsline {section}{\numberline {2.1}Podstawowe definicje}{10}
+\contentsline {subsection}{\numberline {2.1.1}Warstwa dost\IeC {\k e}pu do danych}{10}
+\contentsline {subsection}{\numberline {2.1.2}Normalizacja bazy danych}{11}
+\contentsline {subsection}{\numberline {2.1.3}SQL}{11}
+\contentsline {subsection}{\numberline {2.1.4}Mapowanie Obiektowo-Relacyjne}{11}
+\contentsline {subsection}{\numberline {2.1.5}Wzorzec projektowy}{12}
+\contentsline {subsection}{\numberline {2.1.6}Wzorzec Model-Widok-Kontroler}{12}
+\contentsline {subsection}{\numberline {2.1.7}Wzorzec DAO}{13}
+\contentsline {subsection}{\numberline {2.1.8}Biblioteka wsp\IeC {\'o}\IeC {\l }dzielona}{14}
+\contentsline {subsection}{\numberline {2.1.9}Qt framework}{15}
+\contentsline {chapter}{\numberline {3}Analiza istniej\IeC {\k a}cych aplikacji do generowania opisu mapowania obiektowo-relacyjnego}{16}
+\contentsline {section}{\numberline {3.1}Istniej\IeC {\k a}ce rozwi\IeC {\k a}zania w dziedzinie}{16}
+\contentsline {subsection}{\numberline {3.1.1}Wymagania aplikacji}{16}
+\contentsline {section}{\numberline {3.2}Wady i s\IeC {\l }abe punkty istniej\IeC {\k a}cych rozwi\IeC {\k a}za\IeC {\'n}}{17}
+\contentsline {chapter}{\numberline {4}Technologie i metody u\IeC {\.z}yte w cz\IeC {\k e}\IeC {\'s}ci badawczej}{18}
+\contentsline {subsection}{\numberline {4.0.1}J\IeC {\k e}zyk programowania}{18}
+\contentsline {subsection}{\numberline {4.0.2}System baz danych}{19}
+\contentsline {subsection}{\numberline {4.0.3}\IeC {\'S}rodowisko deweloperskie}{19}
+\contentsline {subsection}{\numberline {4.0.4}Biblioteki}{20}
+\contentsline {subsection}{\numberline {4.0.5}Inne narz\IeC {\k e}dzia}{20}
+\contentsline {chapter}{\numberline {5}Projektowanie aplikacji szkieletowej Qubic}{21}
+\contentsline {section}{\numberline {5.1}Analiza wymaga\IeC {\'n}}{21}
+\contentsline {subsection}{\numberline {5.1.1}Studium mo\IeC {\.z}liwo\IeC {\'s}ci}{21}
+\contentsline {subsection}{\numberline {5.1.2}Wymagania funkcjonalne}{22}
+\contentsline {subsection}{\numberline {5.1.3}Ograniczenia projektu}{22}
+\contentsline {section}{\numberline {5.2}Projekt}{23}
+\contentsline {subsection}{\numberline {5.2.1}Projekt warstwy danych}{23}
+\contentsline {subsection}{\numberline {5.2.2}Projekt aplikacji}{24}
+\contentsline {section}{\numberline {5.3}Implementacja: punkty kluczowe}{32}
+\contentsline {section}{\numberline {5.4}Testy stworzonej aplikacji}{48}
+\contentsline {subsection}{\numberline {5.4.1}Testy wydajno\IeC {\'s}ci}{48}
+\contentsline {subsection}{\numberline {5.4.2}Por\IeC {\'o}wnanie funkcjonalno\IeC {\'s}ci}{51}
+\contentsline {chapter}{\numberline {6}Podsumowanie}{52}
+\contentsline {section}{\numberline {6.1}Dyskusja wynik\IeC {\'o}w}{52}
+\contentsline {section}{\numberline {6.2}Ocena mo\IeC {\.z}liwo\IeC {\'s}ci wdro\IeC {\.z}enia Qubica}{52}
+\contentsline {section}{\numberline {6.3}Perspektywy dalszego rozwoju}{53}
+\contentsline {chapter}{Bibliografia}{53}
+\contentsline {chapter}{Spis rysunk\IeC {\'o}w}{55}
+\contentsline {chapter}{Spis tabel}{56}

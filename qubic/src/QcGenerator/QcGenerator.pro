@@ -17,7 +17,8 @@ TEMPLATE = app
 SOURCES += main.cpp\
         qcgenerator.cpp
 
-HEADERS  += qcgenerator.h
+HEADERS  += qcgenerator.h \
+    timer.h
 
 FORMS    += qcgenerator.ui
 

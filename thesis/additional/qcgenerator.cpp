@@ -1,55 +1,3 @@
-#include "qcgenerator.h"
-#include "ui_qcgenerator.h"
-
-#include <QMessageBox>
-#include <QFileDialog>
-
-#include "properties/qcproperties.h"
-#include "properties/qcmappingproperties.h"
-#include "properties/qcstaticproperties.h"
-#include "properties/qcpropertiesvalidator.h"
-
-#include "schema/qcschemagenerator.h"
-#include "schema/qcschema.h"
-#include "schema/qcschemavalidator.h"
-
-#include "generator/qcfilegenerator.h"
-#include "timer.h"
-#include <QDebug>
-
-QcGenerator::QcGenerator(QWidget *parent) :
-    QMainWindow(parent),
-    ui(new Ui::QcGenerator)
-{
-    ui->setupUi(this);
-
-    // Connect signals & slots
-    connect(ui->actionSetDBProperty,SIGNAL(triggered()),this,SLOT(loadDBProperty()));
-    connect(ui->actionSetMappingProperty,SIGNAL(triggered()),this,SLOT(loadMappingProperty()));
-    connect(ui->actionConnect,SIGNAL(triggered()),this,SLOT(connectToDB()));
-    connect(ui->actionGenerate,SIGNAL(triggered()),this,SLOT(generate()));
-    connect(ui->comboBox,SIGNAL(currentIndexChanged(QString)),SLOT(setLoggingLevel(QString)));
-
-    ui->actionConnect->setEnabled(false);
-    ui->actionGenerate->setEnabled(false);
-
-    QcLogger::addDestination(ui->logBrowser);
-}
-
-QcGenerator::~QcGenerator()
-{
-    if(db != NULL) {
-        db->close();
-        delete db;
-    }
-    delete ui;
-    if(mapping != NULL)
-        delete mapping;
-    if(properties != NULL)
-        delete properties;
-
-}
-
 // ===================== SLOTS ===================== //
 
 void QcGenerator::loadDBProperty() {
@@ -111,10 +59,7 @@ void QcGenerator::connectToDB() {
 }
 
 void QcGenerator::generate() {
-    Timer tmr;
-    double elapsed;
     QcSchema schema = QcSchemaGenerator::getSchema(mapping);
-    elapsed = tmr.elapsed();
 
     if(!QcSchemaValidator::hasErrors()) {
 
@@ -124,30 +69,12 @@ void QcGenerator::generate() {
 
         QString dir = QFileDialog::getExistingDirectory(this,tr("Open directory"),"",QFileDialog::ShowDirsOnly | QFileDialog::DontResolveSymlinks);
 
-        if(dir == NULL) {
-            QMessageBox::critical(this,"Error", "Cancel clicked. Aborting.");
-            return;
-        }
-
-        tmr.reset();
-        QcFileGenerator::generateProject(dir, schema);
-        elapsed += tmr.elapsed();
-
-        ui->logBrowser->append("Generation time: " + QString::number(elapsed));
+        QcFileGenerator::generateHeaders(dir,schema);
+        QcFileGenerator::generateCPPs(dir,schema);
 
         QMessageBox::information(this,"Generation","Generating completed.");
     } else {
         QMessageBox::critical(this,"Error",QcSchemaValidator::getErrors());
     }
 
-}
-
-void QcGenerator::setLoggingLevel(QString level) {
-    if(level.contains("info",Qt::CaseInsensitive)) {
-        QcLogger::setLoggingLevel(QsLogging::Level::InfoLevel);
-    } else if(level.contains("debug", Qt::CaseInsensitive)) {
-        QcLogger::setLoggingLevel(QsLogging::Level::DebugLevel);
-    }
-
-    ui->logBrowser->clear();
 }

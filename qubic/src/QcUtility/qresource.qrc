@@ -1,0 +1,45 @@
+<RCC>
+    <qresource prefix="/">
+        <file>files/qb.properties</file>
+        <file>files/ORM/QbCore/qbdatabase.cpp</file>
+        <file>files/ORM/QbCore/qbdatabase.h</file>
+        <file>files/ORM/QbCore/qbmysqlquery.cpp</file>
+        <file>files/ORM/QbCore/qbmysqlquery.h</file>
+        <file>files/ORM/QbCore/qbpersistable.cpp</file>
+        <file>files/ORM/QbCore/qbpersistable.h</file>
+        <file>files/ORM/QbCore/qbproperties.cpp</file>
+        <file>files/ORM/QbCore/qbproperties.h</file>
+        <file>files/ORM/QbCore/qbquery.cpp</file>
+        <file>files/ORM/QbCore/qbquery.h</file>
+        <file>files/ORM/QbUtilities/qbadvancedqueryhelper.cpp</file>
+        <file>files/ORM/QbUtilities/qbadvancedqueryhelper.h</file>
+        <file>files/ORM/QbUtilities/qbloggerhelper.cpp</file>
+        <file>files/ORM/QbUtilities/qbloggerhelper.h</file>
+        <file>files/ORM/QbUtilities/qbmappinghelper.cpp</file>
+        <file>files/ORM/QbUtilities/qbmappinghelper.h</file>
+        <file>files/ORM/QbUtilities/qbmysqlmappinghelper.cpp</file>
+        <file>files/ORM/QbUtilities/qbmysqlmappinghelper.h</file>
+        <file>files/ORM/QbUtilities/qbmysqlpersistencehelper.cpp</file>
+        <file>files/ORM/QbUtilities/qbmysqlpersistencehelper.h</file>
+        <file>files/ORM/QbUtilities/qbpersistencehelper.cpp</file>
+        <file>files/ORM/QbUtilities/qbpersistencehelper.h</file>
+        <file>files/ORM/QbUtilities/qbqueryhelper.cpp</file>
+        <file>files/ORM/QbUtilities/qbqueryhelper.h</file>
+        <file>files/ORM/QsLog/QsLog.cpp</file>
+        <file>files/ORM/QsLog/QsLog.h</file>
+        <file>files/ORM/QsLog/QsLogDest.cpp</file>
+        <file>files/ORM/QsLog/QsLogDest.h</file>
+        <file>files/ORM/QsLog/QsLogDestConsole.cpp</file>
+        <file>files/ORM/QsLog/QsLogDestConsole.h</file>
+        <file>files/ORM/QsLog/QsLogDestFile.cpp</file>
+        <file>files/ORM/QsLog/QsLogDestFile.h</file>
+        <file>files/ORM/QsLog/QsLogDisableForThisFile.h</file>
+        <file>files/ORM/QsLog/QsLogLevel.h</file>
+        <file>files/ORM/Qubic.h</file>
+        <file>files/ORM/QbCore/QbCore.pri</file>
+        <file>files/ORM/QbUtilities/QbUtilities.pri</file>
+        <file>files/ORM/QsLog/QsLog.pri</file>
+        <file>files/QubicProject.pro</file>
+        <file>files/ORM/Qubic.pri</file>
+    </qresource>
+</RCC>

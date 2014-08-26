@@ -1,0 +1,40 @@
+...
+sie 17, 2014 9:34:20 PM org.jooq.tools.JooqLogger info
+INFO: Enums fetched            : 0 (0 included, 0 excluded)
+sie 17, 2014 9:34:20 PM org.jooq.tools.JooqLogger info
+INFO: Generating table         : Company.java [input=company, output=company, pk
+=KEY_company_PRIMARY]
+sie 17, 2014 9:34:20 PM org.jooq.tools.JooqLogger info
+INFO: Generating table         : Department.java [input=department, output=depar
+tment, pk=KEY_department_PRIMARY]
+sie 17, 2014 9:34:20 PM org.jooq.tools.JooqLogger info
+INFO: Generating table         : Employee.java [input=employee, output=employee,
+ pk=KEY_employee_PRIMARY]
+sie 17, 2014 9:34:20 PM org.jooq.tools.JooqLogger info
+INFO: Tables generated         : Total: 619.231ms
+sie 17, 2014 9:34:20 PM org.jooq.tools.JooqLogger info
+INFO: Generating table references
+sie 17, 2014 9:34:20 PM org.jooq.tools.JooqLogger info
+INFO: Table refs generated     : Total: 623.451ms, +4.22ms
+sie 17, 2014 9:34:20 PM org.jooq.tools.JooqLogger info
+INFO: Generating Keys
+sie 17, 2014 9:34:20 PM org.jooq.tools.JooqLogger info
+INFO: Keys generated           : Total: 631.825ms, +8.373ms
+sie 17, 2014 9:34:20 PM org.jooq.tools.JooqLogger info
+INFO: Generating table records
+sie 17, 2014 9:34:20 PM org.jooq.tools.JooqLogger info
+INFO: Generating record        : AssignmentRecord.java
+sie 17, 2014 9:34:20 PM org.jooq.tools.JooqLogger info
+INFO: Generating record        : CompanyRecord.java
+sie 17, 2014 9:34:20 PM org.jooq.tools.JooqLogger info
+INFO: Generating record        : DepartmentRecord.java
+sie 17, 2014 9:34:20 PM org.jooq.tools.JooqLogger info
+INFO: Generating record        : EmployeeRecord.java
+sie 17, 2014 9:34:20 PM org.jooq.tools.JooqLogger info
+INFO: Table records generated  : Total: 666.048ms, +34.222ms
+sie 17, 2014 9:34:20 PM org.jooq.tools.JooqLogger info
+INFO: Routines fetched         : 0 (0 included, 0 excluded)
+sie 17, 2014 9:34:20 PM org.jooq.tools.JooqLogger info
+INFO: Packages fetched         : 0 (0 included, 0 excluded)
+sie 17, 2014 9:34:20 PM org.jooq.tools.JooqLogger info
+INFO: GENERATION FINISHED!     : Total: 681.673ms, +15.624ms

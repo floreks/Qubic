@@ -7,18 +7,31 @@ QString QcFunction::getBody() {
 
     switch(type) {
     case(FunctionType::Getter):
-        result.append(parameters[0].getType() + " " + className + "::get" + functionName + "()const {\n"
-                + "\treturn " + parameters[0].getName() + ";\n"
-                + "}");
+        if(body.isEmpty()) {
+            result.append(parameters[0].getType() + " " + className + "::get" + functionName + "()const {\n"
+                    + "\treturn " + parameters[0].getName() + ";\n"
+                    + "}");
+        } else {
+            result.append(body);
+        }
         break;
     case(FunctionType::Setter):
-        result.append("void " + className + "::set" + functionName + "(");
-        for(QcVariable p : parameters) {
-            result.append(p.getType() + " " + p.getName());
-            p.getName() != parameters.last().getName() ? result.append(", ") : result.append("");
+        if(body.isEmpty()) {
+            result.append("void " + className + "::set" + functionName + "(");
+            for(QcVariable p : parameters) {
+                result.append(p.getType() + " " + p.getName());
+                p.getName() != parameters.last().getName() ? result.append(", ") : result.append("");
+            }
+            result.append(") {\n\tthis->" + functionName.toLower() + "=" + functionName.toLower()
+                          + ";\n}");
+        } else {
+            result.append("void " + className + "::set" + functionName + "(");
+            for(QcVariable p : parameters) {
+                result.append(p.getType() + " " + p.getName());
+                p.getName() != parameters.last().getName() ? result.append(", ") : result.append("");
+            }
+            result.append(") {\n\t" + body + "\n}");
         }
-        result.append(") {\n\tthis->" + functionName.toLower() + "=" + functionName.toLower()
-                      + ";\n}");
         break;
     case(FunctionType::Constructor):
         result.append(className + "::" + className + "(");
@@ -28,9 +41,9 @@ QString QcFunction::getBody() {
         }
         result.append(") {\n");
         result.append(QString("\tif(!isRegistered) {\n") +
-            "\t\tqRegisterMetaType<" + className + ">(\"" + className + QString("\");\n") +
-            "\t\tisRegistered = true;\n" +
-            "\t}\n");
+                      "\t\tqRegisterMetaType<" + className + ">(\"" + className + QString("\");\n") +
+                      "\t\tisRegistered = true;\n" +
+                      "\t}\n");
         for(QcVariable p : parameters) {
             result.append("\tthis->" + p.getName() + "=" + p.getName() +";\n");
             if(p.getName().contains("id",Qt::CaseInsensitive)) {

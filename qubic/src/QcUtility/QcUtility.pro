@@ -46,3 +46,6 @@ CONFIG(release, debug|release) {
     TARGET = QcUtility
 }
 
+RESOURCES += \
+    qresource.qrc
+
