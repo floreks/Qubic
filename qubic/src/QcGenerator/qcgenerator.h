@@ -5,6 +5,7 @@
 
 #include "properties/properties.h"
 #include "database/qcdatabase.h"
+#include "relationwidget.h"
 
 namespace Ui {
 class QcGenerator;
@@ -23,6 +24,8 @@ private:
 
     Properties *properties = NULL, *mapping = NULL;
     QcDatabase *db = NULL;
+    RelationWidget *relationWidget = NULL;
+    QcSchema *schema = NULL;
 private slots:
     void loadDBProperty();
     void loadMappingProperty();
@@ -32,6 +35,8 @@ private slots:
     void generate();
 
     void setLoggingLevel(QString);
+
+    void setUpRelations();
 };
 
 #endif // QCGENERATOR_H

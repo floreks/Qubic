@@ -17,7 +17,7 @@ public:
     void addTable(QcMetaTable table);
     void setTables(QList<QcMetaTable> tables);
     QcMetaTable getTable(QString tableName);
-    QList<QcMetaTable> getSchema()const;
+    QList<QcMetaTable>& getSchema();
 
     friend QDebug operator<<(QDebug os, const QcSchema &obj);
 };

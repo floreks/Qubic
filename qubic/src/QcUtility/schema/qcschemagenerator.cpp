@@ -26,19 +26,6 @@ QList<QcMetaTable> QcSchemaGenerator::getTables(Properties *properties) {
 
     setRelations(result);
 
-    for(QcMetaTable table : result) {
-        switch(table.getRelationType()) {
-        case(RelationType::OneToMany):
-            logger->debug("One to many");
-            logger->debug(table.getRelatedTable()->getName());
-            break;
-        case(RelationType::ManyToMany):
-            logger->debug("Many to many");
-            logger->debug(table.getRelatedTable()->getName());
-            logger->debug(table.getJointTable()->getName());
-        }
-    }
-
     return result;
 }
 
@@ -96,21 +83,15 @@ void QcSchemaGenerator::setRelations(QList<QcMetaTable> &tables) {
             logger->debug("Found many to many relation");
             QcMetaTable &leftSide = findTable(tables,fkFields.at(0)->getName());
             QcMetaTable &rightSide = findTable(tables,fkFields.at(1)->getName());
-            QStringList split = table.getName().split("_");
-            if(split.size() == 2 &&
-                    (leftSide.getName().compare(split.at(0)) == 0 || rightSide.getName().compare(split.at(0)) == 0) &&
-                    (leftSide.getName().compare(split.at(1)) == 0 || rightSide.getName().compare(split.at(1)) == 0)) {
 
-                logger->debug("Left: " + leftSide.getName() + " Center: " + table.getName() + " Right: " + rightSide.getName());
-                leftSide.setRelationType(RelationType::ManyToMany);
-                leftSide.setRelatedTable(&rightSide);
-                leftSide.setJointTable(&table);
+            logger->debug("Left: " + leftSide.getName() + " Center: " + table.getName() + " Right: " + rightSide.getName());
+            leftSide.setRelationType(RelationType::ManyToMany);
+            leftSide.setRelatedTable(&rightSide);
+            leftSide.setJointTable(&table);
 
-                rightSide.setRelationType(RelationType::ManyToMany);
-                rightSide.setRelatedTable(&leftSide);
-                rightSide.setJointTable(&table);
-            }
-
+            rightSide.setRelationType(RelationType::ManyToMany);
+            rightSide.setRelatedTable(&leftSide);
+            rightSide.setJointTable(&table);
         }
     }
 }

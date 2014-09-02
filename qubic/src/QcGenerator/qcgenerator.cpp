@@ -29,6 +29,7 @@ QcGenerator::QcGenerator(QWidget *parent) :
     connect(ui->actionConnect,SIGNAL(triggered()),this,SLOT(connectToDB()));
     connect(ui->actionGenerate,SIGNAL(triggered()),this,SLOT(generate()));
     connect(ui->comboBox,SIGNAL(currentIndexChanged(QString)),SLOT(setLoggingLevel(QString)));
+    connect(ui->actionSetRelations, SIGNAL(triggered()), this, SLOT(setUpRelations()));
 
     ui->actionConnect->setEnabled(false);
     ui->actionGenerate->setEnabled(false);
@@ -51,6 +52,13 @@ QcGenerator::~QcGenerator()
 }
 
 // ===================== SLOTS ===================== //
+
+void QcGenerator::setUpRelations() {
+    schema = new QcSchema(QcSchemaGenerator::getSchema(mapping));
+
+    relationWidget = new RelationWidget(this, schema);
+    relationWidget->exec();
+}
 
 void QcGenerator::loadDBProperty() {
     QFileInfo propertyFile(QC_PROPERTIES_DIR + QDir::separator() + QC_PROPERTIES_FILE);
@@ -108,13 +116,18 @@ void QcGenerator::connectToDB() {
     }
 
     QMessageBox::information(this,"Database","Successfully connected to database.");
+    ui->actionSetRelations->setEnabled(true);
 }
 
 void QcGenerator::generate() {
-    Timer tmr;
-    double elapsed;
-    QcSchema schema = QcSchemaGenerator::getSchema(mapping);
-    elapsed = tmr.elapsed();
+    if(schema == NULL) {
+        schema = new QcSchema(QcSchemaGenerator::getSchema(mapping));
+        for(QcMetaTable &table : schema->getSchema()) {
+            if(table.getRelationType() == RelationType::ManyToMany) {
+                table.setRelationType(RelationType::None);
+            }
+        }
+    }
 
     if(!QcSchemaValidator::hasErrors()) {
 
@@ -129,11 +142,7 @@ void QcGenerator::generate() {
             return;
         }
 
-        tmr.reset();
-        QcFileGenerator::generateProject(dir, schema);
-        elapsed += tmr.elapsed();
-
-        ui->logBrowser->append("Generation time: " + QString::number(elapsed));
+        QcFileGenerator::generateProject(dir, *schema);
 
         QMessageBox::information(this,"Generation","Generating completed.");
     } else {

@@ -18,18 +18,18 @@ QcMetaTable QcSchema::getTable(QString tableName) {
 
     for(int i=0;i<schema.size();i++) {
         if(schema.at(i).getName().compare(tableName) == 0) {
-            return schema.at(i);
+            return schema[i];
         }
     }
 
     return QcMetaTable("");
 }
 
-QList<QcMetaTable> QcSchema::getSchema()const {
+QList<QcMetaTable> &QcSchema::getSchema() {
     return schema;
 }
 
-QDebug operator<<(QDebug os, const QcSchema &obj) {
+QDebug operator<<(QDebug os, QcSchema &obj) {
     os << obj.getSchema();
     return os;
 }

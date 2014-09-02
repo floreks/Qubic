@@ -195,6 +195,9 @@
     </widget>
     <addaction name="menuLoad"/>
     <addaction name="actionConnect"/>
+    <addaction name="separator"/>
+    <addaction name="actionSetRelations"/>
+    <addaction name="separator"/>
     <addaction name="actionGenerate"/>
    </widget>
    <addaction name="menuMenu"/>
@@ -218,6 +221,14 @@
   <action name="actionGenerate">
    <property name="text">
     <string>Generate</string>
+   </property>
+  </action>
+  <action name="actionSetRelations">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>Set Relations</string>
    </property>
   </action>
  </widget>

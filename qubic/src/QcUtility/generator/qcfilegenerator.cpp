@@ -271,11 +271,14 @@ QcFunction QcFileGenerator::getPointerFunction(QcMetaTable &table) {
 }
 
 QcFunction QcFileGenerator::getRelationFunction(QcMetaTable &table) {
+    logger = QcLogger::getInstance();
     QcFunction func(table.getRelatedTable()->getName(),table.getName());
 
     if(table.getRelationType() == RelationType::OneToMany) {
+        logger->debug("File generator - building One To Many relation function");
         func.setType(FunctionType::OTM);
     } else {
+        logger->debug("File generator - building Many To Many relation function");
         func.setType(FunctionType::MTM);
         func.addParameter("",table.getJointTable()->getName());
     }

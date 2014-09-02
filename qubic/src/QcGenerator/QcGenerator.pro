@@ -15,12 +15,15 @@ TEMPLATE = app
 
 
 SOURCES += main.cpp\
-        qcgenerator.cpp
+        qcgenerator.cpp \
+    relationwidget.cpp
 
 HEADERS  += qcgenerator.h \
-    timer.h
+    timer.h \
+    relationwidget.h
 
-FORMS    += qcgenerator.ui
+FORMS    += qcgenerator.ui \
+    relationwidget.ui
 
 INCLUDEPATH += $$PWD/../QcUtility
 
