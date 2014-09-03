@@ -1,5 +1,3 @@
-// ===================== SLOTS ===================== //
-
 void QcGenerator::loadDBProperty() {
     QFileInfo propertyFile(QC_PROPERTIES_DIR + QDir::separator() + QC_PROPERTIES_FILE);
     if(!propertyFile.exists()) {
@@ -16,16 +14,8 @@ void QcGenerator::loadDBProperty() {
         return;
     }
 
-    ui->usernameEdit->setText(properties->getProperty("username"));
-    ui->passwordEdit->setText(properties->getProperty("password"));
+...
 
-    ui->dbNameEdit->setText(properties->getProperty("database","name"));
-
-    ui->dbHostEdit->setText(properties->getProperty("host","address"));
-    ui->dbPortEdit->setText(properties->getProperty("host","port"));
-
-    QMessageBox::information(this,"Validation successfull", "Properties and schema validated successfully.");
-    ui->actionConnect->setEnabled(true);
 }
 
 void QcGenerator::loadMappingProperty() {
@@ -56,10 +46,18 @@ void QcGenerator::connectToDB() {
     }
 
     QMessageBox::information(this,"Database","Successfully connected to database.");
+    ui->actionSetRelations->setEnabled(true);
 }
 
 void QcGenerator::generate() {
-    QcSchema schema = QcSchemaGenerator::getSchema(mapping);
+    if(schema == NULL) {
+        schema = new QcSchema(QcSchemaGenerator::getSchema(mapping));
+        for(QcMetaTable &table : schema->getSchema()) {
+            if(table.getRelationType() == RelationType::ManyToMany) {
+                table.setRelationType(RelationType::None);
+            }
+        }
+    }
 
     if(!QcSchemaValidator::hasErrors()) {
 
@@ -69,8 +67,12 @@ void QcGenerator::generate() {
 
         QString dir = QFileDialog::getExistingDirectory(this,tr("Open directory"),"",QFileDialog::ShowDirsOnly | QFileDialog::DontResolveSymlinks);
 
-        QcFileGenerator::generateHeaders(dir,schema);
-        QcFileGenerator::generateCPPs(dir,schema);
+        if(dir == NULL) {
+            QMessageBox::critical(this,"Error", "Cancel clicked. Aborting.");
+            return;
+        }
+
+        QcFileGenerator::generateProject(dir, *schema);
 
         QMessageBox::information(this,"Generation","Generating completed.");
     } else {

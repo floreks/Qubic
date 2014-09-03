@@ -1,9 +1,3 @@
-#ifndef QCMETAFIELD_H
-#define QCMETAFIELD_H
-
-#include <QString>
-#include <QMetaType>
-
 class QcMetaField
 {
 private:

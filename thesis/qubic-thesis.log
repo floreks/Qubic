@@ -1,7 +1,7 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.6.14)  18 AUG 2014 21:48
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.6.14)  2 SEP 2014 20:50
 entering extended mode
 **qubic-thesis.tex
-(E:\Dropbox\Private\Qubic\thesis\qubic-thesis.tex
+(E:\Projects\Qubic\thesis\qubic-thesis.tex
 LaTeX2e <2011/06/27>
 Babel <v3.8m> and hyphenation patterns for english, afrikaans, ancientgreek, ar
 abic, armenian, assamese, basque, bengali, bokmal, bulgarian, catalan, coptic, 
@@ -507,11 +507,32 @@ Package caption3 Info: TeX engine: e-TeX on input line 57.
 Package caption Info: listings package is loaded.
 Package caption Info: wrapfig package is loaded.
 )
-\c@definition=\count111
-\c@example=\count112
-\c@corollary=\count113
+(E:\MiKTeX\tex\generic\babel\babel.sty
+Package: babel 2008/07/08 v3.8m The Babel package
 
-(E:\Dropbox\Private\Qubic\thesis\qubic-thesis.aux)
+*************************************
+* Local config file bblopts.cfg used
+*
+(E:\MiKTeX\tex\latex\00miktex\bblopts.cfg
+File: bblopts.cfg 2006/07/31 v1.0 MiKTeX 'babel' configuration
+)
+(E:\MiKTeX\tex\generic\babel\polish.ldf
+Language: polish 2005/03/31 v1.2l Polish support from the babel system
+ (E:\MiKTeX\tex\generic\babel\babel.def
+File: babel.def 2008/07/08 v3.8m Babel common definitions
+\babel@savecnt=\count111
+\U@D=\dimen131
+)
+Package babel Info: Making " an active character on input line 83.
+\pl@left=\dimen132
+\pl@down=\dimen133
+\pl@right=\dimen134
+\pl@temp=\dimen135
+))
+\c@definition=\count112
+\c@example=\count113
+\c@corollary=\count114
+ (E:\Projects\Qubic\thesis\qubic-thesis.aux)
 LaTeX Font Info:    Checking defaults for OML/txmi/m/it on input line 48.
 LaTeX Font Info:    Try loading font information for OML+txmi on input line 48.
 
@@ -554,19 +575,19 @@ File: t1txr.fd 2000/12/15 v3.1
 )
 (C:\Users\GiBSoN\AppData\Roaming\MiKTeX\2.9\tex\context\base\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count114
-\scratchdimen=\dimen131
+\scratchcounter=\count115
+\scratchdimen=\dimen136
 \scratchbox=\box31
-\nofMPsegments=\count115
-\nofMParguments=\count116
+\nofMPsegments=\count116
+\nofMParguments=\count117
 \everyMPshowfont=\toks24
-\MPscratchCnt=\count117
-\MPscratchDim=\dimen132
-\MPnumerator=\count118
-\makeMPintoPDFobject=\count119
+\MPscratchCnt=\count118
+\MPscratchDim=\dimen137
+\MPnumerator=\count119
+\makeMPintoPDFobject=\count120
 \everyMPtoPDFconversion=\toks25
 )
-\c@lstlisting=\count120
+\c@lstlisting=\count121
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
  <images/logo.png, id=1, 115.632pt x 153.2124pt>
@@ -601,17 +622,17 @@ File: utxsyc.fd 2000/12/15 v3.1
 )
 [1{C:/Users/GiBSoN/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}
 
- <E:/Dropbox/Private/Qubic/thesis/images/logo.png>]
-(E:\Dropbox\Private\Qubic\thesis\qubic-thesis.toc
-Overfull \hbox (6.27747pt too wide) in paragraph at lines 4--4
- [][] []\T1/txr/m/n/12 Przybli»enie istniej[]cych ap-likacji szkiele-towych z d
-ziedziny 
+ <E:/Projects/Qubic/thesis/images/logo.png>] (E:\Projects\Qubic\thesis\qubic-th
+esis.toc
+Overfull \hbox (6.27747pt too wide) in paragraph at lines 5--5
+ [][] []\T1/txr/m/n/12 Przybli»enie istniej[]cych apli-ka-cji szkie-le-to-wych 
+z dzie-dziny 
  []
 
 
-Overfull \hbox (19.5494pt too wide) in paragraph at lines 25--25
- [] []\T1/txr/bx/n/12 Analiza istniej[]cych ap-likacji do gen-erowa-nia opisu m
-apowa-nia obiektowo- 
+Overfull \hbox (19.5494pt too wide) in paragraph at lines 26--26
+ [] []\T1/txr/bx/n/12 Analiza istniej[]cych apli-ka-cji do ge-ne-ro-wa-nia opis
+u ma-po-wa-nia obiektowo- 
  []
 
 [2
@@ -620,103 +641,37 @@ apowa-nia obiektowo-
 ])
 \tf@toc=\write3
  [3]
-Rozdzia\IeC {\l } 1.
+Rozdzia\l  1.
 
 Overfull \hbox (12.28625pt too wide) in paragraph at lines 84--121
-[]\T1/txr/m/n/12 Narz[]dzia czy ap-likacje szkiele-towe sªu»[]ce do mapowa-nia 
-obiektowo-relacyjnego
+[]\T1/txr/m/n/12 Narz[]dzia czy apli-ka-cje szkie-le-towe sªu»[]ce do ma-po-wa-
+nia obiektowo-relacyjnego
  []
 
 
-Overfull \hbox (0.81744pt too wide) in paragraph at lines 84--121
-[] \T1/txr/m/n/12 u»y-wane przez pro-gramistów musz[] by¢ za-zwyczaj dopa-sowyw
-ane do ich potrzeb.
- []
-
-
-Overfull \hbox (12.44545pt too wide) in paragraph at lines 84--121
-\T1/txr/m/n/12 relacyjnego mo»na znale¹¢ pewne wzorce i pro-gramy sªu»[]ce do g
-en-erowa-nia warstwy
- []
-
-
-Overfull \hbox (31.02144pt too wide) in paragraph at lines 84--121
-\T1/txr/m/n/12 tego typu narz[]dzi bardziej sku-pia si[] na rozwi[]zaniu konkre
-t-nych prob-lemów zwi[]zanych
- []
-
-
-Overfull \hbox (9.96146pt too wide) in paragraph at lines 84--121
-\T1/txr/m/n/12 deweloperom na prace z konkret-nymi obiek-tami, bez prak-ty-czne
-j zna-jo-mo±ci j[]zyków
- []
-
-
-Overfull \hbox (35.59341pt too wide) in paragraph at lines 84--121
-\T1/txr/m/n/12 mod-uªów. Moduª gen-er-a-tora opisu mapowa-nia obiektowo-relacyj
-nego b[]dzie udost[]pniony
- []
-
-
-Overfull \hbox (16.09273pt too wide) in paragraph at lines 84--121
-\T1/txr/m/n/12 by¢ u»y-wane nieza-le»nie. W niniejszej pracy zostanie przed-sta
-w-iony moduª generuj[]cy
- []
-
-
-Overfull \hbox (12.49342pt too wide) in paragraph at lines 84--121
-\T1/txr/m/n/12 rozwi[]zaniem prob-lemu gen-erowa-nia opisu mapowa-nia obiektowo
--relacyjnego. Drugi
+Overfull \hbox (23.01743pt too wide) in paragraph at lines 84--121
+\T1/txr/m/n/12 wraz z teo-re-tycz-nym rozwi[]zaniem pro-blemu ge-ne-ro-wa-nia o
+pisu ma-po-wa-nia obiektowo-
  []
 
 [4
 
 ]
 Overfull \hbox (10.3761pt too wide) in paragraph at lines 123--123
-[]\T1/txr/bx/n/14.4 Przybli»enie istniej[]cych ap-likacji szkiele-towych z dzie
-dziny
- []
-
-
-Overfull \hbox (10.02142pt too wide) in paragraph at lines 124--126
-\T1/txr/m/n/12 Speªnienie tego celu wi[]»e si[] z poz-naniem prob-lematyki gen-
-erowa-nia opisu mapowa-
- []
-
-
-Overfull \hbox (23.72545pt too wide) in paragraph at lines 124--126
-\T1/txr/m/n/12 erowa-nia warstwy danych ap-likacji. Nale»y zdefin-iowa¢ oraz za
--pro-ponowa¢ rozwi[]zanie
- []
-
-
-Overfull \hbox (16.45345pt too wide) in paragraph at lines 124--126
-\T1/txr/m/n/12 prob-lemu gen-erowa-nia warstwy danych ap-likacji, a nast[]pnie 
-przeanal-i-zowa¢ istniej[]ce
- []
-
-
-Overfull \hbox (3.86543pt too wide) in paragraph at lines 124--126
-\T1/txr/m/n/12 ap-likacje sªu»[]ce do mapowa-nia obiektowo-relacyjnego oferuj[]
-ce funkcj[] gen-erowa-
+[]\T1/txr/bx/n/14.4 Przybli»enie istniej[]cych apli-ka-cji szkie-le-to-wych z d
+zie-dziny
  []
 
 [5]
-Overfull \hbox (5.88144pt too wide) in paragraph at lines 127--128
-\T1/txr/m/n/12 Po rozpoz-na-niu prob-lematyki tem-atu i za-pro-ponowa-niu wªas-
-nego rozwi[]zania nale»y
+Overfull \hbox (6.39746pt too wide) in paragraph at lines 127--128
+\T1/txr/m/n/12 kretne ¹ró-dªa wraz z istniej[]cymi rozwi[]zaniami ar-chi-tek-to
+-nicz-nymi, które nawi[]zuj[]
  []
 
 
-Overfull \hbox (18.7334pt too wide) in paragraph at lines 127--128
-\T1/txr/m/n/12 gen-erowa-nia opisu mapowa-nia obiektowo-relacyjnego. Kole-jnym 
-krok-iem jest stworze-
- []
+Overfull \hbox (2.02417pt too wide) in paragraph at lines 128--128
+\T1/txr/bx/n/14.4 cjami szkie-le-to-wymi w j[]zyku C++ oraz w in-nych j[]zykach
 
-
-Overfull \hbox (4.81772pt too wide) in paragraph at lines 128--128
-[]\T1/txr/bx/n/14.4 Porównanie stwor-zonej ap-likacji z ju» istniej[]cymi ap-li
-kac-
  []
 
 
@@ -724,16 +679,10 @@ Underfull \hbox (badness 10000) in paragraph at lines 133--137
 
  []
 
-
-Overfull \hbox (2.82011pt too wide) in paragraph at lines 133--137
-\T1/txr/m/n/12 atyki gen-erowa-nia opisu mapowa-nia obiektowo-relacyjnego, wi[]
-kszo±¢ ¹ródeª
- []
-
-
+[6]
 Overfull \hbox (33.5281pt too wide) in paragraph at lines 137--140
-[]\T1/txr/m/n/12 Analiza wyma-ga« ap-likacji szkiele-towych generuj[]cych opis 
-mapowa-nia obiektowo-
+[]\T1/txr/m/n/12 Analiza wy-ma-ga« apli-ka-cji szkie-le-to-wych generuj[]cych o
+pis ma-po-wa-nia obiektowo-
  []
 
 
@@ -743,37 +692,19 @@ Underfull \hbox (badness 10000) in paragraph at lines 137--140
 
 
 Overfull \hbox (16.32011pt too wide) in paragraph at lines 137--140
-\T1/txr/m/n/12 Narz[]dzia zajmuj[]ce si[] gen-erowaniem opisu mapowa-nia obiekt
-owo-relacyjnego
+\T1/txr/m/n/12 Narz[]dzia zajmuj[]ce si[] ge-ne-ro-wa-niem opisu ma-po-wa-nia o
+biektowo-relacyjnego
  []
 
 
-Overfull \hbox (5.14812pt too wide) in paragraph at lines 137--140
-\T1/txr/m/n/12 Podob-nie jest i w tym przy-padku gdzie wyma-gania gen-er-a-tora
- opisu s[] postaw-
- []
-
-
-Overfull \hbox (30.8281pt too wide) in paragraph at lines 137--140
-\T1/txr/m/n/12 ione przez drugi moduª ap-likacji zajmuj[]cy si[] mapowaniem obi
-ektowo-relacyjnym. 
- []
-
-[6]
 Underfull \hbox (badness 10000) in paragraph at lines 140--142
 
  []
 
 
 Overfull \hbox (9.57542pt too wide) in paragraph at lines 140--142
-\T1/txr/m/n/12 W opar-ciu o ze-brane in-for-ma-cje i wyma-gania ap-likacji szki
-ele-towych sªu»[]cych
- []
-
-
-Overfull \hbox (15.08412pt too wide) in paragraph at lines 140--142
-\T1/txr/m/n/12 ap-likacja szkiele-towa maj[]ca na celu rozwi[]zanie prob-lemów 
-zi-den-ty-fikowanych
+\T1/txr/m/n/12 W opar-ciu o ze-brane in-for-ma-cje i wy-ma-ga-nia apli-ka-cji s
+zkie-le-to-wych sªu»[]cych
  []
 
 
@@ -783,63 +714,27 @@ Underfull \hbox (badness 10000) in paragraph at lines 142--144
 
 
 Overfull \hbox (8.65215pt too wide) in paragraph at lines 142--144
-\T1/txr/m/n/12 wyci[]gni[]te zostan[] odpowied-nie wnioski na temat sposobu roz
-wi[]zania przed-
+\T1/txr/m/n/12 wyci[]gni[]te zostan[] od-po-wied-nie wnio-ski na te-mat spo-sob
+u rozwi[]zania przed-
  []
 
-
-Overfull \hbox (3.55215pt too wide) in paragraph at lines 142--144
-\T1/txr/m/n/12 czy pro-ponowane rozwi[]zanie jest lep-sze, ta«sze, szyb-sze od 
-porówny-wanych. 
- []
-
-[7]
-Overfull \hbox (1.42943pt too wide) in paragraph at lines 164--175
-\T1/txr/m/n/12 Zna-j-duje si[] tam opis warstwy dost[]pu do danych, która musi 
-zosta¢ wygen-erowana.
- []
-
-
-Overfull \hbox (39.26544pt too wide) in paragraph at lines 164--175
-\T1/txr/m/n/12 Nast[]pnie po kolei przed-staw-ione zostaj[] tem-atyki zwi[]zane
- z bazami danych, mapowaniem
- []
-
-
-Overfull \hbox (5.84543pt too wide) in paragraph at lines 164--175
-\T1/txr/m/n/12 Kolejny rozdziaª opisuje faz[] pro-jek-towa-nia i im-ple-men-tac
-ji ap-likacji Qubic. Spisane
- []
-
-[8] [9]
-Rozdzia\IeC {\l } 2.
-
-Overfull \hbox (21.12146pt too wide) in paragraph at lines 178--179
-\T1/txr/m/n/12 danych, ap-likac-jami z za-kresu ORM, wzor-cami pro-jek-towymi, 
-ap-likac-jami zajmuj[]cymi
- []
-
+[7] [8] [9]
+Rozdzia\l  2.
 [10
 
 ]
-Overfull \hbox (9.34947pt too wide) in paragraph at lines 183--184
-\T1/txr/m/n/12 Pro-ces ten za-zwyczaj ma na celu zdefin-iowanie poª[]cze« mi[]d
-zy tabelami, a nast[]pnie
+Overfull \hbox (6.2174pt too wide) in paragraph at lines 186--187
+\T1/txr/m/n/12 one na pod-sta-wie me-ta-da-nych opisuj[]cych to od-wzo-ro-wa-ni
+e. Ma-po-wa-nie obiektowo-
  []
 
-
-Overfull \hbox (18.49341pt too wide) in paragraph at lines 187--188
-\T1/txr/m/n/12 s[] one na pod-stawie metadanych opisuj[]cych to odw-zorowanie. 
-Mapowanie obiektowo-
- []
-
-LaTeX Font Info:    Try loading font information for OMS+txr on input line 189.
+LaTeX Font Info:    Try loading font information for OMS+txr on input line 188.
 
 (C:\Users\GiBSoN\AppData\Roaming\MiKTeX\2.9\tex\latex\txfonts\omstxr.fd
 File: omstxr.fd 2000/12/15 v3.1
 )
 LaTeX Font Info:    Font shape `OMS/txr/m/n' in size <12> not available
-(Font)              Font shape `OMS/txsy/m/n' tried instead on input line 189.
+(Font)              Font shape `OMS/txsy/m/n' tried instead on input line 188.
 
 Overfull \hbox (77.50581pt too wide) has occurred while \output is active
 \T1/txr/m/sl/12 ROZDZIAŠ 2.  GENERATOR OPISU MAPOWANIA OBIEKTOWO-RELACYJNEGO W 
@@ -849,18 +744,12 @@ C++ \T1/txr/m/n/12 11
 [11] <images/orm.png, id=44, 413.29407pt x 114.4275pt>
 File: images/orm.png Graphic file (type png)
  <use images/orm.png>
-Package pdftex.def Info: images/orm.png used on input line 197.
+Package pdftex.def Info: images/orm.png used on input line 196.
 (pdftex.def)             Requested size: 398.33858pt x 110.28914pt.
 
-Underfull \hbox (badness 1596) in paragraph at lines 198--198
-[]\T1/txr/m/n/12 Rys. 2.1: |Up-roszc-zony prze-bieg gen-erowa-nia opisu mapowa-
-nia obiektowo-
- []
-
-
-Overfull \hbox (1.66815pt too wide) in paragraph at lines 208--209
-[]\T1/txr/m/n/12 Wzorce czyn-no±-ciowe - opisuj[]ce za-chowanie i powi[]zania w
-spóªpracuj[]cych
+Overfull \hbox (1.66815pt too wide) in paragraph at lines 207--208
+[]\T1/txr/m/n/12 Wzorce czyn-no-±ciowe - opisuj[]ce za-cho-wa-nie i powi[]zania
+ wspóªpracuj[]cych
  []
 
 
@@ -869,35 +758,40 @@ Overfull \hbox (77.50581pt too wide) has occurred while \output is active
 C++ \T1/txr/m/n/12 12
  []
 
-[12 <E:/Dropbox/Private/Qubic/thesis/images/orm.png>]
-<images/mvc.jpg, id=50, 321.2pt x 321.2pt>
-File: images/mvc.jpg Graphic file (type jpg)
- <use images/mvc.jpg>
-Package pdftex.def Info: images/mvc.jpg used on input line 220.
-(pdftex.def)             Requested size: 239.00557pt x 239.01248pt.
+[12 <E:/Projects/Qubic/thesis/images/orm.png>]
+<images/mvc.png, id=50, 301.8778pt x 204.01219pt>
+File: images/mvc.png Graphic file (type png)
+ <use images/mvc.png>
+Package pdftex.def Info: images/mvc.png used on input line 219.
+(pdftex.def)             Requested size: 239.00557pt x 161.52274pt.
 
-<images/dao.jpg, id=51, 425.59pt x 168.63pt>
-File: images/dao.jpg Graphic file (type jpg)
- <use images/dao.jpg>
-Package pdftex.def Info: images/dao.jpg used on input line 229.
-(pdftex.def)             Requested size: 318.67207pt x 126.27405pt.
+<images/dao.png, id=51, 517.18219pt x 150.5625pt>
+File: images/dao.png Graphic file (type png)
+ <use images/dao.png>
+Package pdftex.def Info: images/dao.png used on input line 228.
+(pdftex.def)             Requested size: 378.42043pt x 110.1693pt.
+
+
+LaTeX Warning: Citation `daoimg' on page 13 undefined on input line 229.
+
+
+LaTeX Warning: Citation `daoimg' on page 13 undefined on input line 229.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
 
 Overfull \hbox (77.50581pt too wide) has occurred while \output is active
 \T1/txr/m/sl/12 ROZDZIAŠ 2.  GENERATOR OPISU MAPOWANIA OBIEKTOWO-RELACYJNEGO W 
 C++ \T1/txr/m/n/12 13
  []
 
-[13 <E:/Dropbox/Private/Qubic/thesis/images/mvc.jpg>]
+[13 <E:/Projects/Qubic/thesis/images/mvc.png>]
 <images/dll.png, id=56, 551.81157pt x 411.78844pt>
 File: images/dll.png Graphic file (type png)
  <use images/dll.png>
-Package pdftex.def Info: images/dll.png used on input line 244.
+Package pdftex.def Info: images/dll.png used on input line 243.
 (pdftex.def)             Requested size: 278.83578pt x 208.0866pt.
-
-Overfull \hbox (1.32146pt too wide) in paragraph at lines 241--247
-\T1/txr/m/n/12 ces który za-ªaduje taka bibliotek[] do wªas-nej pami[]ci pro-ce
-su je-dynie ma-puje adresy
- []
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
@@ -908,10 +802,10 @@ Overfull \hbox (77.50581pt too wide) has occurred while \output is active
 C++ \T1/txr/m/n/12 14
  []
 
-[14 <E:/Dropbox/Private/Qubic/thesis/images/dao.jpg>]
-Overfull \hbox (5.90413pt too wide) in paragraph at lines 252--253
-[]\T1/txr/m/n/12 Wsparcie dla bu-dowa-nia in-ter-fe-jsu u»ytkown-ika przy u»y-c
-iu ró»nych narz[]dzie 
+[14 <E:/Projects/Qubic/thesis/images/dao.png>]
+Overfull \hbox (5.90413pt too wide) in paragraph at lines 251--252
+[]\T1/txr/m/n/12 Wsparcie dla bu-do-wa-nia in-ter-fejsu u»yt-kow-nika przy u»y-
+ciu ró»-nych narz[]dzie 
  []
 
 
@@ -920,295 +814,180 @@ Overfull \hbox (77.50581pt too wide) has occurred while \output is active
 C++ \T1/txr/m/n/12 15
  []
 
-[15 <E:/Dropbox/Private/Qubic/thesis/images/dll.png>]
-Rozdzia\IeC {\l } 3.
+[15 <E:/Projects/Qubic/thesis/images/dll.png>]
+Rozdzia\l  3.
 
-Overfull \hbox (8.07668pt too wide) in paragraph at lines 260--261
-\T1/txr/m/n/12 W j[]zyku C++ brak jest podob-nych ap-likacji zajmuj[]cych sie g
-en-erowaniem warstwy
+Overfull \hbox (7.9687pt too wide) in paragraph at lines 259--260
+\T1/txr/m/n/12 obiektowo-relacyjnym jed-nak bez funk-cjo-nal-no-±ci ge-ne-ro-wa
+-nia jego opisu. W j[]zyku
  []
 
 
-Overfull \hbox (10.62143pt too wide) in paragraph at lines 260--261
-\T1/txr/m/n/12 dost[]pu do danych ap-likacji. Istniej[] ap-likacje zajmuj[]ce s
-i[] mapowaniem obiektowo-
- []
-
-
-Overfull \hbox (11.79744pt too wide) in paragraph at lines 262--265
-\T1/txr/m/n/12 ce« wywoªuj[]c odpowiedni[] klas[]. Je-dynym wymo-giem oprócz po
-si-ada-nia odpowied-
+Overfull \hbox (22.1294pt too wide) in paragraph at lines 259--260
+\T1/txr/m/n/12 Java ist-nieje kilka apli-ka-cji zajmuj[]cych si[] ge-ne-ro-wa-n
+iem opisu ma-po-wa-nia obiektowo-
  []
 
 [16
 
 ]
-Overfull \hbox (0.8641pt too wide) in paragraph at lines 269--270
-[]\T1/txr/m/n/12 Ze wzgl[]du na budow[] mod-elu warstwy danych ap-likacji wymag
-a du»ej ilo±ci
- []
-
-
 Overfull \hbox (279.05641pt too wide) has occurred while \output is active
 \T1/txr/m/sl/12 ROZDZIAŠ 3.  ANALIZA ISTNIEJ[]CYCH APLIKACJI DO GENEROWANIA OPI
 SU MAPOWANIA OBIEKTOWO-RELACYJNEGO \T1/txr/m/n/12 17
  []
 
 [17]
-Rozdzia\IeC {\l } 4.
-<images/c++test.png, id=70, 458.46281pt x 277.035pt>
+Rozdzia\l  4.
+[18
+
+] [19] <images/c++test.png, id=77, 458.46281pt x 277.035pt>
 File: images/c++test.png Graphic file (type png)
- <use images/c++test.png>
-Package pdftex.def Info: images/c++test.png used on input line 289.
+
+<use images/c++test.png>
+Package pdftex.def Info: images/c++test.png used on input line 314.
 (pdftex.def)             Requested size: 438.17487pt x 264.78809pt.
 
-Overfull \hbox (39.83629pt too wide) in paragraph at lines 289--290
+Overfull \hbox (39.83629pt too wide) in paragraph at lines 314--315
  [][] 
  []
+
+[20 <E:/Projects/Qubic/thesis/images/c++test.png>]
+Overfull \hbox (2.5694pt too wide) in paragraph at lines 324--325
+\T1/txr/m/n/12 ator jest zin-te-gro-wany z ze-sta-wem bi-blio-tek u»y-tego fra-
+me-worka i udost[]pnia wspar-
+ []
+
+<images/git.png, id=82, 777.65532pt x 629.35126pt>
+File: images/git.png Graphic file (type png)
+ <use images/git.png>
+Package pdftex.def Info: images/git.png used on input line 332.
+(pdftex.def)             Requested size: 358.50227pt x 290.13889pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[18
-
-]
-Overfull \hbox (7.32144pt too wide) in paragraph at lines 301--302
-\T1/txr/m/n/12 U»yty zestaw bib-liotek nale»y do frame-worka Qt. Udost[]pnia on
- bib-lioteki przeno±ne
- []
-
-
-Overfull \hbox (10.51341pt too wide) in paragraph at lines 301--302
-\T1/txr/m/n/12 i narz[]dzia pro-gramisty-czne dedykowane dla j[]zyków C++, Java
- czy QML. Gªównym
- []
-
-
-Overfull \hbox (5.64912pt too wide) has occurred while \output is active
-\T1/txr/m/sl/12 ROZDZIAŠ 4.  TECHNOLOGIE I METODY U›YTE W CZ[]‘CI BADAWCZEJ \T1
-/txr/m/n/12 19
- []
-
-[19 <E:/Dropbox/Private/Qubic/thesis/images/c++test.png>]
-Overfull \hbox (7.83739pt too wide) in paragraph at lines 303--304
-\T1/txr/m/n/12 troli wer-sji o nazwie GIT. Pozwalaªo to kon-trolowa¢ caªy pro-c
-es pow-stawa-nia Qubica.
- []
-
-<images/git.png, id=79, 777.65532pt x 629.35126pt>
-File: images/git.png Graphic file (type png)
- <use images/git.png>
-Package pdftex.def Info: images/git.png used on input line 307.
-(pdftex.def)             Requested size: 358.50227pt x 290.13889pt.
-
-Overfull \hbox (5.64912pt too wide) has occurred while \output is active
-\T1/txr/m/sl/12 ROZDZIAŠ 4.  TECHNOLOGIE I METODY U›YTE W CZ[]‘CI BADAWCZEJ \T1
-/txr/m/n/12 20
- []
-
-[20 <E:/Dropbox/Private/Qubic/thesis/images/git.png>]
-Rozdzia\IeC {\l } 5.
-
-Overfull \hbox (2.07674pt too wide) in paragraph at lines 315--316
-\T1/txr/m/n/12 likacji Qubic. W pier-wszej cz[]±ci s[] zdefin-iowane wyma-gania
- ap-likacji oraz opisane
- []
-
-
-Overfull \hbox (7.70544pt too wide) in paragraph at lines 315--316
-\T1/txr/m/n/12 tech-nolo-gie i metodolo-gie u»yte w pro-jek-cie z podzi-aªem na
- warstwy mod-elu, widoku
- []
-
-
-Overfull \hbox (1.9094pt too wide) in paragraph at lines 319--320
-\T1/txr/m/n/12 Ze wzgl[]du na budow[] wªas-nego sys-temu mapowa-nia obiektowo-r
-elacyjnego moduª
- []
-
-[21
-
-]
-Overfull \hbox (23.43742pt too wide) in paragraph at lines 331--332
-\T1/txr/m/n/12 mapowanie obiektowo-relacyjnym na baz[] danych zostaªy naªo»one 
-pewne ograniczenia: 
- []
-
-
-Overfull \hbox (0.45746pt too wide) in paragraph at lines 337--338
-\T1/txr/m/n/12 Równie» bª[]dne wskazanie relacji w tabelach mo»e wi[]za¢ si[] z
- bª[]dami log-icznymi
- []
-
-[22]
+[21]
 (C:\Users\GiBSoN\AppData\Roaming\MiKTeX\2.9\tex\latex\listings\lstlang1.sty
 File: lstlang1.sty 2014/03/04 1.5c listings language file
 )
-(E:\Dropbox\Private\Qubic\thesis\additional/database.sql) [23]
-Overfull \hbox (8.95343pt too wide) in paragraph at lines 345--347
-\T1/txr/m/n/12 posi-ada¢ up-rawnienia do od-czytu in-for-ma-cji z tabel opisuj[
-]cych budow[] bazy danych.
- []
-
-
-Overfull \hbox (3.92545pt too wide) in paragraph at lines 348--349
-\T1/txr/m/n/12 Projektowana ap-likacja zostaªa oparta o wzorzec model-widok-kon
-troler, gdzie mod-
- []
-
+(E:\Projects\Qubic\thesis\additional/database.sql) [22 <E:/Projects/Qubic/thesi
+s/images/git.png>] [23]
 <images/QubicUseCase.png, id=92, 1058.95625pt x 751.80875pt>
 File: images/QubicUseCase.png Graphic file (type png)
 
 <use images/QubicUseCase.png>
-Package pdftex.def Info: images/QubicUseCase.png used on input line 352.
+Package pdftex.def Info: images/QubicUseCase.png used on input line 350.
 (pdftex.def)             Requested size: 597.50786pt x 424.19914pt.
 
-Overfull \hbox (25.86057pt too wide) in paragraph at lines 352--353
+Overfull \hbox (25.86057pt too wide) in paragraph at lines 350--351
  [][] 
  []
 
 
-LaTeX Warning: Float too large for page by 52.95273pt on input line 354.
+LaTeX Warning: Float too large for page by 52.95273pt on input line 352.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[24] [25 <E:/Dropbox/Private/Qubic/thesis/images/QubicUseCase.png>]
-Overfull \hbox (30.38548pt too wide) in paragraph at lines 357--359
-\T1/txr/m/n/12 nia, który na-jpierw od-czy-tuje dane z bazy i za-pisuje je do p
-ami[]ci, nast[]pnie przeprowadza
- []
-
+[24] [25 <E:/Projects/Qubic/thesis/images/QubicUseCase.png>]
 <images/Qubic.png, id=101, 1390.19376pt x 785.93625pt>
 File: images/Qubic.png Graphic file (type png)
  <use images/Qubic.png>
-Package pdftex.def Info: images/Qubic.png used on input line 362.
+Package pdftex.def Info: images/Qubic.png used on input line 360.
 (pdftex.def)             Requested size: 637.34415pt x 360.31183pt.
 
 
-LaTeX Warning: Float too large for page by 92.78902pt on input line 364.
+LaTeX Warning: Float too large for page by 92.78902pt on input line 362.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [26
 
-] [27 <E:/Dropbox/Private/Qubic/thesis/images/Qubic.png>]
-Overfull \hbox (3.51425pt too wide) in paragraph at lines 367--369
-[]\T1/txr/m/n/12 Paczka QcU-til-ity jest w is-to-cie bibliotek[] wspóªdzielon[]
- realizuj[]c[] gen-erowanie
- []
-
-
-Overfull \hbox (13.21342pt too wide) in paragraph at lines 367--369
-\T1/txr/m/n/12 opisu mapowa-nia obiektowo-relacyjnego. Moduª Qc-Gen-er-a-tor na
-to-mi-ast jest aplikacj[]
- []
-
-
-Overfull \hbox (5.18547pt too wide) in paragraph at lines 367--369
-\T1/txr/m/n/12 jest baza danych, której struk-tura zostaªa przed-staw-iona we w
-cze±niejszym rozdziale.
- []
-
-
-Overfull \hbox (2.77023pt too wide) in paragraph at lines 367--369
-[]\T1/txr/m/n/12 Moduª gªówny zajmuj[]cy si[] gen-erowaniem zostaª podzielony n
-a log-iczne cz[]±ci
+] [27 <E:/Projects/Qubic/thesis/images/Qubic.png>]
+Overfull \hbox (2.77023pt too wide) in paragraph at lines 365--367
+[]\T1/txr/m/n/12 Moduª gªówny zajmuj[]cy si[] ge-ne-ro-wa-niem zo-staª po-dzie-
+lony na lo-giczne cz[]±ci
  []
 
 <images/logger.png, id=109, 1258.7025pt x 723.70375pt>
 File: images/logger.png Graphic file (type png)
  <use images/logger.png>
-Package pdftex.def Info: images/logger.png used on input line 372.
-(pdftex.def)             Requested size: 378.42043pt x 217.5766pt.
+Package pdftex.def Info: images/logger.png used on input line 370.
+(pdftex.def)             Requested size: 637.34415pt x 366.4448pt.
+
+
+LaTeX Warning: Float too large for page by 92.78902pt on input line 372.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
 
 [28
 
- <E:/Dropbox/Private/Qubic/thesis/images/logger.png>]
-<images/properties.png, id=114, 787.94376pt x 661.47125pt>
+] [29 <E:/Projects/Qubic/thesis/images/logger.png>]
+<images/properties.png, id=117, 787.94376pt x 661.47125pt>
 File: images/properties.png Graphic file (type png)
 
 <use images/properties.png>
-Package pdftex.def Info: images/properties.png used on input line 381.
+Package pdftex.def Info: images/properties.png used on input line 379.
 (pdftex.def)             Requested size: 438.17487pt x 367.83751pt.
 
-Overfull \hbox (39.83629pt too wide) in paragraph at lines 381--382
+Overfull \hbox (39.83629pt too wide) in paragraph at lines 379--380
  [][] 
  []
 
-
-Overfull \hbox (24.49028pt too wide) in paragraph at lines 386--387
-[]\T1/txr/m/n/12 Wszelkie ustaw-ienia potrzebne do poª[]czenia z baz[] danych o
-raz do przeprowadzenia
- []
-
-
-Overfull \hbox (22.89743pt too wide) in paragraph at lines 386--387
-\T1/txr/m/n/12 pro-cesu mapowa-nia tabel na klasy s[] ob-sªugi-wane przez powy»
-szy moduª. Udost[]pniony
- []
-
-<images/database.png, id=115, 732.7375pt x 445.665pt>
+<images/database.png, id=118, 732.7375pt x 445.665pt>
 File: images/database.png Graphic file (type png)
 
 <use images/database.png>
-Package pdftex.def Info: images/database.png used on input line 390.
+Package pdftex.def Info: images/database.png used on input line 388.
 (pdftex.def)             Requested size: 438.17487pt x 266.51022pt.
 
-Overfull \hbox (39.83629pt too wide) in paragraph at lines 390--391
+Overfull \hbox (39.83629pt too wide) in paragraph at lines 388--389
  [][] 
  []
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[29 <E:/Dropbox/Private/Qubic/thesis/images/properties.png>]
-Overfull \hbox (16.76413pt too wide) in paragraph at lines 397--398
-[]\T1/txr/m/n/12 jest odpowiedzialny za ut-worze-nie poª[]czenia z baz[] danych
- i od-czyt metadanych
+[30
+
+ <E:/Projects/Qubic/thesis/images/properties.png>]
+Overfull \hbox (11.2907pt too wide) in paragraph at lines 406--407
+[]\T1/txr/m/n/12 Open Da-ta-base Con-nec-ti-vity (ODBC) - Mi-cro-soft SQL Se-rv
+er and other ODBC-
  []
 
-<images/schema.png, id=120, 1287.81125pt x 782.925pt>
+[31 <E:/Projects/Qubic/thesis/images/database.png>]
+<images/schema.png, id=128, 1287.81125pt x 782.925pt>
 File: images/schema.png Graphic file (type png)
  <use images/schema.png>
-Package pdftex.def Info: images/schema.png used on input line 403.
+Package pdftex.def Info: images/schema.png used on input line 416.
 (pdftex.def)             Requested size: 438.17487pt x 266.38213pt.
 
-Overfull \hbox (39.83629pt too wide) in paragraph at lines 403--404
+Overfull \hbox (39.83629pt too wide) in paragraph at lines 416--417
  [][] 
  []
 
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[30 <E:/Dropbox/Private/Qubic/thesis/images/database.png>]
-Overfull \hbox (24.51427pt too wide) in paragraph at lines 408--409
-[]\T1/txr/m/n/12 Powy»szy moduª jest najwa»niejsz[] cz[]±ci[] ap-likacji. Jego 
-zadaniem jest przetworze-
- []
-
-<images/generator.png, id=125, 1119.18124pt x 798.985pt>
+[32 <E:/Projects/Qubic/thesis/images/schema.png>]
+<images/generator.png, id=133, 1119.18124pt x 798.985pt>
 File: images/generator.png Graphic file (type png)
 
 <use images/generator.png>
-Package pdftex.def Info: images/generator.png used on input line 419.
+Package pdftex.def Info: images/generator.png used on input line 432.
 (pdftex.def)             Requested size: 438.17487pt x 312.80986pt.
 
-Overfull \hbox (39.83629pt too wide) in paragraph at lines 419--420
+Overfull \hbox (39.83629pt too wide) in paragraph at lines 432--433
  [][] 
  []
 
 
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[31 <E:/Dropbox/Private/Qubic/thesis/images/schema.png>]
-Overfull \hbox (22.1534pt too wide) in paragraph at lines 427--429
-\T1/txr/m/n/12 ze gªówny przepªyw danych przy gen-erowa-niu opisu mapowa-nia ob
-iektowo-relacyjnego.
+Overfull \hbox (22.1534pt too wide) in paragraph at lines 440--442
+\T1/txr/m/n/12 ze gªówny prze-pªyw da-nych przy ge-ne-ro-wa-niu opisu ma-po-wa-
+nia obiektowo-relacyjnego.
  []
 
-[32 <E:/Dropbox/Private/Qubic/thesis/images/generator.png>]
+[33 <E:/Projects/Qubic/thesis/images/generator.png>]
 (C:\Users\GiBSoN\AppData\Roaming\MiKTeX\2.9\tex\latex\listings\lstlang1.sty
 File: lstlang1.sty 2014/03/04 1.5c listings language file
 )
@@ -1218,82 +997,68 @@ File: lstlang1.sty 2014/03/04 1.5c listings language file
 (C:\Users\GiBSoN\AppData\Roaming\MiKTeX\2.9\tex\latex\listings\lstmisc.sty
 File: lstmisc.sty 2014/03/04 1.5c (Carsten Heinz)
 )
-(E:\Dropbox\Private\Qubic\thesis\additional/qcdatabase.h) [33]
-(E:\Dropbox\Private\Qubic\thesis\additional/databasedescriptor.h) [34]
-(E:\Dropbox\Private\Qubic\thesis\additional/mysqldescriptor.cpp) [35]
-Underfull \vbox (badness 10000) detected at line 444
+(E:\Projects\Qubic\thesis\additional/qcdatabase.h)
+LaTeX Font Info:    Try loading font information for T1+txtt on input line 447.
+
+
+(C:\Users\GiBSoN\AppData\Roaming\MiKTeX\2.9\tex\latex\txfonts\t1txtt.fd
+File: t1txtt.fd 2000/12/15 v3.1
+)
+[34] (E:\Projects\Qubic\thesis\additional/databasedescriptor.h)
+Overfull \hbox (5.5422pt too wide) in paragraph at lines 453--454
+[]\T1/txr/m/n/12 Kolejnym pro-ble-mem jest od-po-wied-nie ma-po-wa-nie ty-pów k
+o-lumn na typy j[]zyka
+ []
+
+[35] (E:\Projects\Qubic\thesis\additional/qcmetafield.h)
+(C:\Users\GiBSoN\AppData\Roaming\MiKTeX\2.9\tex\latex\listings\lstlang1.sty
+File: lstlang1.sty 2014/03/04 1.5c listings language file
+)
+(C:\Users\GiBSoN\AppData\Roaming\MiKTeX\2.9\tex\latex\listings\lstmisc.sty
+File: lstmisc.sty 2014/03/04 1.5c (Carsten Heinz)
+)
+Overfull \hbox (0.10605pt too wide) in paragraph at lines 465--466
+[]\T1/txr/m/n/12 Jedna z naj-wa»-niej-szych klas mo-duªu ge-ne-ra-tora to klasa
+ \T1/txtt/m/n/12 QcSchemaGenerator\T1/txr/m/n/12 ,
  []
 
 
-Underfull \vbox (badness 10000) detected at line 444
+Overfull \hbox (1.08144pt too wide) in paragraph at lines 465--466
+\T1/txr/m/n/12 która wy-ko-rzy-stuje wy-»ej opi-sane klasy w celu utwo-rze-nia 
+struk-tury bazy w pami[]ci
  []
 
-[36]
-Overfull \hbox (4.80147pt too wide) in paragraph at lines 446--447
-\T1/txr/m/n/12 b[]dzie ob-sªugi-wany przez aplikacj[] nale»y rozsz-erzy¢ t[] kl
-as[], do-da¢ wpis do funkcji
- []
-
-[37] (E:\Dropbox\Private\Qubic\thesis\additional/qcmetafield.h) [38]
-Overfull \hbox (13.57344pt too wide) in paragraph at lines 452--453
-\T1/txr/m/n/12 która za-j-muje si[] przetworze-niem in-for-ma-cji po-branych z 
-bazy danych na odpowiedni[]
+[36] (E:\Projects\Qubic\thesis\additional/qcschemagenerator.cpp)
+Overfull \hbox (19.26118pt too wide) in paragraph at lines 471--472
+\T1/txr/m/n/12 reprezentuj[] kon-kretne me-tody w kla-sie(\T1/txtt/m/n/12 QcFun
+ction\T1/txr/m/n/12 ), pliki ¹ró-dªowe(\T1/txtt/m/n/12 QcHeaderFile\T1/txr/m/n/
+12 )
  []
 
 
-Overfull \hbox (39.74545pt too wide) in paragraph at lines 452--453
-\T1/txr/m/n/12 struktur[] danych przechowywan[] w pami[]ci. Gªówna funkcja get-
-Ta-bles jest odpowiedzialna
+Overfull \hbox (19.57347pt too wide) in paragraph at lines 471--472
+\T1/txr/m/n/12 ro-wane s[] m.in. kon-struk-tory, funk-cje odczytuj[]ce i ustawi
+aj[]ce zmienne reprezentuj[]ce
  []
 
-(E:\Dropbox\Private\Qubic\thesis\additional/qcschemagenerator.cpp) [39]
-Underfull \vbox (badness 10000) detected at line 456
+[37] (E:\Projects\Qubic\thesis\additional/qcfilegenerator.h) [38]
+(E:\Projects\Qubic\thesis\additional/qcgenerator.cpp) [39]
+Underfull \vbox (badness 10000) detected at line 481
  []
 
 
-Underfull \vbox (badness 10000) detected at line 456
+Underfull \vbox (badness 10000) detected at line 481
  []
 
 [40]
-Underfull \vbox (badness 10000) detected at line 456
+Underfull \vbox (badness 10000) detected at line 481
  []
 
 
-Underfull \vbox (badness 10000) detected at line 456
+Underfull \vbox (badness 10000) detected at line 481
  []
 
-[41]
-Underfull \vbox (badness 10000) detected at line 456
- []
-
-
-Underfull \vbox (badness 10000) detected at line 456
- []
-
-[42]
-Overfull \hbox (22.72624pt too wide) in paragraph at lines 458--459
-[]\T1/txr/m/n/12 Na pod-stawie ut-wor-zonej struk-tury danych gen-erowane s[] p
-liki pro-jektu. Odpowiada
- []
-
-(E:\Dropbox\Private\Qubic\thesis\additional/qcfilegenerator.h) [43] [44]
-(E:\Dropbox\Private\Qubic\thesis\additional/qcgenerator.cpp) [45]
-Underfull \vbox (badness 10000) detected at line 468
- []
-
-
-Underfull \vbox (badness 10000) detected at line 468
- []
-
-[46]
-Underfull \vbox (badness 10000) detected at line 468
- []
-
-
-Underfull \vbox (badness 10000) detected at line 468
- []
-
-[47] (E:\Dropbox\Private\Qubic\thesis\additional/jooq.log
+[41] (E:\Projects\Qubic\thesis\additional/jooq.log
 Overfull \hbox (9.26537pt too wide) in paragraph at lines 2--3
 [][][][][][][][][][][][][][][][][][][][][] 
  []
@@ -1439,118 +1204,95 @@ Overfull \hbox (9.26537pt too wide) in paragraph at lines 39--40
  []
 
 )
-Underfull \hbox (badness 10000) in paragraph at lines 40--475
+Underfull \hbox (badness 10000) in paragraph at lines 40--488
 [][][][][][][][][][][]
  []
 
-[48] <images/qubic-gen.png, id=187, 401.24907pt x 374.90062pt>
+[42] <images/qubic-gen.png, id=169, 401.24907pt x 374.90062pt>
 File: images/qubic-gen.png Graphic file (type png)
 
 <use images/qubic-gen.png>
-Package pdftex.def Info: images/qubic-gen.png used on input line 480.
+Package pdftex.def Info: images/qubic-gen.png used on input line 493.
 (pdftex.def)             Requested size: 438.17487pt x 409.42873pt.
 
-Overfull \hbox (39.83629pt too wide) in paragraph at lines 480--481
+Overfull \hbox (39.83629pt too wide) in paragraph at lines 493--494
  [][] 
  []
 
-[49]
-Overfull \hbox (27.20541pt too wide) in paragraph at lines 498--514
-\T1/txr/m/n/12 Porównanie funkcjon-al-no±ci samego gen-er-a-tora opisu mapowa-n
-ia obiektowo-relacyjnego
+[43]
+Overfull \hbox (27.20541pt too wide) in paragraph at lines 511--527
+\T1/txr/m/n/12 Porównanie funk-cjo-nal-no-±ci sa-mego ge-ne-ra-tora opisu ma-po
+-wa-nia obiektowo-relacyjnego
  []
 
-[50 <E:/Dropbox/Private/Qubic/thesis/images/qubic-gen.png>] [51]
-Rozdzia\IeC {\l } 6.
+[44 <E:/Projects/Qubic/thesis/images/qubic-gen.png>] [45]
+Rozdzia\l  5.
+[46
 
-Overfull \hbox (1.48944pt too wide) in paragraph at lines 518--519
-\T1/txr/m/n/12 podobne ap-likacje. Do-datkowym atutem stwor-zonej ap-likacji je
-st ws-par-cie wi[]kszej
- []
-
-
-Overfull \hbox (3.92546pt too wide) in paragraph at lines 522--524
-\T1/txr/m/n/12 gramis-tom, których zadaniem jest stworze-nie bazy, a ªatwiejsze
- jest dla nich stworze-
- []
-
-[52
-
-] [53]
-Overfull \hbox (31.77226pt too wide) in paragraph at lines 533--534
+] [47]
+Overfull \hbox (31.77226pt too wide) in paragraph at lines 546--547
 []\T1/txr/m/n/12 http://msdn.microsoft.com/en-us/library/windows/desktop/ms6819
 14(v=vs.85).aspx
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 534--535
-[]\T1/txr/m/n/12 http://docs.jboss.org/hibernate/orm/4.3/manual/en-US/html/ - [
-dost[]p
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 538--539
+Underfull \hbox (badness 10000) in paragraph at lines 551--552
 []\T1/txr/m/n/12 http://www.oracle.com/technetwork/java/dataaccessobject-138824
 .html -
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 541--542
+Underfull \hbox (badness 10000) in paragraph at lines 554--555
 []\T1/txr/m/n/12 http://www.visual-paradigm.com/VPGallery/img/orm/Overview/ORM-
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 542--543
+Underfull \hbox (badness 10000) in paragraph at lines 555--556
 []\T1/txr/m/n/12 http://blog.famzah.net/2010/07/01/cpp-vs-python-vs-perl-vs-php
 -
  []
 
-[54
+[48
 
-]
-Underfull \hbox (badness 10000) in paragraph at lines 543--544
-[]\T1/txr/m/n/12 http://webroad.pl/wp-content/uploads/2012/12/images_old_mvs-sc
-hemat.jpg
- []
+] [49] (E:\Projects\Qubic\thesis\qubic-thesis.lof
 
+LaTeX Warning: Citation `daoimg' on page 50 undefined on input line 6.
 
-Overfull \hbox (36.26024pt too wide) in paragraph at lines 544--545
-[]\T1/txr/m/n/12 http://www.oracle.com/ocom/groups/public/@otn/documents/digita
-lasset/146804.jpg
- []
-
-[55] (E:\Dropbox\Private\Qubic\thesis\qubic-thesis.lof)
+)
 \tf@lof=\write4
- [56
+ [50
 
-]
-(E:\Dropbox\Private\Qubic\thesis\qubic-thesis.lot)
+] (E:\Projects\Qubic\thesis\qubic-thesis.lot)
 \tf@lot=\write5
- [57
+ [51
 
 ]
-(E:\Dropbox\Private\Qubic\thesis\qubic-thesis.aux) ) 
+(E:\Projects\Qubic\thesis\qubic-thesis.aux)
+
+LaTeX Warning: There were undefined references.
+
+ ) 
 Here is how much of TeX's memory you used:
- 6854 strings out of 493921
- 93088 string characters out of 3154497
- 432875 words of memory out of 3000000
- 9978 multiletter control sequences out of 15000+200000
- 61098 words of font info for 111 fonts, out of 3000000 for 9000
+ 7215 strings out of 493921
+ 96916 string characters out of 3154497
+ 334926 words of memory out of 3000000
+ 10323 multiletter control sequences out of 15000+200000
+ 61420 words of font info for 112 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 36i,9n,63p,825b,1307s stack positions out of 5000i,500n,10000p,200000b,50000s
-{E:/MiKTeX/fonts/enc/dvips/
-fontname/8r.enc}<C:/Users/GiBSoN/AppData/Roaming/MiKTeX/2.9/fonts/type1/public/
-txfonts/rtxb.pfb><C:/Users/GiBSoN/AppData/Roaming/MiKTeX/2.9/fonts/type1/public
-/txfonts/rtxi.pfb><C:/Users/GiBSoN/AppData/Roaming/MiKTeX/2.9/fonts/type1/publi
-c/txfonts/rtxr.pfb><C:/Users/GiBSoN/AppData/Roaming/MiKTeX/2.9/fonts/type1/publ
-ic/txfonts/rtxr.pfb><C:/Users/GiBSoN/AppData/Roaming/MiKTeX/2.9/fonts/type1/pub
-lic/txfonts/txsy.pfb><E:/MiKTeX/fonts/type1/urw/times/utmb8a.pfb><E:/MiKTeX/fon
-ts/type1/urw/times/utmr8a.pfb><E:/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><E:/M
-iKTeX/fonts/type1/urw/times/utmri8a.pfb>
-Output written on qubic-thesis.pdf (57 pages, 1100532 bytes).
+ 36i,9n,63p,825b,1303s stack positions out of 5000i,500n,10000p,200000b,50000s
+{E:/MiKTeX/fonts/enc/dvips/fontname/8r.enc}<C:/Users/GiBSoN/AppData/Roaming/M
+iKTeX/2.9/fonts/type1/public/txfonts/rtxb.pfb><C:/Users/GiBSoN/AppData/Roaming/
+MiKTeX/2.9/fonts/type1/public/txfonts/rtxi.pfb><C:/Users/GiBSoN/AppData/Roaming
+/MiKTeX/2.9/fonts/type1/public/txfonts/rtxr.pfb><C:/Users/GiBSoN/AppData/Roamin
+g/MiKTeX/2.9/fonts/type1/public/txfonts/rtxr.pfb><C:/Users/GiBSoN/AppData/Roami
+ng/MiKTeX/2.9/fonts/type1/public/txfonts/t1xtt.pfb><C:/Users/GiBSoN/AppData/Roa
+ming/MiKTeX/2.9/fonts/type1/public/txfonts/txsy.pfb><E:/MiKTeX/fonts/type1/urw/
+times/utmb8a.pfb><E:/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><E:/MiKTeX/fonts/t
+ype1/urw/times/utmr8a.pfb><E:/MiKTeX/fonts/type1/urw/times/utmri8a.pfb>
+Output written on qubic-thesis.pdf (51 pages, 1014686 bytes).
 PDF statistics:
- 249 PDF objects out of 1000 (max. 8388607)
+ 234 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  76 words of extra memory for PDF output out of 10000 (max. 10000000)
 

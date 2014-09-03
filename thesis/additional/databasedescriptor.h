@@ -1,10 +1,3 @@
-#ifndef DATABASEDESCRIPTOR_H
-#define DATABASEDESCRIPTOR_H
-
-#include <QCoreApplication>
-
-#include "qclogger.h"
-
 class DatabaseDescriptor
 {
     Q_DECLARE_TR_FUNCTIONS(DatabaseDescriptor)
@@ -24,5 +17,3 @@ public:
     virtual bool isForeignKey(const QString &tableName, const QString &columnName) = 0;
     virtual QString getFKTable(const QString &tableName, const QString &columnName) = 0;
 };
-
-#endif // DATABASEDESCRIPTOR_H
