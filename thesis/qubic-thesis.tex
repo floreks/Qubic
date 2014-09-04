@@ -91,7 +91,7 @@ człowiek musiałby napisać 30 klas po minimum 80 linijek każda, co przekłada
 Oszczędność czasu, a co za tym idzie i pieniędzy przy zleceniu tego zadania programowi jest ogromna,
 również szansa popełnienia błędu maleje znacząco, zakładając spełnienie przez użytkownika
 kryteriów narzuconych przez tego typu aplikacje. \\
-	\indent Narzędzia czy aplikacje szkieletowe służące do mapowania obiektowo-relacyjnego
+	\indent Narzędzia czy aplikacje szkieletowe służące do mapowania obiektowo-relacyj\-nego
 	\footnote{Mapowanie Obiektowo-Relacyjne (ang. ORM, Object Relational Mapping) - przedstawia sposób odwzorowania obiektowej architektury
 	systemu informatycznego na bazę danych lub inny element systemu o relacyjnym charakterze \cite{hibernateInAction}.}
 używane przez programistów muszą być zazwyczaj dopasowywane do ich potrzeb. Pozwalają one zachować połączenie między bazą
@@ -114,7 +114,7 @@ języków typu SQL
 Moduł generatora opisu mapowania obiektowo-relacyjnego będzie udostępniony jako biblioteka współdzielona.
 Dzięki takiemu rozwiązaniu moduły będą mogły być używane niezależnie.
 W niniejszej pracy zostanie przedstawiony moduł generujący opis 
-relacyjnej bazy danych w postaci plików klas języka C++ wraz z teoretycznym rozwiązaniem problemu generowania opisu mapowania obiektowo-relacyjnego.
+relacyjnej bazy danych w postaci plików klas języka C++ wraz z teoretycznym rozwiązaniem problemu generowania opisu mapowania obiek\-towo-relacyjnego.
 Drugi moduł będzie zajmował się procesem mapowania 
 obiektowo-relacyjnego wygenerowanych klas na obiekty baz danych i udostępniał
 odpowiednie interfejsy do obsługi operacji  zapisu i odczytu na bazie danych.
@@ -134,8 +134,8 @@ Ostatni cel wiąże się z testami stworzonej aplikacji. Po odpowiednich testach
 Obecnie dostępne źródła z tej dziedziny nie są sformalizowane. Dostępne są jedynie opisy i dokumentacje istniejących aplikacji, które uwzględniają
 w sposób ogólny ich budowę. Znalezione i użyte w tej pracy źródła nie są dostępne w języku polskim, więc muszą być tłumaczone w większości z języka angielskiego.
 Jako że nie ma oficjalnych książek dotyczących tematyki generowania opisu mapowania obiektowo-relacyjnego, większość źródeł tu zebranych to źródła elektroniczne, artykuły i dokumentacje.
-\item Analiza wymagań aplikacji szkieletowych generujących opis mapowania obiektowo-relacyjnego. \\ \\
-Narzędzia zajmujące się generowaniem opisu mapowania obiektowo-relacyjnego są zazwyczaj tylko dodatkami do typowych aplikacji typu ORM. Nie znajdziemy tu
+\item Analiza wymagań aplikacji szkieletowych generujących opis mapowania obiek\-towo-relacyjnego. \\ \\
+Narzędzia zajmujące się generowaniem opisu mapowania obiektowo-relacyj\-nego są zazwyczaj tylko dodatkami do typowych aplikacji typu ORM. Nie znajdziemy tu
 modelu aplikacji szkieletowej, na którym można bazować. Wymagania postawione takiej aplikacji są zazwyczaj takie same i są one podyktowane przez aplikacje zajmujące się mapowaniem obiektowo-relacyjnym. Podobnie jest i w tym przypadku gdzie wymagania generatora opisu są postawione przez drugi moduł aplikacji zajmujący się mapowaniem obiektowo-relacyjnym.
 \item Proces projektowania i tworzenia Qubica. \\ \\
 W oparciu o zebrane informacje i wymagania aplikacji szkieletowych służących do generowania opisu mapowania obiektowo-relacyjnego zostanie stworzona aplikacja szkieletowa mająca na celu rozwiązanie problemów zidentyfikowanych w procesie analizy.
@@ -226,7 +226,7 @@ Przykładowy obrazek przedstawia w prosty sposób schemat działania tego wzorca
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=0.95\textwidth]{images/dao.png}
-	\caption{Wzorzec DAO \cite{daoimg}}
+	\caption{Wzorzec DAO.}
 \end{figure}
 \FloatBarrier
 Jak widać w skład wzorca wchodzą:
@@ -256,29 +256,74 @@ Jak widać w skład wzorca wchodzą:
 \chapter{Analiza istniejących aplikacji do generowania opisu mapowania obiektowo-relacyjnego}\label{chap:analiza}
 W tym rozdziale zostaną przeanalizowane istniejące aplikacje zajmujące się generowaniem opisu mapowania obiektowo-relacyjnego. Sprawdzone zostaną ich słabe i mocne stron oraz wymagania.
 \section{Istniejące rozwiązania w dziedzinie}
-\indent W języku C++ brak jest podobnych aplikacji zajmujących sie generowaniem warstwy dostępu do danych aplikacji. Istnieją aplikacje zajmujące się mapowaniem obiektowo-relacyjnym jednak bez funkcjonalności generowania jego opisu. W języku Java istnieje kilka aplikacji zajmujących się generowaniem opisu mapowania obiektowo-relacyjnego. Są nimi: JOOQ \cite{jooqweb} oraz Hibernate \cite{hibernateweb}. Obie aplikacje zajmują się mapowaniem obiektowo-relacyjnym i posiadają funkcjonalność generowania warstwy dostępu do danych z istniejących systemów relacyjnych baz danych.
+\indent W języku C++ liczba aplikacji zajmujących się generowaniem opisu mapowania obiektowo-relacyjnego jest znikoma. Jedyna warta uwagi biblioteka to QxORM, a w zasadzie specjalny generator zbudowany na jej podstawie o nazwie QxEntityEditor. W języku Java istnieje kilka aplikacji zajmujących się generowaniem opisu mapowania obiektowo-relacyjnego. Są nimi: JOOQ \cite{jooqweb} czy Hibernate \cite{hibernateweb}. Obie aplikacje zajmują się mapowaniem obiektowo-relacyjnym i posiadają funkcjonalność generowania warstwy dostępu do danych z istniejących systemów relacyjnych baz danych.
 \subsection{Wymagania aplikacji}
-Obie aplikacje, tj. JOOQ oraz Hibernate zostały stworzone przy użyciu języka Java. Dzięki temu mogą one być używane zarówno na systemach unixowych jak i tych z rodziny Windows.
-Sam Hibernate nie posiada opcji generowania modelu warstwy danych aplikacji. Dostępne są w tym celu odpowiednie wtyczki do środowisk programistycznych, takich jak Eclipse czy Intellij. Aplikacja JOOQ natomiast rozwiązała ten problem i udostępnia funkcję generatora kodu z linii poleceń wywołując odpowiednią klasę.
+W przeciwieństwie do analizowanych aplikacji Javowych QxEntityEditor został stworzony jako całkowicie niezależna aplikacja, jednak aby generowanie kodu było możliwe wymaga on dostępu do biblioteki QxORM. Pozostałe aplikacje, tj. JOOQ oraz Hibernate zostały stworzone przy użyciu języka Java. Dzięki temu mogą one być używane zarówno na systemach unixowych jak i tych z rodziny Windows. Sam Hibernate nie posiada opcji generowania modelu warstwy danych aplikacji. Dostępne są w tym celu odpowiednie wtyczki do środowisk programistycznych, takich jak Eclipse czy Intellij. Aplikacja JOOQ natomiast rozwiązała ten problem i udostępnia funkcję generatora kodu z linii poleceń wywołując odpowiednią klasę.
 Jedynym wymogiem oprócz posiadania odpowiedniego środowiska z którego wygenerowany zostanie projekt na podstawie bazy danych jest stworzenie odpowiedniego pliku konfiguracyjnego.
-\section{Wady i słabe punkty istniejących rozwiązań}
-Jako pierwsze weźmy pod uwagę wady aplikacji Hibernate:
+
+\section{Hibernate}
+Hibernate udostępnia możliwość mapowania modelu danych na relacyjną bazę danych. Dostarcza on również dodatkowe narzędzia, które pozwalają ten proces odwrócić. Są to odpowiednie wtyczki do środowisk programistycznych takich jak Eclipse czy IntelliJ. Udostępniony interfejs jest prosty w obsłudze, a konfiguracja wymaga jedynie dostarczenia odpowiedniego pliku z informacjami o połączeniu. Wadą jest niestety brak możliwości zdefiniowania przez użytkownika dodatkowych informacji, np. dotyczących relacji między tabelami. Dużym plusem jest to, że wszystkie te narzędzia są dostępne za darmo na licencji LGPL\footnote{LGPL - licencja wolnego oprogramowania. Pozwala między innymi na używanie oprogramowania objętego taką licencją w komercyjnych projektach, bez konieczności zakupu licencji.}
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=.67\textwidth]{images/eclipse.png}
+	\caption{Interfejs generowania kodu frameworka Hibernate.}
+\end{figure}
+
+\FloatBarrier
+
+\section{JOOQ}
+Jest stosunkowo nowym i lekkim narzędziem do mapowania obiektowo-relacyjnego. Głównym założeniem twórców było postawienie SQL na pierwszym miejscu. Zamiast tworzyć własny język do generowania zapytań, skupili się na prostym i szybkim generowaniu zapytań SQL. Nie udostępnia on dużej funkcjonalności jak na przykład Hibernate jednak dzięki temu oferuje szybkość i prostotę użycia. Generowanie kodu odbywa się niestety z linii poleceń, jako że nie udostępnia on żadnego graficznego interfejsu. Generowanie odbywa się jednostronnie, czyli z istniejącej bazy danych do projektu języka Java. W celu wygenerowania projektu należy przygotować wcześniej odpowiedni plik ustawień i wywołać odpowiednią klasę.
+
+\begin{framed}
+\centering
+\begin{lstlisting}[language=Java]
+java org.jooq.util.GenerationTool /jooq-config.xml
+\end{lstlisting}
+\end{framed}
+
+\FloatBarrier
+
+Niestety biblioteka JOOQ w darmowej ofercie ma dość ograniczone możliwości. W celu uzycia jej do średnich i większych projektów wymagane jest wykupienie wersji profesjonalnej lub dla firm. W darmowej wersji nie obsługuję ona zbyt dużej ilości baz danych.
+
+\section{QxEntityEditor}
+
+QxEntityEditor jest graficznym edytorem przeznaczonym dla biblioteki QxORM. Pozwala on zarządzać modelem danych w bardzo szerokim zakresie, np.:
+
 \begin{itemize}
-\item{Bardzo duża ilość API\footnote{API(ang. Application Programming Interface) - dostarcza odpowiednie specyfikacje podprogramów, struktur danych, klas obiektów i wymaganych protokołów komunikacyjnych.}. do nauki, przez co nie jest łatwy w obsłudze.}
-\item{Ze względu na budowę modelu warstwy danych aplikacji wymaga dużej ilości zapytań do bazy. Często przy bazach z dużą ilością rekordów wydajność zauważalnie spada.}
-\item{Wymaga użycia odpowiedniego środowiska programistycznego i wtyczek w celu generowania warstwy dostępu do danych aplikacji.}
+\item{Pozwala generować klasy C++ na podstawie bazy danych przeznaczone do używania z biblioteką QxORM.}
+\item{Pozwala generować skrypty tworzące bazę danych.}
+\item{Wspomaga tworzenie aplikacji typu klient/serwer.}
+\item{Udostępnia własny interfejs modelowania bazy danych. Nie wymaga jej wcześniejszego istnienia w celu stworzenia bazy oraz projektu.}
 \end{itemize}
 
-Druga aplikacja JOOQ rozwiązuje dwie z trzech wyżej wymienionych wad. Niestety nadal oferuje one generowanie modelu danych z zachowaniem czystego wzorca DAO, co wiąże się z większym zużyciem pamięci i w pewnych sytuacjach stratami wydajności. Oczywiście tego typu rozwiązania posiadają również bardzo wiele zalet:
-	
-\begin{itemize}
-\item{Nie wymagają od programisty znajomości języka SQL.}
-\item{Oszczędzają dużo czasu, ponieważ same zajmują się komunikacją z bazą i pozyskiwaniem danych.}
-\item{Pozwalają skupić się na logice biznesowej aplikacji, zamiast zarządzaniu bazą danych.}
-\item{Są niezależne od systemów baz danych. Mogą współpracować z wieloma róznymi systemami.}
-\end{itemize}
+Użytkowanie aplikacji niestety nie jest zbyt proste ze względu na bardzo duża funkcjonalność i dość niejasne błędy. Próby wygenerowania kodu z bazy MySQL niestety zakończyły się niepowodzeniem. Sama aplikacja jest płatna i nie udostępnia swoich źródeł co znacznie ogranicza jej dostępność dla zwykłego programisty.
 
-Są to najważniejsze zalety tego typu rozwiązań. Jednak jeśli chodzi o analizowanie w tym rozdziale aplikacje, żadna z nich nie współpracuje z aplikacjami pisanymi w języku C++. Pozwala to zaproponować własne rozwiązanie i wypełnić tę lukę.
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=1\textwidth]{images/qxentity.png}
+	\caption{Interfejs aplikacji QxEntityEditor.}
+\end{figure}
+
+\FloatBarrier
+
+\section{Wady i zalety istniejących rozwiązań}
+
+\begin{table}[!ht]
+\centering
+    \begin{tabular}{| p{3cm} |  p{3cm} |  p{2cm} | p{3cm} |}
+    \hline
+    QxEntityEditor & JOOQ & Hibernate & \\ \hline
+     tak & tak & tak & Wsparcie dla popularnych systemów baz danych \\ \hline
+ duża & mała & duża & Dostępna funkcjonalność \\ \hline
+ średnia & dobra & dobra & Przejrzystość generowanego kodu \\ \hline
+ pojedyncza licencja 300\$ & od 320\$ do 640\$ w zależności od licencji & darmowy & Cena \\ \hline
+ duży & średni & średni & Stopień trudności konfiguracji \\ \hline
+    \end{tabular}
+    \caption{Porównanie wybranych aplikacji zajmujących się generowaniem opisu mapowania obiektowo-relacyjnego.}
+\end{table}
+
+Podsumowując powyższą tabelę można stwierdzić, że każde z istniejących rozwiązań ma pewne wady lub braki. Z aplikacji przeznaczonych dla języka Java Hibernate jest zdecydowanym zwycięzcą jeśli chodzi o funkcjonalność, prostotę i cenę narzędzia do generowania opisu mapowania obiektowo-relacyjnego. JOOQ z drugiej strony swą prostotą użycia sprawia, że dla prywatnych użytkowników jest zdecydowanym liderem. Jeśli chodzi natomiast o język C++, tutaj jedynym kandydatem jest QxEntityEditor. Posiada on dużą funkcjonalność, jednak cena jaką należy zapłacić zdecydowanie odstrasza zwykłych użytkowników. Sprawia to, że staje się on narzędziem przeznaczonym raczej dla firm.
 
 \chapter{Projektowanie aplikacji szkieletowej Qubic} \label{rozdz.czesc.prakt}
 
@@ -311,12 +356,12 @@ Są to najważniejsze zalety tego typu rozwiązań. Jednak jeśli chodzi o anali
 Do stworzenia aplikacji został wybrany język C++. Najważniejszym czynnikiem jego wyboru jest wydajność. W porównaniu podstawowych operacji między innymi popularnymi językami język ten jest zdecydowanie szybszy. Poniższa tabela przedstawia porównanie czasów wykonania: pętli, operacji tablicowych, podstawowych operacji matematycznych.
 \begin{figure}[h]
 	\centering
-	\includegraphics[width=1.1\textwidth]{images/c++test.png}
+	\includegraphics[width=1\textwidth]{images/c++test.png}
 	\caption{Porównanie wydajności popularnych języków względem C++. \cite{c++testimg}}
 \end{figure}
 \FloatBarrier
 
-Drugim ważnym czynnikiem wyboru języka C++ jest brak istnienia aplikacji realizujących mapowanie obiektowo-relacyjne wraz z możliwością generowania warstwy dostępu do danych w tym języku.
+Drugim ważnym czynnikiem wyboru języka C++ jest znikoma ilość aplikacji realizujących mapowanie obiektowo-relacyjne wraz z możliwością generowania warstwy dostępu do danych w tym języku.
 
 \subsection{System baz danych}
 Jako system zarządzania bazą danych został wybrany serwer MySQL. Czynniki które o tym zdecydowały to przede wszystkim mała zajętość pamięci oraz łatwa i szybka konfiguracja. Dodatkowo posiada on bardzo dobrą integrację z użytym frameworkiem Qt, który został użyty m.in.: w celu połączenia z bazą danych oraz odczytu jej struktury z poziomu języka C++.
@@ -397,7 +442,7 @@ Moduł bazy danych pełni kilka funkcji:
 \item{Dzięki odpowiedniej hierarchii klas zapewnia wsparcie dla różnych systemów baz danych. }
 \end{itemize}
 
-Wspierane przez Qubica typy baz danych są ograniczone przez framework Qt. Udostępnia on sterowniki dla następujących baz danych:
+Wspierane przez Qubica typy baz danych są ograniczone przez framework Qt. Udostępnia on sterowniki i wsparcie dla następujących baz danych:
 \begin{itemize}
 \item{IBM DB2}
 \item{Borland InterBase}
@@ -444,7 +489,16 @@ W tej części pracy zostaną przedstawione kluczowe fragmenty kodu odpowiadają
 \lstinputcplusplus[caption={QcDatabase}]{additional/qcdatabase.h}
 \end{framed}
 
-Ważnym krokiem przed przystąpieniem do procesu generowania jest uzyskanie informacji z bazy danych o tabelach, typach kolumn, kluczach głównych i obcych. W celu zapewnienia wsparcia dla różnych systemów relacyjnych baz danych stworzona została klasa abstrakcyjna {\tt DatabaseDescriptor} , którą należy rozszerzyć aby obsłużyc konkretną bazę danych. Wymusza ona na użytkowniku implementację metod, które udostępnią informacje potrzebne do prawidlowego utworzenia schematu bazy danych w pamięci.
+Ważnym krokiem przed przystąpieniem do procesu generowania jest uzyskanie informacji z bazy danych o tabelach, typach kolumn, kluczach głównych i obcych. W celu zapewnienia wsparcia dla różnych systemów relacyjnych baz danych stworzona została klasa abstrakcyjna {\tt DatabaseDescriptor} , którą należy rozszerzyć aby obsłużyc konkretną bazę danych, a następnie dodać wpis do klasy zajmującej się tworzeniem konkretnej klasy w zależności od używanej bazy danych. Wymusza ona na użytkowniku implementację metod, które udostępnią informacje potrzebne do prawidlowego utworzenia schematu bazy danych w pamięci. Oto przykładowy wpis dodający obsługę baz typu MySQL oraz kod klasy {\tt DatabaseDescriptor} pokazujący wymagane metody:
+
+\begin{framed}
+\begin{lstlisting}[language=C++]
+ if(driverName.contains("MYSQL",Qt::CaseInsensitive)) 
+ {
+     return new MySQLDescriptor();
+ }
+\end{lstlisting}
+\end{framed}
 
 \begin{framed}
 \lstinputcplusplus[caption={DatabaseDescriptor}]{additional/databasedescriptor.h}
@@ -458,9 +512,11 @@ Kolejnym problemem jest odpowiednie mapowanie typów kolumn na typy języka C++.
 
 Tak wygląda przykładowy wpis w pliku mapowań, który typ {\tt char} bazy danych mapuje na obiekt {\tt QcStringField}. 
 
+\begin{framed}
 \begin{lstlisting}[language=XML]
 <qc:map fromType="char" toType="QcStringField"/>
 \end{lstlisting}
+\end{framed}
 
 Jedna z najważniejszych klas modułu generatora to klasa {\tt QcSchemaGenerator}, która  wykorzystuje wyżej opisane klasy w celu utworzenia struktury bazy w pamięci programu. Główna funkcja {\tt getTables} jest odpowiedzialna za odczytanie tabel, nazw i typów kolumn oraz rozpoznanie relacji między tabelami. W trakcie przetwarzania wykonywana jest również walidacja danych. Najkosztowniejsza operacją jest automatyczne wykrycie relacji między tabelami. Zostało to zapewnione poprzez wykrycie ilości kluczy obcych w tabeli, a następnie zapisanie informacji o typie relacji i powiązanych tabelach.
 
@@ -474,10 +530,10 @@ Na podstawie utworzonej struktury danych generowane są pliki projektu. Ze wzgl�
 \lstinputcplusplus[caption={QcFileGenerator}]{additional/qcfilegenerator.h}
 \end{framed}
 
-Poniżej przedstawiony jest częściowy kod prostej aplikacji graficznej opartej o funkcje udostępniane przez stworzoną bibliotekę. Odczytuje ona odpowiednie pliki ustawień, łączy się z bazą danych, sprawdza ustawienia, a następnie generuje projekt wykorzystywany przez moduł mapowania obiektowo-relacyjnego.
+Poniżej przedstawiony jest częściowy kod prostej aplikacji graficznej opartej o funkcje udostępniane przez stworzoną bibliotekę. Została ona stworzona jedynie jako reprezentacja możliwości stworzonej biblioteki. Odczytuje ona i sprawdza poprawność odpowiednich plików ustawień, tj. pliku mapowań oraz pliku z informacjami o połączeniu. Następnie po poprawnej walidacji ustawień pozwala na ustanowienie połączenia z bazą. Dodatkowo została dodana możliwość zdefiniowania przez użytkownika, które relacje wiele do wielu mają zostać uwzględnione przy generowaniu projektu. Najważniejszą funkcją jest oczywiście możliwość wygenerowania projektu jeśli wcześniejsze kroki zostaną wykonane bez błędów.
 
 \begin{framed}
-\lstinputcplusplus[caption={QcGenerator}]{additional/qcgenerator.cpp}
+\lstinputcplusplus[caption={QcGenerator}]{additional/qcgenerator.h}
 \end{framed}
 
 \section{Testy stworzonej aplikacji}
@@ -488,7 +544,7 @@ Test wydajności został przeprowadzony w porównaniu z aplikacją JOOQ napisan�
 \lstinputlisting[caption={JOOQ Log}]{additional/jooq.log}
 \end{framed}
 
-\begin{figure}[h]
+\begin{figure}[!ht]
 	\centering
 	\includegraphics[width=1.1\textwidth]{images/qubic-gen.png}
 	\caption{Interfejs aplikacji przykładowej wraz z logiem procesu generowania.}
@@ -511,24 +567,46 @@ Test wydajności został przeprowadzony w porównaniu z aplikacją JOOQ napisan�
 Porównanie funkcjonalności samego generatora opisu mapowania obiektowo-relacyjnego opiera się na sprawdzeniu wsparcia różnych dialektów SQL. Porównane zostały jedynie najpopularniejsze dialekty.
 \begin{table}[!ht]
 \centering
-    \begin{tabular}{ccccc}
+    \begin{tabular}{cccccc}
     \hline
-    Framework & Qubic & JOOQ & Hibernate & Funkcjonalność \\ \hline
-    & tak & tak & tak & Wsparcie MySQL \\ \hline
-& tak & tak & tak & Wsparcie PostgreSQL \\ \hline
-& tak & tak & nie & Wsparcie SQLite \\ \hline
-& tak & tak & tak & Wsparcie Oracle \\ \hline
-& tak & nie & tak & Wsparcie MSSQL \\ \hline
-& tak & tak & tak & Wsparcie Sybase \\ \hline
-& tak & tak & tak & Wsparcie IBM DB2 \\ \hline
+    Framework & Qubic & JOOQ & Hibernate & QxEntityEditor & Funkcjonalność \\ \hline
+    & tak & tak & tak & tak & Wsparcie MySQL \\ \hline
+& tak & tak & tak & tak & Wsparcie PostgreSQL \\ \hline
+& tak & tak & nie & tak & Wsparcie SQLite \\ \hline
+& tak & tak & tak & tak & Wsparcie Oracle \\ \hline
+& tak & nie & tak & tak & Wsparcie MSSQL \\ \hline
+& tak & tak & tak & tak & Wsparcie Sybase \\ \hline
+& tak & tak & tak & tak & Wsparcie IBM DB2 \\ \hline
     \end{tabular}
     \caption{Porównanie funkcjonalności wybranych aplikacji zajmujących się generowaniem opisu mapowania obiektowo-relacyjnego.}
 \end{table}
 
+\subsection{Opis użytkowania aplikacji}
+
+Proces generowania i korzystania z gotowego projektu jest bardzo prosty i wiąże się z wykonaniem kilku kroków.
+
+\begin{itemize}
+\item W podfolderze {\tt resources} aplikacji znajdują się dwa pliki ustawień \\{\tt qcmapping.xml} oraz {\tt qcproperties.xml}. Przed rozpoczęciem generowania należy uzupełnić informacje o bazie w drugim pliku.
+\item Po uruchomieniu aplikacji należy w {\tt Menu -> Load} załadować pliki ustawień. Są one domyślnie zczytywane z folderu {\tt resources} oraz sprawdzane pod kątem błędów.
+\item Następnym krokiem jest ustanowienie połączenia z bazą, {\tt Menu -> Connect}. 
+\item Jeśli poprzedni krok został wykonany, dostępne będą opcje generowania oraz ustawienia dodatkowych informacji o relacjach.
+\subitem {\tt Menu -> Set Relations} pozwala na zdefiniowanie, które relacje wiele do wielu zostaną uwzględnione przy generowaniu projektu.
+\subitem {\tt Menu -> Generate} - po wybraniu tej opcji, program spyta nas o podanie folderu, w którym zostanie wygenerowany projekt.
+\end{itemize}
+
+Po wygenerowaniu projektu można zacząć tworzenie aplikacji opartej o Qubica. W celu późniejszego uruchomienia stworzonej aplikacji wymagane są następujące kroki:
+
+\begin{itemize}
+\item Z folderu z wygenerowanym projektem należy skopiować plik {\tt qb.properties} do folderu z plikiem wykonawczym tworzonej aplikacji.
+\item Do folderu ze stworzoną aplikacją należy również skopiować bibliotekę z odpowiednim sterownikiem bazy danych dla języka C++.
+\end{itemize}
+
+ Cała część zajmująca się mapowaniem obiektowo-relacyjnym została wbudowana w stworzoną bibliotekę, dzięki czemu nie wymaga to dodatkowego nakładu w postaci ściągania i ustawiania czegokolwiek.
+
 \chapter{Podsumowanie}
 Ten rozdział zawiera podsumowanie pracy oraz uzyskanych wyników. Omówione zostają dodatkowe możliwości rozwoju tematu jak i całej aplikacji Qubic.
 \section{Dyskusja wyników}
-Przeprowadzone testy generowania warstwy dostępu do danych aplikacji wykazały około 35\% wzrost wydajności na korzyść zaproponowanego rozwiązania. Należy tu zaznaczyć, że w języku C++ nie znaleziono podobnych aplikacji, a różnice wydajności wynikają częściowo z budowy języka Java, w którym zostały napisane podobne aplikacje. Dodatkowym atutem stworzonej aplikacji jest wsparcie większej ilości dialektów SQL od konkurencyjnych rozwiązań oraz brak istnienia podobnych aplikacji w języku C++, dzięki czemu Qubic staje się bezkonkurencyjnym rozwiązanie w swojej dziedzinie. Prostota użycia, brak zależności od zewnętrznych aplikacji czy dodatkowego ręcznego konfigurowania to tylko kilka z wielu atutów stworzonego generatora opisu mapowania obiektowo-relacyjnego.
+Przeprowadzone testy generowania warstwy dostępu do danych aplikacji wykazały około 35\% wzrost wydajności na korzyść zaproponowanego rozwiązania. Należy tu zaznaczyć, że w języku C++ nie istnieją aplikacje udostępniające potrzebne informacje, a różnice wydajności wynikają częściowo z budowy języka Java, w którym zostały napisane podobne aplikacje. Dodatkowym atutem stworzonej aplikacji jest wsparcie większej ilości dialektów SQL od konkurencyjnych rozwiązań oraz bardzo mała ilość podobnych aplikacji w języku C++, dzięki czemu Qubic staje się bezkonkurencyjnym rozwiązaniem w swojej dziedzinie. Prostota użycia, brak zależności od zewnętrznych aplikacji czy dodatkowego ręcznego konfigurowania to tylko kilka z wielu atutów stworzonego generatora opisu mapowania obiektowo-relacyjnego.
 \section{Ocena możliwości wdrożenia Qubica}
 Qubic pozwala zaoszczędzić programistom dużą ilość czasu w fazie tworzenia aplikacji, dzięki czemu mogą sie oni skupić na innych częściach projektu. Moduł generujący warstwę dostępu do danych jest prosty i szybki w użyciu oraz dalszym rozwoju. W razie potrzeby jest prosto konfigurowalny, a dzięki generycznej budowie aplikacja może być łatwo dostosowywana do własnych potrzeb. Dzięki temu jej wdrożenie nie wiąże się z dużymi kosztami, a pozwala na późniejsze zaoszczędzenie cennego czasu w fazie implementacyjnej.
 \section{Perspektywy dalszego rozwoju}
@@ -554,6 +632,7 @@ Dodatkowym atutem stworzonej aplikacji byłby moduł zajmujący się procesem od
 	\bibitem{ormimg} http://www.visual-paradigm.com/VPGallery/img/orm/Overview/ORM-Overview.png --  [dostęp 02.11.2013]
 	\bibitem{c++testimg} http://blog.famzah.net/2010/07/01/cpp-vs-python-vs-perl-vs-php-performance-benchmark/ - [dostęp 02.07.2014]
 	\bibitem{dllimg} {http://i.msdn.microsoft.com/dynimg/IC34006.gif - [dostęp 29.07.2014]}
+	\bibitem{qxentity} {http://www.qxorm.com/qxentityeditor/resource/qxee\_sample.png - [dostęp 04.09.2014]}
 \end{thebibliography}
 
 \addcontentsline{toc}{chapter}{Spis rysunków} 

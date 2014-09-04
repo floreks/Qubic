@@ -3,18 +3,20 @@
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {2.1}{\ignorespaces Uproszczony przebieg generowania opisu mapowania obiektowo-relacyjnego \cite {ormimg}.\relax }}{12}
 \contentsline {figure}{\numberline {2.2}{\ignorespaces Wzorzec Model-Widok-Kontroler.\relax }}{13}
-\contentsline {figure}{\numberline {2.3}{\ignorespaces Wzorzec DAO \cite {daoimg}\relax }}{14}
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Wzorzec DAO.\relax }}{14}
 \contentsline {figure}{\numberline {2.4}{\ignorespaces Schemat dzia\IeC {\l }ania biblioteki wsp\IeC {\'o}\IeC {\l }dzielonej \cite {dllimg}.\relax }}{15}
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Interfejs generowania kodu frameworka Hibernate.\relax }}{17}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Interfejs aplikacji QxEntityEditor.\relax }}{19}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Por\IeC {\'o}wnanie wydajno\IeC {\'s}ci popularnych j\IeC {\k e}zyk\IeC {\'o}w wzgl\IeC {\k e}dem C++. \cite {c++testimg}\relax }}{20}
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Log kontrolny zmian projektowych z portalu Github.\relax }}{22}
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Diagram przypadk\IeC {\'o}w u\IeC {\.z}ycia modu\IeC {\l }u generatora.\relax }}{25}
-\contentsline {figure}{\numberline {4.4}{\ignorespaces Diagram koncepcyjny generatora.\relax }}{27}
-\contentsline {figure}{\numberline {4.5}{\ignorespaces Diagram klas modu\IeC {\l }u logera.\relax }}{29}
-\contentsline {figure}{\numberline {4.6}{\ignorespaces Diagram klas modu\IeC {\l }u ustawie\IeC {\'n}.\relax }}{30}
-\contentsline {figure}{\numberline {4.7}{\ignorespaces Diagram klas modu\IeC {\l }u bazy danych.\relax }}{31}
-\contentsline {figure}{\numberline {4.8}{\ignorespaces Diagram klas modu\IeC {\l }u budowania struktury danych.\relax }}{32}
-\contentsline {figure}{\numberline {4.9}{\ignorespaces Diagram klas modu\IeC {\l }u generatora projektu.\relax }}{33}
-\contentsline {figure}{\numberline {4.10}{\ignorespaces Interfejs aplikacji przyk\IeC {\l }adowej wraz z logiem procesu generowania.\relax }}{44}
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Por\IeC {\'o}wnanie wydajno\IeC {\'s}ci popularnych j\IeC {\k e}zyk\IeC {\'o}w wzgl\IeC {\k e}dem C++. \cite {c++testimg}\relax }}{23}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Log kontrolny zmian projektowych z portalu Github.\relax }}{25}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Diagram przypadk\IeC {\'o}w u\IeC {\.z}ycia modu\IeC {\l }u generatora.\relax }}{28}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Diagram koncepcyjny generatora.\relax }}{30}
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Diagram klas modu\IeC {\l }u logera.\relax }}{32}
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Diagram klas modu\IeC {\l }u ustawie\IeC {\'n}.\relax }}{33}
+\contentsline {figure}{\numberline {4.7}{\ignorespaces Diagram klas modu\IeC {\l }u bazy danych.\relax }}{34}
+\contentsline {figure}{\numberline {4.8}{\ignorespaces Diagram klas modu\IeC {\l }u budowania struktury danych.\relax }}{35}
+\contentsline {figure}{\numberline {4.9}{\ignorespaces Diagram klas modu\IeC {\l }u generatora projektu.\relax }}{36}
+\contentsline {figure}{\numberline {4.10}{\ignorespaces Interfejs aplikacji przyk\IeC {\l }adowej wraz z logiem procesu generowania.\relax }}{45}
 \addvspace {10\p@ }
