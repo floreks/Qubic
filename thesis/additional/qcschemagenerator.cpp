@@ -12,8 +12,6 @@ QList<QcMetaTable> QcSchemaGenerator::getTables(Properties *properties) {
         QcSchemaValidator::checkTable(table);
         result.append(table);
     }
-
     setRelations(result);
-
     return result;
 }

@@ -1,22 +1,23 @@
 \select@language {polish}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {2.1}{\ignorespaces Uproszczony przebieg generowania opisu mapowania obiektowo-relacyjnego \cite {ormimg}.\relax }}{12}
-\contentsline {figure}{\numberline {2.2}{\ignorespaces Wzorzec Model-Widok-Kontroler.\relax }}{13}
-\contentsline {figure}{\numberline {2.3}{\ignorespaces Wzorzec DAO.\relax }}{14}
-\contentsline {figure}{\numberline {2.4}{\ignorespaces Schemat dzia\IeC {\l }ania biblioteki wsp\IeC {\'o}\IeC {\l }dzielonej \cite {dllimg}.\relax }}{15}
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Uproszczony przebieg generowania opisu mapowania obiektowo-relacyjnego \cite {ormimg}.\relax }}{11}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Wzorzec Model-Widok-Kontroler.\relax }}{12}
+\contentsline {figure}{\numberline {2.3}{\ignorespaces {\color {black} Schemat dzia\IeC {\l }ania biblioteki wsp\IeC {\'o}\IeC {\l }dzielonej \cite {dllimg}.}\relax }}{13}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Interfejs generowania kodu frameworka Hibernate.\relax }}{17}
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Interfejs aplikacji QxEntityEditor.\relax }}{19}
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Interfejs generowania kodu frameworka Hibernate.\relax }}{15}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Interfejs aplikacji QxEntityEditor.\relax }}{17}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Por\IeC {\'o}wnanie wydajno\IeC {\'s}ci popularnych j\IeC {\k e}zyk\IeC {\'o}w wzgl\IeC {\k e}dem C++. \cite {c++testimg}\relax }}{23}
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Log kontrolny zmian projektowych z portalu Github.\relax }}{25}
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Diagram przypadk\IeC {\'o}w u\IeC {\.z}ycia modu\IeC {\l }u generatora.\relax }}{28}
-\contentsline {figure}{\numberline {4.4}{\ignorespaces Diagram koncepcyjny generatora.\relax }}{30}
-\contentsline {figure}{\numberline {4.5}{\ignorespaces Diagram klas modu\IeC {\l }u logera.\relax }}{32}
-\contentsline {figure}{\numberline {4.6}{\ignorespaces Diagram klas modu\IeC {\l }u ustawie\IeC {\'n}.\relax }}{33}
-\contentsline {figure}{\numberline {4.7}{\ignorespaces Diagram klas modu\IeC {\l }u bazy danych.\relax }}{34}
-\contentsline {figure}{\numberline {4.8}{\ignorespaces Diagram klas modu\IeC {\l }u budowania struktury danych.\relax }}{35}
-\contentsline {figure}{\numberline {4.9}{\ignorespaces Diagram klas modu\IeC {\l }u generatora projektu.\relax }}{36}
-\contentsline {figure}{\numberline {4.10}{\ignorespaces Interfejs aplikacji przyk\IeC {\l }adowej wraz z logiem procesu generowania.\relax }}{45}
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Por\IeC {\'o}wnanie wydajno\IeC {\'s}ci popularnych j\IeC {\k e}zyk\IeC {\'o}w wzgl\IeC {\k e}dem C++. \cite {c++testimg}\relax }}{21}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Log kontrolny zmian projektowych z portalu Github.\relax }}{22}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Diagram przypadk\IeC {\'o}w u\IeC {\.z}ycia modu\IeC {\l }u generatora.\relax }}{25}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Diagram koncepcyjny generatora.\relax }}{26}
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Diagram klas modu\IeC {\l }u logera.\relax }}{28}
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Diagram klas modu\IeC {\l }u ustawie\IeC {\'n}.\relax }}{29}
+\contentsline {figure}{\numberline {4.7}{\ignorespaces Diagram klas modu\IeC {\l }u bazy danych.\relax }}{31}
+\contentsline {figure}{\numberline {4.8}{\ignorespaces Diagram klas modu\IeC {\l }u budowania struktury danych.\relax }}{31}
+\contentsline {figure}{\numberline {4.9}{\ignorespaces Diagram klas modu\IeC {\l }u generatora projektu.\relax }}{32}
+\contentsline {figure}{\numberline {4.10}{\ignorespaces Interfejs generatora.\relax }}{40}
+\contentsline {figure}{\numberline {4.11}{\ignorespaces Interfejs generatora.\relax }}{41}
+\contentsline {figure}{\numberline {4.12}{\ignorespaces Struktura stworzonego projektu.\relax }}{42}
 \addvspace {10\p@ }
